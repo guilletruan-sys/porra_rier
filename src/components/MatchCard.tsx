@@ -65,17 +65,15 @@ export function MatchCard({ match }: MatchCardProps) {
           {/* Score / Time */}
           <div className="flex flex-col items-center shrink-0">
             {hasScore ? (
-              isFinished ? (
-                <Spoiler>
-                  <button
-                    onClick={onScoreClick}
-                    aria-label="Ver detalles del partido"
-                    className="active:scale-95 transition-transform"
-                  >
-                    {scoreBadge}
-                  </button>
-                </Spoiler>
-              ) : <Spoiler>{scoreBadge}</Spoiler>
+              <Spoiler>
+                <button
+                  onClick={onScoreClick}
+                  aria-label="Ver detalles del partido"
+                  className="active:scale-95 transition-transform"
+                >
+                  {scoreBadge}
+                </button>
+              </Spoiler>
             ) : tbd ? (
               <div className="flex flex-col items-center">
                 <span className="text-slate-500 text-xs font-semibold">{time}</span>
