@@ -104,10 +104,9 @@ export function PaywallModal() {
             <div className="bg-slate-50 rounded-xl px-4 py-3 text-center">
               <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Suscripción mensual</p>
               <div className="flex items-baseline justify-center gap-1 mt-1">
-                <span className="text-3xl font-black text-slate-800">9,99 €</span>
+                <span className="text-3xl font-black text-slate-800">999 €</span>
                 <span className="text-xs text-slate-500">/mes</span>
               </div>
-              <p className="text-[10px] text-amber-600 font-bold mt-1">🎉 Primer mes a 1 €</p>
             </div>
           </div>
         </div>
@@ -118,7 +117,7 @@ export function PaywallModal() {
             onClick={onSubscribe}
             className="w-full bg-gradient-to-br from-amber-400 to-amber-600 text-white font-black text-sm py-3 rounded-xl shadow active:scale-95 transition-transform"
           >
-            Suscribirme · 1 € el primer mes
+            Suscribirme · 999 €/mes
           </button>
 
           {toast && (

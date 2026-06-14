@@ -160,49 +160,68 @@ export default function ParticipantPage({ params }: { params: Promise<{ particip
         </PremiumGate>
       )}
 
-      {/* Group stage */}
-      {sortedGroups.map(groupKey => {
-        const gMatches = matchesByGroup.get(groupKey)!
-        const letter = groupKey.replace('GROUP_', '')
+      {/* Group stage — first group free in lite mode, the rest are Pro */}
+      {(() => {
+        const renderGroup = (groupKey: string) => {
+          const gMatches = matchesByGroup.get(groupKey)!
+          const letter = groupKey.replace('GROUP_', '')
+          return (
+            <section key={groupKey}>
+              <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">
+                Grupo {letter}
+              </p>
+              <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50">
+                {gMatches.map(m => {
+                  const key = getMatchKey(m.homeTeam.tla, m.awayTeam.tla)
+                  const pred = preds.groupStage[key]
+                  if (!pred) return null
+                  const { points, reason } = scoreGroupMatch(pred, m)
+                  const isFinished = m.status === 'FINISHED' || m.status === 'IN_PLAY'
+                  const homeFlagUrl = getFlagUrl(m.homeTeam.tla)
+                  const awayFlagUrl = getFlagUrl(m.awayTeam.tla)
+                  return (
+                    <div key={m.id} className={`flex items-center gap-2 px-3 py-2.5 ${isFinished ? (REASON_BG[reason] ?? '') : ''}`}>
+                      {homeFlagUrl && <Image src={homeFlagUrl} alt="" width={14} height={10} unoptimized className="rounded-sm shrink-0" />}
+                      <span className="text-[10px] font-semibold text-slate-700 flex-1 truncate">
+                        {m.homeTeam.shortName} – {m.awayTeam.shortName}
+                      </span>
+                      {awayFlagUrl && <Image src={awayFlagUrl} alt="" width={14} height={10} unoptimized className="rounded-sm shrink-0" />}
+                      <span className="text-[10px] font-bold text-slate-500 ml-1">{pred.homeGoals}–{pred.awayGoals}</span>
+                      {isFinished && (
+                        <>
+                          <span className="text-[9px] text-slate-400">
+                            ({m.score.fullTime.home ?? 0}–{m.score.fullTime.away ?? 0})
+                          </span>
+                          <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${REASON_BADGE[reason] ?? 'bg-slate-100 text-slate-400'}`}>
+                            {points > 0 ? `+${points}` : '0'}
+                          </span>
+                        </>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+            </section>
+          )
+        }
+        const [firstGroup, ...restGroups] = sortedGroups
         return (
-          <section key={groupKey}>
-            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">
-              Grupo {letter}
-            </p>
-            <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50">
-              {gMatches.map(m => {
-                const key = getMatchKey(m.homeTeam.tla, m.awayTeam.tla)
-                const pred = preds.groupStage[key]
-                if (!pred) return null
-                const { points, reason } = scoreGroupMatch(pred, m)
-                const isFinished = m.status === 'FINISHED' || m.status === 'IN_PLAY'
-                const homeFlagUrl = getFlagUrl(m.homeTeam.tla)
-                const awayFlagUrl = getFlagUrl(m.awayTeam.tla)
-                return (
-                  <div key={m.id} className={`flex items-center gap-2 px-3 py-2.5 ${isFinished ? (REASON_BG[reason] ?? '') : ''}`}>
-                    {homeFlagUrl && <Image src={homeFlagUrl} alt="" width={14} height={10} unoptimized className="rounded-sm shrink-0" />}
-                    <span className="text-[10px] font-semibold text-slate-700 flex-1 truncate">
-                      {m.homeTeam.shortName} – {m.awayTeam.shortName}
-                    </span>
-                    {awayFlagUrl && <Image src={awayFlagUrl} alt="" width={14} height={10} unoptimized className="rounded-sm shrink-0" />}
-                    <span className="text-[10px] font-bold text-slate-500 ml-1">{pred.homeGoals}–{pred.awayGoals}</span>
-                    {isFinished && (
-                      <>
-                        <span className="text-[9px] text-slate-400">
-                          ({m.score.fullTime.home ?? 0}–{m.score.fullTime.away ?? 0})
-                        </span>
-                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${REASON_BADGE[reason] ?? 'bg-slate-100 text-slate-400'}`}>
-                          {points > 0 ? `+${points}` : '0'}
-                        </span>
-                      </>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-          </section>
+          <>
+            {firstGroup && renderGroup(firstGroup)}
+            {restGroups.length > 0 && (
+              <PremiumGate
+                mode="replace"
+                feature="todas las predicciones de grupos"
+                title="🔮 Predicciones de todos los grupos"
+                description="Mejora a Pro para ver las predicciones de fase de grupos al completo, no solo el primer grupo."
+                compact
+              >
+                {restGroups.map(renderGroup)}
+              </PremiumGate>
+            )}
+          </>
         )
-      })}
+      })()}
 
       {/* Knockouts — Pro */}
       {(r32Qualifiers.length > 0 || knockoutByRound.size > 0) && (

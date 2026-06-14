@@ -10,7 +10,7 @@ interface AppHeaderProps {
   subtitle?: string
 }
 
-export function AppHeader({ title = 'Porra Rier', subtitle }: AppHeaderProps) {
+export function AppHeader({ title = 'Porra', subtitle }: AppHeaderProps) {
   const [refreshing, setRefreshing] = useState(false)
   const { isPremium } = useLite()
   const { name, openPicker } = useIdentity()
@@ -34,7 +34,7 @@ export function AppHeader({ title = 'Porra Rier', subtitle }: AppHeaderProps) {
     <header className="bg-gradient-to-r from-[#c8102e] to-[#006341] px-4 py-3 text-white">
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 min-w-0">
-          <Image src="/icon.png" alt="Porra Rier" width={28} height={28} className="rounded-sm" />
+          <Image src="/icon.png" alt="Porra" width={28} height={28} className="rounded-sm" />
           <h1 className="text-sm font-black tracking-tight truncate">{title}</h1>
         </div>
         <div className="flex items-center gap-1.5 shrink-0">
