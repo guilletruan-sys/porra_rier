@@ -4,6 +4,7 @@ import type { Match, PredictionsData, PickResult } from '@/lib/types'
 import { getMatchKey } from '@/lib/team-map'
 import { scoreGroupMatch } from '@/lib/scoring'
 import { useSpoiler } from '@/contexts/SpoilerContext'
+import { useLite } from '@/contexts/LiteContext'
 import { Spoiler } from '@/components/Spoiler'
 
 interface PredictionGridProps {
@@ -27,8 +28,10 @@ const BAR_CLS: Record<PickResult, string> = {
 export function PredictionGrid({ match, predictions, participants }: PredictionGridProps) {
   const matchKey = getMatchKey(match.homeTeam.tla, match.awayTeam.tla)
   const { hidden } = useSpoiler()
+  const { isPremium } = useLite()
   const reallyFinished = match.status === 'FINISHED' || match.status === 'IN_PLAY'
-  const isFinished = reallyFinished && !hidden
+  // In lite mode, hide the score-derived coloring/points badges entirely
+  const isFinished = reallyFinished && !hidden && isPremium
 
   const rows = participants.map(name => {
     const pred = predictions[name]?.groupStage[matchKey]

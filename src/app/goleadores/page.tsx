@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { getFlagUrl } from '@/lib/team-map'
 import { IconBall, IconFlagFallback, RankBadge } from '@/components/icons'
 import { Spoiler } from '@/components/Spoiler'
+import { PremiumGate } from '@/components/PremiumGate'
+import { useLite } from '@/contexts/LiteContext'
 
 interface Scorer {
   player: { id: number; name: string }
@@ -18,13 +20,34 @@ interface Scorer {
 export default function GoleadoresPage() {
   const [scorers, setScorers] = useState<Scorer[]>([])
   const [loading, setLoading] = useState(true)
+  const { isPremium, ready: liteReady } = useLite()
 
   useEffect(() => {
+    if (!isPremium) { setLoading(false); return }
     fetch('/api/scorers')
       .then(r => r.json())
       .then(d => { setScorers(d.scorers ?? []); setLoading(false) })
       .catch(() => setLoading(false))
-  }, [])
+  }, [isPremium])
+
+  if (liteReady && !isPremium) {
+    return (
+      <div className="p-3">
+        <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-1.5">
+          <IconBall size={13} className="text-[#c8102e]" />
+          Tabla de goleadores
+        </h2>
+        <PremiumGate
+          mode="replace"
+          feature="la tabla de goleadores"
+          title="⚽ Tabla de goleadores"
+          description="Pichichi del Mundial actualizado en tiempo real con goles, asistencias y partidos jugados"
+        >
+          <div />
+        </PremiumGate>
+      </div>
+    )
+  }
 
   return (
     <div className="p-3">

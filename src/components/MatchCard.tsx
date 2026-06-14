@@ -7,6 +7,8 @@ import { IconFlagFallback } from '@/components/icons'
 import { MatchDetailsSheet } from '@/components/MatchDetailsSheet'
 import { MatchPreviewSheet } from '@/components/MatchPreviewSheet'
 import { Spoiler } from '@/components/Spoiler'
+import { useLite } from '@/contexts/LiteContext'
+import { usePaywall } from '@/contexts/PaywallContext'
 import type { Match } from '@/lib/types'
 
 interface MatchCardProps {
@@ -24,6 +26,8 @@ function formatDateTime(utcDate: string): { date: string; time: string } {
 export function MatchCard({ match }: MatchCardProps) {
   const [open, setOpen] = useState(false)
   const [previewOpen, setPreviewOpen] = useState(false)
+  const { isPremium } = useLite()
+  const { showPaywall } = usePaywall()
   const { homeTeam, awayTeam, score, status, utcDate } = match
   const isLive = status === 'IN_PLAY' || status === 'PAUSED'
   const isFinished = status === 'FINISHED'
@@ -36,12 +40,28 @@ export function MatchCard({ match }: MatchCardProps) {
     </span>
   )
 
+  const onScoreClick = () => {
+    if (!isPremium) { showPaywall('los detalles del partido'); return }
+    setOpen(true)
+  }
+  const onTimeClick = () => {
+    if (!isPremium) { showPaywall('las predicciones del partido'); return }
+    setPreviewOpen(true)
+  }
+  const onFlagClick = (e: React.MouseEvent) => {
+    if (!isPremium) { e.preventDefault(); showPaywall('la página del equipo') }
+  }
+
   return (
     <>
       <div className="bg-white rounded-xl p-3 shadow-sm border border-slate-100">
         <div className="flex items-center justify-between gap-2">
           {/* Home team */}
-          <Link href={`/equipo/${homeTeam.tla}`} className="flex items-center gap-1.5 flex-1 min-w-0 hover:opacity-80">
+          <Link
+            href={`/equipo/${homeTeam.tla}`}
+            onClick={onFlagClick}
+            className="flex items-center gap-1.5 flex-1 min-w-0 hover:opacity-80"
+          >
             <TeamFlag tla={homeTeam.tla} name={homeTeam.shortName} />
             <span className="text-xs font-semibold text-slate-800 truncate">{homeTeam.shortName}</span>
           </Link>
@@ -52,7 +72,7 @@ export function MatchCard({ match }: MatchCardProps) {
               isFinished ? (
                 <Spoiler>
                   <button
-                    onClick={() => setOpen(true)}
+                    onClick={onScoreClick}
                     aria-label="Ver detalles del partido"
                     className="active:scale-95 transition-transform"
                   >
@@ -62,7 +82,7 @@ export function MatchCard({ match }: MatchCardProps) {
               ) : <Spoiler>{scoreBadge}</Spoiler>
             ) : (
               <button
-                onClick={() => setPreviewOpen(true)}
+                onClick={onTimeClick}
                 aria-label="Ver predicciones para este partido"
                 className="flex flex-col items-center active:scale-95 transition-transform"
               >
@@ -83,7 +103,11 @@ export function MatchCard({ match }: MatchCardProps) {
           </div>
 
           {/* Away team */}
-          <Link href={`/equipo/${awayTeam.tla}`} className="flex items-center gap-1.5 flex-1 min-w-0 justify-end hover:opacity-80">
+          <Link
+            href={`/equipo/${awayTeam.tla}`}
+            onClick={onFlagClick}
+            className="flex items-center gap-1.5 flex-1 min-w-0 justify-end hover:opacity-80"
+          >
             <span className="text-xs font-semibold text-slate-800 truncate text-right">{awayTeam.shortName}</span>
             <TeamFlag tla={awayTeam.tla} name={awayTeam.shortName} />
           </Link>

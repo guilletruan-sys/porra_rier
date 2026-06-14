@@ -5,6 +5,9 @@ import Image from 'next/image'
 import { getFlagUrl, getMatchKey, TLA_TO_EXCEL_NAME } from '@/lib/team-map'
 import { IconCheck } from '@/components/icons'
 import { ParticipantStats } from '@/components/ParticipantStats'
+import { PremiumGate } from '@/components/PremiumGate'
+import { useLite } from '@/contexts/LiteContext'
+import { useIdentity } from '@/contexts/IdentityContext'
 import { scoreGroupMatch, calculateParticipantScore } from '@/lib/scoring'
 import type { Match, PredictionsData } from '@/lib/types'
 import predictionsRaw from '@/data/predictions.json'
@@ -30,6 +33,9 @@ export default function ParticipantPage({ params }: { params: Promise<{ particip
   const router = useRouter()
   const [matches, setMatches] = useState<Match[]>([])
   const [loading, setLoading] = useState(true)
+  const { isPremium, ready: liteReady } = useLite()
+  const { name: myName, ready: idReady } = useIdentity()
+  const isOwnProfile = myName != null && myName === name
 
   useEffect(() => {
     fetch('/api/matches')
@@ -43,6 +49,28 @@ export default function ParticipantPage({ params }: { params: Promise<{ particip
     return (
       <div className="p-4 text-center text-sm text-slate-400">
         Participante no encontrado
+      </div>
+    )
+  }
+
+  // LITE mode: only your own profile is free; others require Pro
+  if (liteReady && idReady && !isPremium && !isOwnProfile) {
+    return (
+      <div className="p-3">
+        <button
+          onClick={() => router.back()}
+          className="text-[11px] text-slate-400 mb-2 flex items-center gap-1 hover:text-slate-700"
+        >
+          ← Volver
+        </button>
+        <PremiumGate
+          mode="replace"
+          feature={`las predicciones de ${name}`}
+          title={`👀 Predicciones de ${name}`}
+          description="Mejora a Pro para ver las predicciones de los demás participantes, no solo las tuyas."
+        >
+          <div />
+        </PremiumGate>
       </div>
     )
   }
@@ -120,7 +148,17 @@ export default function ParticipantPage({ params }: { params: Promise<{ particip
 
       {loading && <div className="text-center text-sm text-slate-400 py-4">Cargando partidos…</div>}
 
-      {!loading && <ParticipantStats preds={preds} matches={matches} />}
+      {!loading && (
+        <PremiumGate
+          mode="replace"
+          feature="las stats personales"
+          title="📊 Tus estadísticas"
+          description="% de acierto, tendencia 1X2, mejor día, racha actual"
+          compact
+        >
+          <ParticipantStats preds={preds} matches={matches} />
+        </PremiumGate>
+      )}
 
       {/* Group stage */}
       {sortedGroups.map(groupKey => {
@@ -166,8 +204,15 @@ export default function ParticipantPage({ params }: { params: Promise<{ particip
         )
       })}
 
-      {/* Knockouts */}
+      {/* Knockouts — Pro */}
       {(r32Qualifiers.length > 0 || knockoutByRound.size > 0) && (
+        <PremiumGate
+          mode="replace"
+          feature="las eliminatorias"
+          title="🏆 Eliminatorias"
+          description="Tus predicciones de octavos, cuartos, semis, final y 3er puesto con tu progreso real"
+          compact
+        >
         <section>
           <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">Eliminatorias</p>
           <div className="space-y-2">
@@ -228,9 +273,17 @@ export default function ParticipantPage({ params }: { params: Promise<{ particip
             ))}
           </div>
         </section>
+        </PremiumGate>
       )}
 
-      {/* Specials */}
+      {/* Specials — Pro */}
+      <PremiumGate
+        mode="replace"
+        feature="las predicciones especiales"
+        title="⭐ Especiales"
+        description="Tu campeón, subcampeón, 3er puesto, Bota de Oro/Plata/Bronce y Balón de Oro/Plata/Bronce"
+        compact
+      >
       <section>
         <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">Especiales</p>
         <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50">
@@ -252,6 +305,7 @@ export default function ParticipantPage({ params }: { params: Promise<{ particip
           ))}
         </div>
       </section>
+      </PremiumGate>
     </div>
   )
 }

@@ -3,6 +3,8 @@ import { use, useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { PremiumGate } from '@/components/PremiumGate'
+import { useLite } from '@/contexts/LiteContext'
 import type { Match } from '@/lib/types'
 
 interface PersonCurrentTeam {
@@ -57,8 +59,10 @@ export default function PlayerPage({ params }: { params: Promise<{ id: string }>
   const [wiki, setWiki] = useState<WikiInfo | null>(null)
   const [stats, setStats] = useState<WcStats | null>(null)
   const [loading, setLoading] = useState(true)
+  const { isPremium, ready: liteReady } = useLite()
 
   useEffect(() => {
+    if (!isPremium) { setLoading(false); return }
     fetch(`/api/persons/${pid}`)
       .then(r => r.json())
       .then(d => setPerson(d.person ?? null))
@@ -116,6 +120,26 @@ export default function PlayerPage({ params }: { params: Promise<{ id: string }>
     return () => { cancelled = true }
   }, [person, pid])
 
+  if (liteReady && !isPremium) {
+    return (
+      <div className="p-3">
+        <button
+          onClick={() => router.back()}
+          className="text-[11px] text-slate-400 mb-2 flex items-center gap-1 hover:text-slate-700"
+        >
+          ← Volver
+        </button>
+        <PremiumGate
+          mode="replace"
+          feature="el perfil del jugador"
+          title="🧑 Ficha del jugador"
+          description="Foto, club actual, posición, edad y estadísticas del Mundial"
+        >
+          <div />
+        </PremiumGate>
+      </div>
+    )
+  }
   if (loading) {
     return <div className="p-4 text-center text-sm text-slate-400">Cargando…</div>
   }

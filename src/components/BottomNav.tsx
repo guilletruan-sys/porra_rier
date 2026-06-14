@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useLite } from '@/contexts/LiteContext'
 
 function IconHome({ active }: { active: boolean }) {
   return active ? (
@@ -62,17 +63,27 @@ const NAV_ITEMS = [
   { href: '/goleadores', Icon: IconRunner, label: 'Goleadores' },
 ]
 
+// Tabs that are entirely locked in lite mode
+const LITE_LOCKED_HREFS = new Set(['/goleadores'])
+
 export function BottomNav() {
   const pathname = usePathname()
+  const { isPremium } = useLite()
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 flex justify-around py-2 pb-4 z-50">
       {NAV_ITEMS.map(({ href, Icon, label }) => {
         const active = pathname === href || (href !== '/' && pathname.startsWith(href))
+        const locked = !isPremium && LITE_LOCKED_HREFS.has(href)
         return (
-          <Link key={href} href={href} className="flex flex-col items-center gap-0.5 min-w-[56px]">
+          <Link key={href} href={href} className="flex flex-col items-center gap-0.5 min-w-[56px] relative">
             <div className={`flex items-center justify-center rounded-xl px-3 py-1 transition-colors ${active ? 'bg-red-50' : ''}`}>
               <Icon active={active} />
+              {locked && (
+                <span className="absolute top-0 right-2 inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-amber-500 text-white shadow">
+                  <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                </span>
+              )}
             </div>
             <span className={`text-[9px] font-semibold ${active ? 'text-[#c8102e]' : 'text-slate-400'}`}>
               {label}

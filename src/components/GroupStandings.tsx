@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { getFlagUrl } from '@/lib/team-map'
 import { IconFlagFallback } from '@/components/icons'
 import { Spoiler } from '@/components/Spoiler'
+import { PremiumGate } from '@/components/PremiumGate'
 import type { Match } from '@/lib/types'
 
 interface TeamRow {
@@ -66,6 +67,13 @@ export function GroupStandings({ matches, group, highlightTla }: GroupStandingsP
   const hasPlayed = rows.some(r => r.pj > 0)
 
   return (
+    <PremiumGate
+      mode="replace"
+      feature={`la clasificación del grupo ${group}`}
+      title={`📊 Grupo ${group}`}
+      description="Tabla en tiempo real con PJ · G · E · P · GF · GC · DG · Puntos"
+      compact
+    >
     <div className="bg-white rounded-xl shadow-sm mb-3 overflow-hidden">
       <div className="px-3 py-2 border-b border-slate-50">
         <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">
@@ -76,6 +84,7 @@ export function GroupStandings({ matches, group, highlightTla }: GroupStandingsP
         <_GroupTable rows={rows} highlightTla={highlightTla} />
       </Spoiler> : <_GroupTable rows={rows} highlightTla={highlightTla} />}
     </div>
+    </PremiumGate>
   )
 }
 
