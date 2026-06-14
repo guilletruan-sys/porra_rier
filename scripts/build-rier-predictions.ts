@@ -7,17 +7,19 @@ import * as path from 'path'
 
 const BACKUP_DIR = path.join(__dirname, '..', 'backup-old-excels')
 
-// File on disk → participant name. Order matches the WhatsApp screenshot.
+// File on disk → participant name. Identified by the "Escribe tu nombre" field
+// inside each workbook (and, where blank, by author metadata or a known pick the
+// participant confirmed). Order matches the WhatsApp screenshot.
 const FILE_TO_PARTICIPANT: Array<[string, string]> = [
-  ['MUNDIAL-PEDRO.xlsx', 'Pedro'],
-  ['City Excel-Mundial-2026.xlsx', 'City'],
-  ['Excel-Mundial-2026_CQAV (1) (1).xlsx', 'Miguel'],          // ~4MB matches Miguel
-  ['Excel-Mundial-2026_Tola.xlsx', 'Tola'],
-  ['Excel-Mundial-2026_CQAV.xlsx', 'Julito'],                   // 459 KB
-  ['mundial-2026 partido españa.xlsx', 'Tacho'],
-  ['Gafa.xlsx', 'Gafas'],
-  ['Excel-Mundial-2026_CQAV FELI DEFINITIVO.xlsx', 'Felipe Ramón'],
-  ['Excel-Mundial-2026 Vaca.xlsx', 'Vaca'],
+  ['MUNDIAL-PEDRO.xlsx', 'Pedro'],                            // nombre: PEDRO
+  ['City Excel-Mundial-2026.xlsx', 'City'],                   // nombre: City
+  ['Excel-Mundial-2026_CQAV.xlsx', 'Miguel'],                 // BRA–MAR Empate 3-3 (confirmado por Miguel)
+  ['Excel-Mundial-2026_Tola.xlsx', 'Tola'],                   // autor: GARCIA-TOLA MONPIN
+  ['Julito (reparado).xlsx', 'Julito'],                       // CQAV (1).xlsx reparado (imagen corrupta); por descarte
+  ['mundial-2026 partido españa.xlsx', 'Tacho'],              // nombre: Tacho
+  ['Gafa.xlsx', 'Gafas'],                                     // nombre: Edu
+  ['Excel-Mundial-2026_CQAV FELI DEFINITIVO.xlsx', 'Felipe Ramón'], // nombre: FELI
+  ['Excel-Mundial-2026 Vaca.xlsx', 'Vaca'],                   // nombre: Alvaro Vaca
 ]
 
 // Spanish team name (as in the fan-made template) → FIFA TLA
