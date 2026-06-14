@@ -1,0 +1,4074 @@
+{
+  "Pedro": {
+    "groupStage": {
+      "MEX_RSA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "KOR_CZE": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "CZE_RSA": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "MEX_KOR": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CZE_MEX": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "RSA_KOR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "CAN_BIH": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "QAT_SUI": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "SUI_BIH": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CAN_QAT": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "SUI_CAN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "BIH_QAT": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "BRA_MAR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "HAI_SCO": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "SCO_MAR": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "BRA_HAI": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SCO_BRA": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "MAR_HAI": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "USA_PAR": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "AUS_TUR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "USA_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_PAR": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_USA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "PAR_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GER_CUW": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CIV_ECU": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "GER_CIV": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ECU_CUW": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CUW_CIV": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ECU_GER": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "NED_JPN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "SWE_TUN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NED_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUN_JPN": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "JPN_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUN_NED": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "BEL_EGY": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRN_NZL": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "BEL_IRN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NZL_EGY": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "EGY_IRN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "NZL_BEL": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ESP_CPV": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KSA_URU": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ESP_KSA": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "URU_CPV": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CPV_KSA": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "URU_ESP": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "FRA_SEN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRQ_NOR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "FRA_IRQ": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NOR_SEN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "NOR_FRA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "SEN_IRQ": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_ALG": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "AUT_JOR": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_AUT": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "JOR_ALG": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ALG_AUT": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "JOR_ARG": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_COD": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "UZB_COL": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "POR_UZB": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "COL_COD": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "COL_POR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "COD_UZB": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ENG_CRO": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GHA_PAN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ENG_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "PAN_CRO": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "PAN_ENG": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "CRO_GHA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      }
+    },
+    "knockout": {
+      "CZE_CAN": {
+        "advancingTeamTla": "CAN",
+        "round": "ROUND_OF_32"
+      },
+      "BRA_JPN": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "GER_PAR": {
+        "advancingTeamTla": "GER",
+        "round": "ROUND_OF_32"
+      },
+      "NED_MAR": {
+        "advancingTeamTla": "NED",
+        "round": "ROUND_OF_32"
+      },
+      "ECU_NOR": {
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "FRA_SWE": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_32"
+      },
+      "MEX_CIV": {
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "ENG_SEN": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "BEL_KOR": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "USA_ALG": {
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "ESP_AUT": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_32"
+      },
+      "COL_CRO": {
+        "advancingTeamTla": "COL",
+        "round": "ROUND_OF_32"
+      },
+      "SUI_IRN": {
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "TUR_EGY": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "ARG_URU": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_32"
+      },
+      "POR_GHA": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_32"
+      },
+      "CAN_NED": {
+        "advancingTeamTla": "NED",
+        "round": "ROUND_OF_16"
+      },
+      "GER_FRA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "BRA_NOR": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "MEX_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "COL_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_16"
+      },
+      "USA_BEL": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_16"
+      },
+      "ARG_TUR": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_16"
+      },
+      "SUI_POR": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_16"
+      },
+      "FRA_NED": {
+        "advancingTeamTla": "FRA",
+        "round": "QUARTER_FINALS"
+      },
+      "ESP_BEL": {
+        "advancingTeamTla": "ESP",
+        "round": "QUARTER_FINALS"
+      },
+      "BRA_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "QUARTER_FINALS"
+      },
+      "ARG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "QUARTER_FINALS"
+      },
+      "FRA_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "SEMI_FINALS"
+      },
+      "ENG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "SEMI_FINALS"
+      },
+      "FRA_ENG": {
+        "advancingTeamTla": "FRA",
+        "round": "THIRD_PLACE"
+      },
+      "ESP_POR": {
+        "advancingTeamTla": "ESP",
+        "round": "FINAL"
+      }
+    },
+    "specials": {
+      "champion": "ESP",
+      "runnerUp": "POR",
+      "thirdPlace": "FRA",
+      "goldenBoot": {
+        "first": "Kilyan Mbappe",
+        "second": "Harry Kane",
+        "third": "Cristiano Ronaldo"
+      },
+      "goldenBall": {
+        "first": "Lamine Yamal",
+        "second": "Vitinha",
+        "third": "Kilyan Mbappe"
+      }
+    }
+  },
+  "City": {
+    "groupStage": {
+      "MEX_RSA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "KOR_CZE": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CZE_RSA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "MEX_KOR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "CZE_MEX": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "RSA_KOR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "CAN_BIH": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "QAT_SUI": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SUI_BIH": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CAN_QAT": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SUI_CAN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "BIH_QAT": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "BRA_MAR": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "HAI_SCO": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "SCO_MAR": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "BRA_HAI": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SCO_BRA": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "MAR_HAI": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "USA_PAR": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "AUS_TUR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "USA_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_PAR": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_USA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "PAR_AUS": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "GER_CUW": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CIV_ECU": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "GER_CIV": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ECU_CUW": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CUW_CIV": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ECU_GER": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "NED_JPN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SWE_TUN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NED_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUN_JPN": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "JPN_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "TUN_NED": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "BEL_EGY": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRN_NZL": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "BEL_IRN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NZL_EGY": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "EGY_IRN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NZL_BEL": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ESP_CPV": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KSA_URU": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ESP_KSA": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "URU_CPV": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CPV_KSA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "URU_ESP": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "FRA_SEN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "IRQ_NOR": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "FRA_IRQ": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NOR_SEN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NOR_FRA": {
+        "homeGoals": 2,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SEN_IRQ": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_ALG": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "AUT_JOR": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_AUT": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "JOR_ALG": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ALG_AUT": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "JOR_ARG": {
+        "homeGoals": 0,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "POR_COD": {
+        "homeGoals": 5,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "UZB_COL": {
+        "homeGoals": 1,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "POR_UZB": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "COL_COD": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "COL_POR": {
+        "homeGoals": 2,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "COD_UZB": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "ENG_CRO": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GHA_PAN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "ENG_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "PAN_CRO": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "PAN_ENG": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "CRO_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      }
+    },
+    "knockout": {
+      "KOR_BIH": {
+        "advancingTeamTla": "KOR",
+        "round": "ROUND_OF_32"
+      },
+      "BRA_SWE": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "GER_AUS": {
+        "advancingTeamTla": "GER",
+        "round": "ROUND_OF_32"
+      },
+      "NED_MAR": {
+        "advancingTeamTla": "NED",
+        "round": "ROUND_OF_32"
+      },
+      "CIV_NOR": {
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "FRA_JPN": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_32"
+      },
+      "MEX_SCO": {
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "ENG_SEN": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "BEL_AUT": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "TUR_CAN": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "ESP_ALG": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_32"
+      },
+      "COL_CRO": {
+        "advancingTeamTla": "COL",
+        "round": "ROUND_OF_32"
+      },
+      "SUI_NZL": {
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "USA_EGY": {
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "ARG_URU": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_32"
+      },
+      "POR_ECU": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_32"
+      },
+      "KOR_NED": {
+        "advancingTeamTla": "NED",
+        "round": "ROUND_OF_16"
+      },
+      "GER_FRA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "BRA_NOR": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "MEX_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "COL_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_16"
+      },
+      "TUR_BEL": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_16"
+      },
+      "ARG_USA": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_16"
+      },
+      "SUI_POR": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_16"
+      },
+      "FRA_NED": {
+        "advancingTeamTla": "FRA",
+        "round": "QUARTER_FINALS"
+      },
+      "ESP_TUR": {
+        "advancingTeamTla": "ESP",
+        "round": "QUARTER_FINALS"
+      },
+      "BRA_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "QUARTER_FINALS"
+      },
+      "ARG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "QUARTER_FINALS"
+      },
+      "FRA_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "SEMI_FINALS"
+      },
+      "ENG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "SEMI_FINALS"
+      },
+      "FRA_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "THIRD_PLACE"
+      },
+      "ESP_POR": {
+        "advancingTeamTla": "POR",
+        "round": "FINAL"
+      }
+    },
+    "specials": {
+      "champion": "POR",
+      "runnerUp": "ESP",
+      "thirdPlace": "ENG",
+      "goldenBoot": {
+        "first": "kane",
+        "second": "Mbappe",
+        "third": "Lamine Yamal"
+      },
+      "goldenBall": {
+        "first": "Vitinha",
+        "second": "Pedri",
+        "third": "Dembele"
+      }
+    }
+  },
+  "Miguel": {
+    "groupStage": {
+      "MEX_RSA": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KOR_CZE": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "CZE_RSA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "MEX_KOR": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CZE_MEX": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "RSA_KOR": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "CAN_BIH": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "QAT_SUI": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SUI_BIH": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CAN_QAT": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SUI_CAN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "BIH_QAT": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "BRA_MAR": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "HAI_SCO": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "SCO_MAR": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "BRA_HAI": {
+        "homeGoals": 5,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SCO_BRA": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "MAR_HAI": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "USA_PAR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "AUS_TUR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "USA_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_PAR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "TUR_USA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "PAR_AUS": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "GER_CUW": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CIV_ECU": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GER_CIV": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "ECU_CUW": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CUW_CIV": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ECU_GER": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "NED_JPN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "SWE_TUN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NED_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "TUN_JPN": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "JPN_SWE": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "TUN_NED": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "BEL_EGY": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRN_NZL": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "BEL_IRN": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NZL_EGY": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "EGY_IRN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NZL_BEL": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ESP_CPV": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KSA_URU": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ESP_KSA": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "URU_CPV": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CPV_KSA": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "URU_ESP": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "FRA_SEN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRQ_NOR": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "FRA_IRQ": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NOR_SEN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "NOR_FRA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "SEN_IRQ": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_ALG": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "AUT_JOR": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_AUT": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "JOR_ALG": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ALG_AUT": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "JOR_ARG": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_COD": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "UZB_COL": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_UZB": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "COL_COD": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "COL_POR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "COD_UZB": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "ENG_CRO": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GHA_PAN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ENG_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "PAN_CRO": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "PAN_ENG": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "CRO_GHA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      }
+    },
+    "knockout": {
+      "CZE_CAN": {
+        "advancingTeamTla": "CAN",
+        "round": "ROUND_OF_32"
+      },
+      "BRA_SWE": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "GER_PAR": {
+        "advancingTeamTla": "GER",
+        "round": "ROUND_OF_32"
+      },
+      "NED_MAR": {
+        "advancingTeamTla": "NED",
+        "round": "ROUND_OF_32"
+      },
+      "CIV_NOR": {
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "FRA_JPN": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_32"
+      },
+      "MEX_SCO": {
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "ENG_SEN": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "BEL_KOR": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "USA_ECU": {
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "ESP_ALG": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_32"
+      },
+      "COL_GHA": {
+        "advancingTeamTla": "COL",
+        "round": "ROUND_OF_32"
+      },
+      "SUI_AUT": {
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "TUR_EGY": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "ARG_URU": {
+        "advancingTeamTla": "URU",
+        "round": "ROUND_OF_32"
+      },
+      "POR_CRO": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_32"
+      },
+      "CAN_NED": {
+        "advancingTeamTla": "NED",
+        "round": "ROUND_OF_16"
+      },
+      "GER_FRA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "BRA_NOR": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "MEX_ENG": {
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_16"
+      },
+      "COL_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_16"
+      },
+      "USA_BEL": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_16"
+      },
+      "URU_TUR": {
+        "advancingTeamTla": "URU",
+        "round": "ROUND_OF_16"
+      },
+      "SUI_POR": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_16"
+      },
+      "FRA_NED": {
+        "advancingTeamTla": "FRA",
+        "round": "QUARTER_FINALS"
+      },
+      "ESP_BEL": {
+        "advancingTeamTla": "ESP",
+        "round": "QUARTER_FINALS"
+      },
+      "BRA_MEX": {
+        "advancingTeamTla": "BRA",
+        "round": "QUARTER_FINALS"
+      },
+      "URU_POR": {
+        "advancingTeamTla": "POR",
+        "round": "QUARTER_FINALS"
+      },
+      "FRA_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "SEMI_FINALS"
+      },
+      "BRA_POR": {
+        "advancingTeamTla": "POR",
+        "round": "SEMI_FINALS"
+      },
+      "FRA_BRA": {
+        "advancingTeamTla": "BRA",
+        "round": "THIRD_PLACE"
+      },
+      "ESP_POR": {
+        "advancingTeamTla": "ESP",
+        "round": "FINAL"
+      }
+    },
+    "specials": {
+      "champion": "ESP",
+      "runnerUp": "POR",
+      "thirdPlace": "BRA",
+      "goldenBoot": {
+        "first": "Kilian Mbappe",
+        "second": "Cristiano Ronaldo",
+        "third": "Vinicius"
+      },
+      "goldenBall": {
+        "first": "Pedri",
+        "second": "Mbappe",
+        "third": "vinicius"
+      }
+    }
+  },
+  "Tola": {
+    "groupStage": {
+      "MEX_RSA": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "KOR_CZE": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CZE_RSA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "MEX_KOR": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CZE_MEX": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "RSA_KOR": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "CAN_BIH": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "QAT_SUI": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SUI_BIH": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CAN_QAT": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "SUI_CAN": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "BIH_QAT": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "BRA_MAR": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "HAI_SCO": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SCO_MAR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "BRA_HAI": {
+        "homeGoals": 5,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SCO_BRA": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "MAR_HAI": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "USA_PAR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "AUS_TUR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "USA_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_PAR": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "TUR_USA": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "PAR_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GER_CUW": {
+        "homeGoals": 8,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CIV_ECU": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "GER_CIV": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ECU_CUW": {
+        "homeGoals": 5,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CUW_CIV": {
+        "homeGoals": 0,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "ECU_GER": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "NED_JPN": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "SWE_TUN": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NED_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "TUN_JPN": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "JPN_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUN_NED": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "BEL_EGY": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRN_NZL": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "BEL_IRN": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NZL_EGY": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "EGY_IRN": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NZL_BEL": {
+        "homeGoals": 0,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "ESP_CPV": {
+        "homeGoals": 5,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KSA_URU": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ESP_KSA": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "URU_CPV": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CPV_KSA": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "URU_ESP": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "FRA_SEN": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRQ_NOR": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "FRA_IRQ": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NOR_SEN": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "NOR_FRA": {
+        "homeGoals": 2,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SEN_IRQ": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ARG_ALG": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "AUT_JOR": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_AUT": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "JOR_ALG": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ALG_AUT": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "JOR_ARG": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_COD": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "UZB_COL": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_UZB": {
+        "homeGoals": 4,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "COL_COD": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "COL_POR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "COD_UZB": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "ENG_CRO": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GHA_PAN": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ENG_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "PAN_CRO": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "PAN_ENG": {
+        "homeGoals": 0,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "CRO_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      }
+    },
+    "knockout": {
+      "KOR_BIH": {
+        "advancingTeamTla": "KOR",
+        "round": "ROUND_OF_32"
+      },
+      "BRA_JPN": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "GER_PAR": {
+        "advancingTeamTla": "GER",
+        "round": "ROUND_OF_32"
+      },
+      "NED_MAR": {
+        "advancingTeamTla": "MAR",
+        "round": "ROUND_OF_32"
+      },
+      "ECU_NOR": {
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "FRA_SWE": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_32"
+      },
+      "MEX_SCO": {
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "ENG_SEN": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "BEL_CIV": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "TUR_CAN": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "ESP_AUT": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_32"
+      },
+      "COL_CRO": {
+        "advancingTeamTla": "COL",
+        "round": "ROUND_OF_32"
+      },
+      "SUI_ALG": {
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "USA_EGY": {
+        "advancingTeamTla": "EGY",
+        "round": "ROUND_OF_32"
+      },
+      "ARG_URU": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_32"
+      },
+      "POR_GHA": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_32"
+      },
+      "KOR_MAR": {
+        "advancingTeamTla": "MAR",
+        "round": "ROUND_OF_16"
+      },
+      "GER_FRA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "BRA_NOR": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "MEX_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "COL_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_16"
+      },
+      "TUR_BEL": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_16"
+      },
+      "ARG_EGY": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_16"
+      },
+      "SUI_POR": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_16"
+      },
+      "FRA_MAR": {
+        "advancingTeamTla": "FRA",
+        "round": "QUARTER_FINALS"
+      },
+      "ESP_BEL": {
+        "advancingTeamTla": "ESP",
+        "round": "QUARTER_FINALS"
+      },
+      "BRA_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "QUARTER_FINALS"
+      },
+      "ARG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "QUARTER_FINALS"
+      },
+      "FRA_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "SEMI_FINALS"
+      },
+      "ENG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "SEMI_FINALS"
+      },
+      "FRA_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "THIRD_PLACE"
+      },
+      "ESP_POR": {
+        "advancingTeamTla": "ESP",
+        "round": "FINAL"
+      }
+    },
+    "specials": {
+      "champion": "ESP",
+      "runnerUp": "POR",
+      "thirdPlace": "ENG",
+      "goldenBoot": {
+        "first": "Kilian Mbappe",
+        "second": "Harry Kane",
+        "third": "Cristiano Ronaldo"
+      },
+      "goldenBall": {
+        "first": "Pedri",
+        "second": "Vitinha",
+        "third": "Lamine Yamal"
+      }
+    }
+  },
+  "Julito": {
+    "groupStage": {
+      "MEX_RSA": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "KOR_CZE": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "CZE_RSA": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "MEX_KOR": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CZE_MEX": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "RSA_KOR": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "CAN_BIH": {
+        "homeGoals": 4,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "QAT_SUI": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "SUI_BIH": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "CAN_QAT": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SUI_CAN": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "BIH_QAT": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "BRA_MAR": {
+        "homeGoals": 3,
+        "awayGoals": 3,
+        "pick": "draw"
+      },
+      "HAI_SCO": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "SCO_MAR": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "BRA_HAI": {
+        "homeGoals": 6,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "SCO_BRA": {
+        "homeGoals": 1,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "MAR_HAI": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "USA_PAR": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "AUS_TUR": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "USA_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "TUR_PAR": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "TUR_USA": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "PAR_AUS": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "GER_CUW": {
+        "homeGoals": 7,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CIV_ECU": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "GER_CIV": {
+        "homeGoals": 4,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ECU_CUW": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CUW_CIV": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ECU_GER": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "NED_JPN": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "SWE_TUN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NED_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUN_JPN": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "JPN_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "TUN_NED": {
+        "homeGoals": 1,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "BEL_EGY": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRN_NZL": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "BEL_IRN": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NZL_EGY": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "EGY_IRN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NZL_BEL": {
+        "homeGoals": 0,
+        "awayGoals": 5,
+        "pick": "away"
+      },
+      "ESP_CPV": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KSA_URU": {
+        "homeGoals": 0,
+        "awayGoals": 5,
+        "pick": "away"
+      },
+      "ESP_KSA": {
+        "homeGoals": 6,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "URU_CPV": {
+        "homeGoals": 4,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CPV_KSA": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "URU_ESP": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "FRA_SEN": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "IRQ_NOR": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "FRA_IRQ": {
+        "homeGoals": 6,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NOR_SEN": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "NOR_FRA": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "SEN_IRQ": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ARG_ALG": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "AUT_JOR": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_AUT": {
+        "homeGoals": 4,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "JOR_ALG": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ALG_AUT": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "JOR_ARG": {
+        "homeGoals": 0,
+        "awayGoals": 7,
+        "pick": "away"
+      },
+      "POR_COD": {
+        "homeGoals": 5,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "UZB_COL": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_UZB": {
+        "homeGoals": 6,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "COL_COD": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "COL_POR": {
+        "homeGoals": 2,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "COD_UZB": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "ENG_CRO": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "GHA_PAN": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "ENG_GHA": {
+        "homeGoals": 5,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "PAN_CRO": {
+        "homeGoals": 1,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "PAN_ENG": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "CRO_GHA": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      }
+    },
+    "knockout": {
+      "CZE_SUI": {
+        "advancingTeamTla": "CZE",
+        "round": "ROUND_OF_32"
+      },
+      "BRA_JPN": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "GER_SCO": {
+        "advancingTeamTla": "GER",
+        "round": "ROUND_OF_32"
+      },
+      "NED_MAR": {
+        "advancingTeamTla": "MAR",
+        "round": "ROUND_OF_32"
+      },
+      "CIV_NOR": {
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "FRA_SWE": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_32"
+      },
+      "MEX_ECU": {
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "ENG_COD": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "BEL_KOR": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "TUR_BIH": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "ESP_ALG": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_32"
+      },
+      "COL_CRO": {
+        "advancingTeamTla": "CRO",
+        "round": "ROUND_OF_32"
+      },
+      "CAN_AUT": {
+        "advancingTeamTla": "CAN",
+        "round": "ROUND_OF_32"
+      },
+      "USA_EGY": {
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "ARG_URU": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_32"
+      },
+      "POR_SEN": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_32"
+      },
+      "CZE_MAR": {
+        "advancingTeamTla": "MAR",
+        "round": "ROUND_OF_16"
+      },
+      "GER_FRA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "BRA_NOR": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "MEX_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "CRO_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_16"
+      },
+      "TUR_BEL": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_16"
+      },
+      "ARG_USA": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_16"
+      },
+      "CAN_POR": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_16"
+      },
+      "FRA_MAR": {
+        "advancingTeamTla": "FRA",
+        "round": "QUARTER_FINALS"
+      },
+      "ESP_TUR": {
+        "advancingTeamTla": "ESP",
+        "round": "QUARTER_FINALS"
+      },
+      "BRA_ENG": {
+        "advancingTeamTla": "BRA",
+        "round": "QUARTER_FINALS"
+      },
+      "ARG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "QUARTER_FINALS"
+      },
+      "FRA_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "SEMI_FINALS"
+      },
+      "BRA_POR": {
+        "advancingTeamTla": "POR",
+        "round": "SEMI_FINALS"
+      },
+      "FRA_BRA": {
+        "advancingTeamTla": "FRA",
+        "round": "THIRD_PLACE"
+      },
+      "ESP_POR": {
+        "advancingTeamTla": "ESP",
+        "round": "FINAL"
+      }
+    },
+    "specials": {
+      "champion": "ESP",
+      "runnerUp": "POR",
+      "thirdPlace": "FRA",
+      "goldenBoot": {
+        "first": "Mikel Oyarzabal",
+        "second": "Cristiano Ronaldo",
+        "third": "Killian Mbappe"
+      },
+      "goldenBall": {
+        "first": "Pedri",
+        "second": "Vitinha",
+        "third": "Killian Mbappe"
+      }
+    }
+  },
+  "Tacho": {
+    "groupStage": {
+      "MEX_RSA": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KOR_CZE": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "CZE_RSA": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "MEX_KOR": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CZE_MEX": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "RSA_KOR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "CAN_BIH": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "QAT_SUI": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SUI_BIH": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CAN_QAT": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "SUI_CAN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "BIH_QAT": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "BRA_MAR": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "HAI_SCO": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SCO_MAR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "BRA_HAI": {
+        "homeGoals": 5,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SCO_BRA": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "MAR_HAI": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "USA_PAR": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "AUS_TUR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "USA_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_PAR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "TUR_USA": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "PAR_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GER_CUW": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CIV_ECU": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GER_CIV": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ECU_CUW": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CUW_CIV": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ECU_GER": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "NED_JPN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "SWE_TUN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NED_SWE": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "TUN_JPN": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "JPN_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "TUN_NED": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "BEL_EGY": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "IRN_NZL": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "BEL_IRN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NZL_EGY": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "EGY_IRN": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NZL_BEL": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ESP_CPV": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KSA_URU": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ESP_KSA": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "URU_CPV": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CPV_KSA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "URU_ESP": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "FRA_SEN": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRQ_NOR": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "FRA_IRQ": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NOR_SEN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "NOR_FRA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "SEN_IRQ": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ARG_ALG": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "AUT_JOR": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_AUT": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "JOR_ALG": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ALG_AUT": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "JOR_ARG": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_COD": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "UZB_COL": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "POR_UZB": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "COL_COD": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "COL_POR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "COD_UZB": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ENG_CRO": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "GHA_PAN": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ENG_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "PAN_CRO": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "PAN_ENG": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "CRO_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      }
+    },
+    "knockout": {
+      "RSA_CAN": {
+        "advancingTeamTla": "CAN",
+        "round": "ROUND_OF_32"
+      },
+      "BRA_SWE": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "GER_TUR": {
+        "advancingTeamTla": "GER",
+        "round": "ROUND_OF_32"
+      },
+      "JPN_MAR": {
+        "advancingTeamTla": "JPN",
+        "round": "ROUND_OF_32"
+      },
+      "CIV_FRA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_32"
+      },
+      "NOR_NED": {
+        "advancingTeamTla": "NED",
+        "round": "ROUND_OF_32"
+      },
+      "MEX_SCO": {
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "ENG_COD": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "BEL_SEN": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "USA_ECU": {
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "ESP_AUT": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_32"
+      },
+      "COL_CRO": {
+        "advancingTeamTla": "CRO",
+        "round": "ROUND_OF_32"
+      },
+      "SUI_ALG": {
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "PAR_EGY": {
+        "advancingTeamTla": "EGY",
+        "round": "ROUND_OF_32"
+      },
+      "ARG_URU": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_32"
+      },
+      "POR_GHA": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_32"
+      },
+      "CAN_JPN": {
+        "advancingTeamTla": "JPN",
+        "round": "ROUND_OF_16"
+      },
+      "GER_NED": {
+        "advancingTeamTla": "GER",
+        "round": "ROUND_OF_16"
+      },
+      "BRA_FRA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "MEX_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "CRO_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_16"
+      },
+      "USA_BEL": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_16"
+      },
+      "ARG_EGY": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_16"
+      },
+      "SUI_POR": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_16"
+      },
+      "GER_JPN": {
+        "advancingTeamTla": "GER",
+        "round": "QUARTER_FINALS"
+      },
+      "ESP_BEL": {
+        "advancingTeamTla": "ESP",
+        "round": "QUARTER_FINALS"
+      },
+      "FRA_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "QUARTER_FINALS"
+      },
+      "ARG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "QUARTER_FINALS"
+      },
+      "GER_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "SEMI_FINALS"
+      },
+      "ENG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "SEMI_FINALS"
+      },
+      "GER_ENG": {
+        "advancingTeamTla": "GER",
+        "round": "THIRD_PLACE"
+      },
+      "ESP_POR": {
+        "advancingTeamTla": "ESP",
+        "round": "FINAL"
+      }
+    },
+    "specials": {
+      "champion": "ESP",
+      "runnerUp": "POR",
+      "thirdPlace": "GER",
+      "goldenBoot": {
+        "first": "Oyarzabal",
+        "second": "Cristiano",
+        "third": "Lautaro"
+      },
+      "goldenBall": {
+        "first": "Pedri",
+        "second": "Kane",
+        "third": "Cristiano"
+      }
+    }
+  },
+  "Felipe Ramón": {
+    "groupStage": {
+      "MEX_RSA": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KOR_CZE": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CZE_RSA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "MEX_KOR": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "CZE_MEX": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "RSA_KOR": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "CAN_BIH": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "QAT_SUI": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SUI_BIH": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "CAN_QAT": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SUI_CAN": {
+        "homeGoals": 4,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "BIH_QAT": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "BRA_MAR": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "HAI_SCO": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "SCO_MAR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "BRA_HAI": {
+        "homeGoals": 7,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SCO_BRA": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "MAR_HAI": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "USA_PAR": {
+        "homeGoals": 4,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "AUS_TUR": {
+        "homeGoals": 2,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "USA_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_PAR": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_USA": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "PAR_AUS": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "GER_CUW": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CIV_ECU": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "GER_CIV": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "ECU_CUW": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CUW_CIV": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ECU_GER": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "NED_JPN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "SWE_TUN": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "NED_SWE": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "TUN_JPN": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "JPN_SWE": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "TUN_NED": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "BEL_EGY": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "IRN_NZL": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "BEL_IRN": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NZL_EGY": {
+        "homeGoals": 0,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "EGY_IRN": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NZL_BEL": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "ESP_CPV": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KSA_URU": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ESP_KSA": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "URU_CPV": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CPV_KSA": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "URU_ESP": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "FRA_SEN": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "IRQ_NOR": {
+        "homeGoals": 1,
+        "awayGoals": 4,
+        "pick": "away"
+      },
+      "FRA_IRQ": {
+        "homeGoals": 6,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NOR_SEN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NOR_FRA": {
+        "homeGoals": 2,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SEN_IRQ": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_ALG": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "AUT_JOR": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_AUT": {
+        "homeGoals": 5,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "JOR_ALG": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ALG_AUT": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "JOR_ARG": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_COD": {
+        "homeGoals": 5,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "UZB_COL": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_UZB": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "COL_COD": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "COL_POR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "COD_UZB": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "ENG_CRO": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "GHA_PAN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ENG_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "PAN_CRO": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "PAN_ENG": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "CRO_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      }
+    },
+    "knockout": {
+      "KOR_BIH": {
+        "advancingTeamTla": "KOR",
+        "round": "ROUND_OF_32"
+      },
+      "BRA_NED": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "CIV_SCO": {
+        "advancingTeamTla": "CIV",
+        "round": "ROUND_OF_32"
+      },
+      "JPN_MAR": {
+        "advancingTeamTla": "MAR",
+        "round": "ROUND_OF_32"
+      },
+      "GER_NOR": {
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "FRA_KSA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_32"
+      },
+      "MEX_ECU": {
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "ENG_SEN": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "EGY_CZE": {
+        "advancingTeamTla": "EGY",
+        "round": "ROUND_OF_32"
+      },
+      "USA_CAN": {
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "ESP_ALG": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_32"
+      },
+      "COL_CRO": {
+        "advancingTeamTla": "COL",
+        "round": "ROUND_OF_32"
+      },
+      "SUI_AUT": {
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "TUR_BEL": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "ARG_URU": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_32"
+      },
+      "POR_GHA": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_32"
+      },
+      "KOR_MAR": {
+        "advancingTeamTla": "MAR",
+        "round": "ROUND_OF_16"
+      },
+      "CIV_FRA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "BRA_NOR": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "MEX_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "COL_ESP": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_16"
+      },
+      "USA_EGY": {
+        "advancingTeamTla": "EGY",
+        "round": "ROUND_OF_16"
+      },
+      "ARG_TUR": {
+        "advancingTeamTla": "ARG",
+        "round": "ROUND_OF_16"
+      },
+      "SUI_POR": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_16"
+      },
+      "FRA_MAR": {
+        "advancingTeamTla": "FRA",
+        "round": "QUARTER_FINALS"
+      },
+      "ESP_EGY": {
+        "advancingTeamTla": "ESP",
+        "round": "QUARTER_FINALS"
+      },
+      "BRA_ENG": {
+        "advancingTeamTla": "ENG",
+        "round": "QUARTER_FINALS"
+      },
+      "ARG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "QUARTER_FINALS"
+      },
+      "FRA_ESP": {
+        "advancingTeamTla": "FRA",
+        "round": "SEMI_FINALS"
+      },
+      "ENG_POR": {
+        "advancingTeamTla": "POR",
+        "round": "SEMI_FINALS"
+      },
+      "ESP_ENG": {
+        "advancingTeamTla": "ESP",
+        "round": "THIRD_PLACE"
+      },
+      "FRA_POR": {
+        "advancingTeamTla": "POR",
+        "round": "FINAL"
+      }
+    },
+    "specials": {
+      "champion": "POR",
+      "runnerUp": "FRA",
+      "thirdPlace": "ESP",
+      "goldenBoot": {
+        "first": "Mbappe",
+        "second": "Kane",
+        "third": "Messi"
+      },
+      "goldenBall": {
+        "first": "Vitinha",
+        "second": "Pedri",
+        "third": "Diogo Costa"
+      }
+    }
+  },
+  "Vaca": {
+    "groupStage": {
+      "MEX_RSA": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KOR_CZE": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CZE_RSA": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "MEX_KOR": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "CZE_MEX": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "RSA_KOR": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "CAN_BIH": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "QAT_SUI": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "SUI_BIH": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "CAN_QAT": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SUI_CAN": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "BIH_QAT": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "BRA_MAR": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "HAI_SCO": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "SCO_MAR": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "BRA_HAI": {
+        "homeGoals": 5,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "SCO_BRA": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "MAR_HAI": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "USA_PAR": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "AUS_TUR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "USA_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUR_PAR": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "TUR_USA": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "PAR_AUS": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "GER_CUW": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CIV_ECU": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "GER_CIV": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "ECU_CUW": {
+        "homeGoals": 4,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "CUW_CIV": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "ECU_GER": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "NED_JPN": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "SWE_TUN": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "NED_SWE": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "TUN_JPN": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "JPN_SWE": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "TUN_NED": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "BEL_EGY": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "IRN_NZL": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "BEL_IRN": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NZL_EGY": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "EGY_IRN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "NZL_BEL": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ESP_CPV": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "KSA_URU": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "ESP_KSA": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "URU_CPV": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "CPV_KSA": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "URU_ESP": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "FRA_SEN": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "pick": "home"
+      },
+      "IRQ_NOR": {
+        "homeGoals": 0,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "FRA_IRQ": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "NOR_SEN": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "NOR_FRA": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "pick": "draw"
+      },
+      "SEN_IRQ": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_ALG": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "AUT_JOR": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "ARG_AUT": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "pick": "draw"
+      },
+      "JOR_ALG": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "ALG_AUT": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "pick": "away"
+      },
+      "JOR_ARG": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_COD": {
+        "homeGoals": 3,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "UZB_COL": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "POR_UZB": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "COL_COD": {
+        "homeGoals": 4,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "COL_POR": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "COD_UZB": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "pick": "draw"
+      },
+      "ENG_CRO": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "GHA_PAN": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      },
+      "ENG_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "pick": "home"
+      },
+      "PAN_CRO": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "pick": "away"
+      },
+      "PAN_ENG": {
+        "homeGoals": 0,
+        "awayGoals": 3,
+        "pick": "away"
+      },
+      "CRO_GHA": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "pick": "home"
+      }
+    },
+    "knockout": {
+      "MEX_BIH": {
+        "advancingTeamTla": "BIH",
+        "round": "ROUND_OF_32"
+      },
+      "BRA_JPN": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "GER_USA": {
+        "advancingTeamTla": "GER",
+        "round": "ROUND_OF_32"
+      },
+      "NED_MAR": {
+        "advancingTeamTla": "NED",
+        "round": "ROUND_OF_32"
+      },
+      "CIV_NOR": {
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "FRA_KSA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_32"
+      },
+      "KOR_ECU": {
+        "advancingTeamTla": "ECU",
+        "round": "ROUND_OF_32"
+      },
+      "ENG_SEN": {
+        "advancingTeamTla": "SEN",
+        "round": "ROUND_OF_32"
+      },
+      "BEL_CZE": {
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "TUR_SUI": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "ESP_AUT": {
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_32"
+      },
+      "COL_CRO": {
+        "advancingTeamTla": "CRO",
+        "round": "ROUND_OF_32"
+      },
+      "CAN_ALG": {
+        "advancingTeamTla": "CAN",
+        "round": "ROUND_OF_32"
+      },
+      "PAR_EGY": {
+        "advancingTeamTla": "PAR",
+        "round": "ROUND_OF_32"
+      },
+      "ARG_URU": {
+        "advancingTeamTla": "URU",
+        "round": "ROUND_OF_32"
+      },
+      "POR_GHA": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_32"
+      },
+      "BIH_NED": {
+        "advancingTeamTla": "NED",
+        "round": "ROUND_OF_16"
+      },
+      "GER_FRA": {
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "BRA_NOR": {
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "ECU_SEN": {
+        "advancingTeamTla": "SEN",
+        "round": "ROUND_OF_16"
+      },
+      "CRO_ESP": {
+        "advancingTeamTla": "CRO",
+        "round": "ROUND_OF_16"
+      },
+      "TUR_BEL": {
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_16"
+      },
+      "URU_PAR": {
+        "advancingTeamTla": "URU",
+        "round": "ROUND_OF_16"
+      },
+      "CAN_POR": {
+        "advancingTeamTla": "POR",
+        "round": "ROUND_OF_16"
+      },
+      "FRA_NED": {
+        "advancingTeamTla": "FRA",
+        "round": "QUARTER_FINALS"
+      },
+      "CRO_TUR": {
+        "advancingTeamTla": "CRO",
+        "round": "QUARTER_FINALS"
+      },
+      "BRA_SEN": {
+        "advancingTeamTla": "SEN",
+        "round": "QUARTER_FINALS"
+      },
+      "URU_POR": {
+        "advancingTeamTla": "POR",
+        "round": "QUARTER_FINALS"
+      },
+      "FRA_CRO": {
+        "advancingTeamTla": "CRO",
+        "round": "SEMI_FINALS"
+      },
+      "SEN_POR": {
+        "advancingTeamTla": "POR",
+        "round": "SEMI_FINALS"
+      },
+      "FRA_SEN": {
+        "advancingTeamTla": "FRA",
+        "round": "THIRD_PLACE"
+      },
+      "CRO_POR": {
+        "advancingTeamTla": "POR",
+        "round": "FINAL"
+      }
+    },
+    "specials": {
+      "champion": "POR",
+      "runnerUp": "CRO",
+      "thirdPlace": "FRA",
+      "goldenBoot": {
+        "first": "Cristiano Ronaldo",
+        "second": "Doue",
+        "third": "haaland"
+      },
+      "goldenBall": {
+        "first": "Cristiano Ronaldo",
+        "second": "Modric",
+        "third": "Dembele"
+      }
+    }
+  }
+}
