@@ -15,7 +15,7 @@ const FILE_TO_PARTICIPANT: Array<[string, string]> = [
   ['Excel-Mundial-2026_Tola.xlsx', 'Tola'],
   ['Excel-Mundial-2026_CQAV.xlsx', 'Julito'],                   // 459 KB
   ['mundial-2026 partido españa.xlsx', 'Tacho'],
-  ['Excel-Mundial-2026_CQAV (1).xlsx', 'Gafas'],                // 285 KB
+  ['Gafa.xlsx', 'Gafas'],
   ['Excel-Mundial-2026_CQAV FELI DEFINITIVO.xlsx', 'Felipe Ramón'],
   ['Excel-Mundial-2026 Vaca.xlsx', 'Vaca'],
 ]
