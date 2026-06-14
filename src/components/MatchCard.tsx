@@ -32,6 +32,9 @@ export function MatchCard({ match }: MatchCardProps) {
   const isLive = status === 'IN_PLAY' || status === 'PAUSED'
   const isFinished = status === 'FINISHED'
   const hasScore = isLive || isFinished
+  // Knockout fixtures whose teams aren't decided yet (R32 onwards at the start
+  // of the tournament): show them plainly as pending, with no prediction sheet.
+  const tbd = !homeTeam?.tla || !awayTeam?.tla
   const { date, time } = formatDateTime(utcDate)
 
   const scoreBadge = (
@@ -57,14 +60,7 @@ export function MatchCard({ match }: MatchCardProps) {
       <div className="bg-white rounded-xl p-3 shadow-sm border border-slate-100">
         <div className="flex items-center justify-between gap-2">
           {/* Home team */}
-          <Link
-            href={`/equipo/${homeTeam.tla}`}
-            onClick={onFlagClick}
-            className="flex items-center gap-1.5 flex-1 min-w-0 hover:opacity-80"
-          >
-            <TeamFlag tla={homeTeam.tla} name={homeTeam.shortName} />
-            <span className="text-xs font-semibold text-slate-800 truncate">{homeTeam.shortName}</span>
-          </Link>
+          <TeamSide team={homeTeam} onFlagClick={onFlagClick} />
 
           {/* Score / Time */}
           <div className="flex flex-col items-center shrink-0">
@@ -80,6 +76,12 @@ export function MatchCard({ match }: MatchCardProps) {
                   </button>
                 </Spoiler>
               ) : <Spoiler>{scoreBadge}</Spoiler>
+            ) : tbd ? (
+              <div className="flex flex-col items-center">
+                <span className="text-slate-500 text-xs font-semibold">{time}</span>
+                <span className="text-[9px] text-slate-400">{date}</span>
+                <span className="text-[9px] font-bold text-slate-400 mt-0.5 uppercase tracking-wide">Pendiente</span>
+              </div>
             ) : (
               <button
                 onClick={onTimeClick}
@@ -103,20 +105,48 @@ export function MatchCard({ match }: MatchCardProps) {
           </div>
 
           {/* Away team */}
-          <Link
-            href={`/equipo/${awayTeam.tla}`}
-            onClick={onFlagClick}
-            className="flex items-center gap-1.5 flex-1 min-w-0 justify-end hover:opacity-80"
-          >
-            <span className="text-xs font-semibold text-slate-800 truncate text-right">{awayTeam.shortName}</span>
-            <TeamFlag tla={awayTeam.tla} name={awayTeam.shortName} />
-          </Link>
+          <TeamSide team={awayTeam} onFlagClick={onFlagClick} align="right" />
         </div>
       </div>
 
       {open && <MatchDetailsSheet match={match} onClose={() => setOpen(false)} />}
       {previewOpen && <MatchPreviewSheet match={match} onClose={() => setPreviewOpen(false)} />}
     </>
+  )
+}
+
+function TeamSide({
+  team,
+  onFlagClick,
+  align = 'left',
+}: {
+  team: Match['homeTeam']
+  onFlagClick: (e: React.MouseEvent) => void
+  align?: 'left' | 'right'
+}) {
+  const tbd = !team?.tla
+  const name = team?.shortName ?? 'Por definir'
+  const right = align === 'right'
+  const flag = <TeamFlag tla={team?.tla ?? ''} name={name} />
+  const label = (
+    <span className={`text-xs font-semibold truncate ${tbd ? 'text-slate-400 italic' : 'text-slate-800'} ${right ? 'text-right' : ''}`}>
+      {name}
+    </span>
+  )
+  const inner = right ? <>{label}{flag}</> : <>{flag}{label}</>
+
+  // Knockout matches with undetermined teams aren't clickable team pages.
+  if (tbd) {
+    return <div className={`flex items-center gap-1.5 flex-1 min-w-0 ${right ? 'justify-end' : ''}`}>{inner}</div>
+  }
+  return (
+    <Link
+      href={`/equipo/${team.tla}`}
+      onClick={onFlagClick}
+      className={`flex items-center gap-1.5 flex-1 min-w-0 hover:opacity-80 ${right ? 'justify-end' : ''}`}
+    >
+      {inner}
+    </Link>
   )
 }
 
