@@ -74,6 +74,54 @@ const ES_TO_TLA: Record<string, string> = {
   'Panamá': 'PAN',
 }
 
+// Each participant writes the Golden Boot / Golden Ball players as free text, so
+// the same footballer appears spelled many ways ("Mbappe", "Kilian Mbappe",
+// "Kilyan Mbappe"…). Collapse every known variant to one canonical real name so
+// duplicates merge and scoring against the real top-3 can match.
+function normPlayerKey(s: string): string {
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, ' ')
+}
+const PLAYER_CANONICAL: Record<string, string> = {
+  'kylian mbappe': 'Kylian Mbappé',
+  'kilian mbappe': 'Kylian Mbappé',
+  'killian mbappe': 'Kylian Mbappé',
+  'kilyan mbappe': 'Kylian Mbappé',
+  'mbappe': 'Kylian Mbappé',
+  'cristiano': 'Cristiano Ronaldo',
+  'cristiano ronaldo': 'Cristiano Ronaldo',
+  'harry kane': 'Harry Kane',
+  'kane': 'Harry Kane',
+  'mikel oyarzabal': 'Mikel Oyarzabal',
+  'oyarzabal': 'Mikel Oyarzabal',
+  'vinicius': 'Vinícius Júnior',
+  'vinicius junior': 'Vinícius Júnior',
+  'vinicius jr': 'Vinícius Júnior',
+  'lautaro': 'Lautaro Martínez',
+  'lautaro martinez': 'Lautaro Martínez',
+  'menphis depay': 'Memphis Depay',
+  'memphis depay': 'Memphis Depay',
+  'doue': 'Désiré Doué',
+  'desire doue': 'Désiré Doué',
+  'haaland': 'Erling Haaland',
+  'erling haaland': 'Erling Haaland',
+  'messi': 'Lionel Messi',
+  'lionel messi': 'Lionel Messi',
+  'dembele': 'Ousmane Dembélé',
+  'ousmane dembele': 'Ousmane Dembélé',
+  'modric': 'Luka Modrić',
+  'luka modric': 'Luka Modrić',
+  'lamine yamal': 'Lamine Yamal',
+  'lamine': 'Lamine Yamal',
+  'pedri': 'Pedri',
+  'vitinha': 'Vitinha',
+  'diogo costa': 'Diogo Costa',
+}
+function canonicalPlayer(raw: string): string {
+  const v = (raw ?? '').trim()
+  if (!v) return ''
+  return PLAYER_CANONICAL[normPlayerKey(v)] ?? v
+}
+
 type PickResult = 'home' | 'draw' | 'away'
 
 interface GroupPrediction { homeGoals: number; awayGoals: number; pick: PickResult }
@@ -198,14 +246,14 @@ function parseFile(filepath: string): ParticipantPredictions {
     runnerUp: tla(valAA(runnerUpRow)) ?? '',
     thirdPlace: tla(valAA(thirdRow)) ?? '',
     goldenBoot: {
-      first: valAA(bootGoldRow),
-      second: valAA(bootSilverRow),
-      third: valAA(bootBronzeRow),
+      first: canonicalPlayer(valAA(bootGoldRow)),
+      second: canonicalPlayer(valAA(bootSilverRow)),
+      third: canonicalPlayer(valAA(bootBronzeRow)),
     },
     goldenBall: {
-      first: valAA(ballGoldRow),
-      second: valAA(ballSilverRow),
-      third: valAA(ballBronzeRow),
+      first: canonicalPlayer(valAA(ballGoldRow)),
+      second: canonicalPlayer(valAA(ballSilverRow)),
+      third: canonicalPlayer(valAA(ballBronzeRow)),
     },
   }
 

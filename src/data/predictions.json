@@ -497,14 +497,14 @@
       "runnerUp": "POR",
       "thirdPlace": "FRA",
       "goldenBoot": {
-        "first": "Kilyan Mbappe",
+        "first": "Kylian Mbappé",
         "second": "Harry Kane",
         "third": "Cristiano Ronaldo"
       },
       "goldenBall": {
         "first": "Lamine Yamal",
         "second": "Vitinha",
-        "third": "Kilyan Mbappe"
+        "third": "Kylian Mbappé"
       }
     }
   },
@@ -1006,14 +1006,14 @@
       "runnerUp": "ESP",
       "thirdPlace": "ENG",
       "goldenBoot": {
-        "first": "kane",
-        "second": "Mbappe",
+        "first": "Harry Kane",
+        "second": "Kylian Mbappé",
         "third": "Lamine Yamal"
       },
       "goldenBall": {
         "first": "Vitinha",
         "second": "Pedri",
-        "third": "Dembele"
+        "third": "Ousmane Dembélé"
       }
     }
   },
@@ -1517,12 +1517,12 @@
       "goldenBoot": {
         "first": "Mikel Oyarzabal",
         "second": "Cristiano Ronaldo",
-        "third": "Killian Mbappe"
+        "third": "Kylian Mbappé"
       },
       "goldenBall": {
         "first": "Pedri",
         "second": "Vitinha",
-        "third": "Killian Mbappe"
+        "third": "Kylian Mbappé"
       }
     }
   },
@@ -2024,7 +2024,7 @@
       "runnerUp": "POR",
       "thirdPlace": "ENG",
       "goldenBoot": {
-        "first": "Kilian Mbappe",
+        "first": "Kylian Mbappé",
         "second": "Harry Kane",
         "third": "Cristiano Ronaldo"
       },
@@ -2533,12 +2533,12 @@
       "runnerUp": "ESP",
       "thirdPlace": "FRA",
       "goldenBoot": {
-        "first": "Kilian Mbappe",
+        "first": "Kylian Mbappé",
         "second": "Harry Kane",
-        "third": "Menphis depay"
+        "third": "Memphis Depay"
       },
       "goldenBall": {
-        "first": "Kilian Mbappe",
+        "first": "Kylian Mbappé",
         "second": "Pedri",
         "third": "Vitinha"
       }
@@ -3042,14 +3042,14 @@
       "runnerUp": "POR",
       "thirdPlace": "GER",
       "goldenBoot": {
-        "first": "Oyarzabal",
-        "second": "Cristiano",
-        "third": "Lautaro"
+        "first": "Mikel Oyarzabal",
+        "second": "Cristiano Ronaldo",
+        "third": "Lautaro Martínez"
       },
       "goldenBall": {
         "first": "Pedri",
-        "second": "Kane",
-        "third": "Cristiano"
+        "second": "Harry Kane",
+        "third": "Cristiano Ronaldo"
       }
     }
   },
@@ -3551,14 +3551,14 @@
       "runnerUp": "POR",
       "thirdPlace": "BRA",
       "goldenBoot": {
-        "first": "Kilian Mbappe",
+        "first": "Kylian Mbappé",
         "second": "Cristiano Ronaldo",
-        "third": "Vinicius"
+        "third": "Vinícius Júnior"
       },
       "goldenBall": {
         "first": "Pedri",
-        "second": "Mbappe",
-        "third": "vinicius"
+        "second": "Kylian Mbappé",
+        "third": "Vinícius Júnior"
       }
     }
   },
@@ -4060,9 +4060,9 @@
       "runnerUp": "FRA",
       "thirdPlace": "ESP",
       "goldenBoot": {
-        "first": "Mbappe",
-        "second": "Kane",
-        "third": "Messi"
+        "first": "Kylian Mbappé",
+        "second": "Harry Kane",
+        "third": "Lionel Messi"
       },
       "goldenBall": {
         "first": "Vitinha",
@@ -4570,13 +4570,13 @@
       "thirdPlace": "FRA",
       "goldenBoot": {
         "first": "Cristiano Ronaldo",
-        "second": "Doue",
-        "third": "haaland"
+        "second": "Désiré Doué",
+        "third": "Erling Haaland"
       },
       "goldenBall": {
         "first": "Cristiano Ronaldo",
-        "second": "Modric",
-        "third": "Dembele"
+        "second": "Luka Modrić",
+        "third": "Ousmane Dembélé"
       }
     }
   }
