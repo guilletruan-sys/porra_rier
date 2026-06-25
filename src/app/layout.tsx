@@ -9,9 +9,14 @@ import { PaywallProvider } from '@/contexts/PaywallContext'
 import { IdentityProvider } from '@/contexts/IdentityContext'
 import { PaywallModal } from '@/components/PaywallModal'
 import { IdentityModal } from '@/components/IdentityModal'
+import { SiteLocked } from '@/components/SiteLocked'
 import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({ subsets: ['latin'] })
+
+// Web cerrada al público: muestra la pantalla de bloqueo en lugar de la app.
+// Para reabrir, poner SITE_LOCKED en false.
+const SITE_LOCKED = true
 
 export const metadata: Metadata = {
   title: 'Porra Rier WC 2026',
@@ -28,6 +33,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body className={`${inter.className} bg-slate-100 min-h-screen`}>
+        {SITE_LOCKED ? (
+          <SiteLocked />
+        ) : (
         <LiteProvider>
           <PaywallProvider>
             <IdentityProvider>
@@ -45,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </IdentityProvider>
           </PaywallProvider>
         </LiteProvider>
+        )}
         <Analytics />
       </body>
     </html>
