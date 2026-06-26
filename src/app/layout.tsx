@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 // Web cerrada al público: muestra la pantalla de bloqueo en lugar de la app.
 // Para reabrir, poner SITE_LOCKED en false.
-const SITE_LOCKED = true
+const SITE_LOCKED = false
 
 export const metadata: Metadata = {
   title: 'Porra Rier WC 2026',
