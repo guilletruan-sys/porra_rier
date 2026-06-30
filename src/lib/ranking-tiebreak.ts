@@ -134,8 +134,8 @@ export function compareWithTiebreak(a: ParticipantScore, b: ParticipantScore, ct
 
   // ii — goles del pichichi elegido (con regla "ambos eligieron a un pichichi oficial → empate")
   if (Object.keys(ctx.goalsByPlayer).length > 0) {
-    const aKey = (p1?.specials?.goldenBoot ?? '').toLowerCase().trim()
-    const bKey = (p2?.specials?.goldenBoot ?? '').toLowerCase().trim()
+    const aKey = (p1?.specials?.goldenBoot?.first ?? '').toLowerCase().trim()
+    const bKey = (p2?.specials?.goldenBoot?.first ?? '').toLowerCase().trim()
     const aIsOfficial = aKey !== '' && ctx.topScorersOfficial.has(aKey)
     const bIsOfficial = bKey !== '' && ctx.topScorersOfficial.has(bKey)
     if (!(aIsOfficial && bIsOfficial)) {

@@ -39,13 +39,25 @@ function buildKnockoutSets(knockout: Record<string, KnockoutPrediction>) {
   return { r32Teams, advancers }
 }
 
+interface TopThreePick { first: string; second: string; third: string }
+interface TopThreeActual { first?: string; second?: string; third?: string }
+
+// La Rier puntúa el top-3 por hueco e independiente: 3 oro · 2 plata · 1 bronce.
+function scoreTopThree(pick: TopThreePick, actual: TopThreeActual): number {
+  let pts = 0
+  if (actual.first && pick.first && pick.first.toLowerCase() === actual.first.toLowerCase()) pts += 3
+  if (actual.second && pick.second && pick.second.toLowerCase() === actual.second.toLowerCase()) pts += 2
+  if (actual.third && pick.third && pick.third.toLowerCase() === actual.third.toLowerCase()) pts += 1
+  return pts
+}
+
 export function scoreSpecials(
-  specials: { goldenBoot: string; goldenBall: string; champion: string; runnerUp: string; thirdPlace: string },
-  actual: { goldenBoot?: string; goldenBall?: string; champion?: string; runnerUp?: string; thirdPlace?: string },
+  specials: { goldenBoot: TopThreePick; goldenBall: TopThreePick; champion: string; runnerUp: string; thirdPlace: string },
+  actual: { goldenBoot?: TopThreeActual; goldenBall?: TopThreeActual; champion?: string; runnerUp?: string; thirdPlace?: string },
 ): number {
   let pts = 0
-  if (actual.goldenBoot && specials.goldenBoot.toLowerCase() === actual.goldenBoot.toLowerCase()) pts += 5
-  if (actual.goldenBall && specials.goldenBall.toLowerCase() === actual.goldenBall.toLowerCase()) pts += 5
+  if (actual.goldenBoot) pts += scoreTopThree(specials.goldenBoot, actual.goldenBoot)
+  if (actual.goldenBall) pts += scoreTopThree(specials.goldenBall, actual.goldenBall)
   if (actual.champion && specials.champion === actual.champion) pts += 30
   if (actual.runnerUp && specials.runnerUp === actual.runnerUp) pts += 20
   if (actual.thirdPlace && specials.thirdPlace === actual.thirdPlace) pts += 15
@@ -56,8 +68,8 @@ export interface ActualOutcomes {
   champion?: string
   runnerUp?: string
   thirdPlace?: string
-  goldenBoot?: string
-  goldenBall?: string
+  goldenBoot?: TopThreeActual
+  goldenBall?: TopThreeActual
 }
 
 export function calculateParticipantScore(

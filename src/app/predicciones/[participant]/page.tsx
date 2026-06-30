@@ -189,8 +189,8 @@ export default function ParticipantPage({ params }: { params: Promise<{ particip
             { label: 'Campeón', value: TLA_TO_EXCEL_NAME[preds.specials.champion] ?? preds.specials.champion },
             { label: 'Subcampeón', value: TLA_TO_EXCEL_NAME[preds.specials.runnerUp] ?? preds.specials.runnerUp },
             { label: '3er puesto', value: TLA_TO_EXCEL_NAME[preds.specials.thirdPlace] ?? preds.specials.thirdPlace },
-            { label: 'Golden Boot', value: preds.specials.goldenBoot },
-            { label: 'Golden Ball', value: preds.specials.goldenBall },
+            { label: 'Pichichi', value: [preds.specials.goldenBoot.first, preds.specials.goldenBoot.second, preds.specials.goldenBoot.third].filter(Boolean).join(' · ') },
+            { label: 'Balón de Oro', value: [preds.specials.goldenBall.first, preds.specials.goldenBall.second, preds.specials.goldenBall.third].filter(Boolean).join(' · ') },
           ].map(({ label, value }) => (
             <div key={label} className="flex items-center gap-2 px-3 py-2.5">
               <span className="text-[10px] text-slate-400 dark:text-slate-500 w-20 shrink-0">{label}</span>

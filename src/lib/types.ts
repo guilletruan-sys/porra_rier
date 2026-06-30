@@ -123,9 +123,16 @@ export interface KnockoutPrediction {
   round: Stage               // which knockout round this prediction belongs to
 }
 
+/** Top-3 de una categoría (oro/plata/bronce) — la Rier puntúa los tres. */
+export interface TopThreePick {
+  first: string
+  second: string
+  third: string
+}
+
 export interface SpecialPredictions {
-  goldenBoot: string         // player name
-  goldenBall: string         // player name
+  goldenBoot: TopThreePick   // pichichi: oro/plata/bronce
+  goldenBall: TopThreePick   // mejor jugador: oro/plata/bronce
   champion: string           // team TLA
   runnerUp: string           // team TLA
   thirdPlace: string         // team TLA

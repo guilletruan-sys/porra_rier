@@ -4,7 +4,7 @@ import type { ParticipantPredictions, ParticipantScore, PredictionsData } from '
 const mkPreds = (champion: string, goldenBoot: string): ParticipantPredictions => ({
   groupStage: {},
   knockout: {},
-  specials: { goldenBoot, goldenBall: '', champion, runnerUp: '', thirdPlace: '' },
+  specials: { goldenBoot: { first: goldenBoot, second: '', third: '' }, goldenBall: { first: '', second: '', third: '' }, champion, runnerUp: '', thirdPlace: '' },
 })
 
 const mkScore = (name: string, totalPoints: number, groupStagePoints = 0): ParticipantScore => ({

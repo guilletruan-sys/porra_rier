@@ -35,7 +35,7 @@ const preds = (
 ): ParticipantPredictions => ({
   groupStage: {},
   knockout,
-  specials: { goldenBoot: '', goldenBall: '', champion: '', runnerUp: '', thirdPlace: '', ...specials },
+  specials: { goldenBoot: { first: '', second: '', third: '' }, goldenBall: { first: '', second: '', third: '' }, champion: '', runnerUp: '', thirdPlace: '', ...specials },
 })
 
 const team = (j: KnockoutBreakdown, tla: string) =>

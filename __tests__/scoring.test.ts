@@ -76,7 +76,7 @@ describe('knockout scoring via calculateParticipantScore', () => {
     'Tester': {
       groupStage: {},
       knockout,
-      specials: { goldenBoot: '', goldenBall: '', champion: '', runnerUp: '', thirdPlace: '' },
+      specials: { goldenBoot: { first: '', second: '', third: '' }, goldenBall: { first: '', second: '', third: '' }, champion: '', runnerUp: '', thirdPlace: '' },
     }
   })
 
@@ -167,20 +167,27 @@ describe('knockout scoring via calculateParticipantScore', () => {
   })
 })
 
-describe('scoreSpecials', () => {
+describe('scoreSpecials (Rier: top-3 bota/balón 3-2-1)', () => {
   const specials = {
-    goldenBoot: 'Mbappé',
-    goldenBall: 'Vinicius',
+    goldenBoot: { first: 'Mbappé', second: 'Kane', third: 'Haaland' },
+    goldenBall: { first: 'Vinicius', second: 'Pedri', third: 'Yamal' },
     champion: 'FRA',
     runnerUp: 'BRA',
     thirdPlace: 'ESP',
   }
 
-  it('gives 5 pts for correct golden boot', () => {
-    expect(scoreSpecials(specials, { goldenBoot: 'Mbappé' })).toBe(5)
+  it('gives 3 pts for the golden boot ORO (1st) correct', () => {
+    expect(scoreSpecials(specials, { goldenBoot: { first: 'Mbappé' } })).toBe(3)
   })
-  it('gives 5 pts for correct golden ball', () => {
-    expect(scoreSpecials(specials, { goldenBall: 'Vinicius' })).toBe(5)
+  it('gives 2 pts for plata (2nd) and 1 pt for bronce (3rd)', () => {
+    expect(scoreSpecials(specials, { goldenBoot: { second: 'Kane' } })).toBe(2)
+    expect(scoreSpecials(specials, { goldenBoot: { third: 'Haaland' } })).toBe(1)
+  })
+  it('sums the three independently (3+2+1 = 6 max per categoría)', () => {
+    expect(scoreSpecials(specials, { goldenBoot: { first: 'Mbappé', second: 'Kane', third: 'Haaland' } })).toBe(6)
+  })
+  it('scores golden ball top-3 the same way', () => {
+    expect(scoreSpecials(specials, { goldenBall: { first: 'Vinicius', third: 'Yamal' } })).toBe(4)
   })
   it('gives 30 pts for correct champion', () => {
     expect(scoreSpecials(specials, { champion: 'FRA' })).toBe(30)
@@ -192,10 +199,10 @@ describe('scoreSpecials', () => {
     expect(scoreSpecials(specials, { thirdPlace: 'ESP' })).toBe(15)
   })
   it('gives 0 pts for all wrong', () => {
-    expect(scoreSpecials(specials, { champion: 'ARG', goldenBoot: 'Messi' })).toBe(0)
+    expect(scoreSpecials(specials, { champion: 'ARG', goldenBoot: { first: 'Messi' } })).toBe(0)
   })
   it('is case-insensitive for player names', () => {
-    expect(scoreSpecials(specials, { goldenBoot: 'MBAPPÉ' })).toBe(5)
+    expect(scoreSpecials(specials, { goldenBoot: { first: 'MBAPPÉ' } })).toBe(3)
   })
 })
 
@@ -223,7 +230,7 @@ describe('calculateParticipantScore', () => {
           'MEX_RSA': { homeGoals: 2, awayGoals: 1, pick: 'home' },  // exact: 4 pts
         },
         knockout: {},
-        specials: { goldenBoot: '', goldenBall: '', champion: '', runnerUp: '', thirdPlace: '' },
+        specials: { goldenBoot: { first: '', second: '', third: '' }, goldenBall: { first: '', second: '', third: '' }, champion: '', runnerUp: '', thirdPlace: '' },
       }
     }
     const score = calculateParticipantScore('Tester', predictions, [finishedMatch])
@@ -241,7 +248,7 @@ describe('calculateParticipantScore', () => {
           'BRA_MAR': { homeGoals: 1, awayGoals: 0, pick: 'home' },
         },
         knockout: {},
-        specials: { goldenBoot: '', goldenBall: '', champion: '', runnerUp: '', thirdPlace: '' },
+        specials: { goldenBoot: { first: '', second: '', third: '' }, goldenBall: { first: '', second: '', third: '' }, champion: '', runnerUp: '', thirdPlace: '' },
       }
     }
     const score = calculateParticipantScore('Tester', predictions, [finishedMatch, scheduledMatch])

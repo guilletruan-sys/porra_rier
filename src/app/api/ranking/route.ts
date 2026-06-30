@@ -67,14 +67,12 @@ export async function GET() {
     // Contexto de desempate — calculado UNA vez con los datos más actuales y reutilizado en los 3 snapshots.
     const ctx = await buildTiebreakCtx(allMatches, predictions, participants)
 
-    // Outcomes oficiales del Mundial (campeón / runner-up / 3er puesto / pichichi)
-    // — alimentan los specials. Pichichi viene del context; balón de oro no se sabe
-    // hasta el voto FIFA post-final, queda undefined.
-    const topScorerOfficial = ctx.topScorersOfficial.size > 0
-      ? [...ctx.topScorersOfficial][0]
-      : undefined
-    const currentOutcomes = deriveActualOutcomes(allMatches, { goldenBoot: topScorerOfficial })
-    const finishedOutcomes = deriveActualOutcomes(finished, { goldenBoot: topScorerOfficial })
+    // Outcomes oficiales del Mundial (campeón / runner-up / 3er puesto) — derivados
+    // de los partidos. El pichichi y el balón de oro se puntúan por top-3 (oro/plata/
+    // bronce) y quedan PENDIENTES hasta que se conozcan al final (el balón es voto
+    // FIFA post-final), igual que en la Rier original.
+    const currentOutcomes = deriveActualOutcomes(allMatches)
+    const finishedOutcomes = deriveActualOutcomes(finished)
 
     // Snapshot por-partido (FINISHED excluyendo el más reciente)
     const finishedSorted = [...finished].sort((a, b) => a.utcDate.localeCompare(b.utcDate))
@@ -82,7 +80,7 @@ export async function GET() {
     const prevMatchSet = latestFinished
       ? finishedSorted.filter(m => m.id !== latestFinished.id)
       : []
-    const prevOutcomes = deriveActualOutcomes(prevMatchSet, { goldenBoot: topScorerOfficial })
+    const prevOutcomes = deriveActualOutcomes(prevMatchSet)
     const prevMatchSnap = prevMatchSet.length > 0
       ? snapshot(participants, predictions, prevMatchSet, ctx, prevOutcomes)
       : null

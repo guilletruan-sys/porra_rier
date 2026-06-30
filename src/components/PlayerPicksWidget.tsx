@@ -18,7 +18,8 @@ export function PlayerPicksWidget({ kind, title, icon }: PlayerPicksWidgetProps)
   const groups = new Map<string, { display: string; names: string[] }>()
 
   for (const name of participants as string[]) {
-    const raw = predictions[name]?.specials?.[kind]
+    // Top-3 (oro/plata/bronce): agrupamos por la apuesta de oro (1ª).
+    const raw = predictions[name]?.specials?.[kind]?.first
     if (!raw || typeof raw !== 'string') continue
     const canonical = canonicalizePlayer(raw)
     if (!canonical) continue

@@ -81,7 +81,8 @@ type PickResult = 'home' | 'draw' | 'away'
 type Stage = 'GROUP_STAGE' | 'ROUND_OF_32' | 'ROUND_OF_16' | 'QUARTER_FINALS' | 'SEMI_FINALS' | 'THIRD_PLACE' | 'FINAL'
 interface GroupPrediction { homeGoals: number; awayGoals: number; pick: PickResult }
 interface KnockoutPrediction { slot: string; homeTla: string; awayTla: string; advancingTeamTla: string; round: Stage }
-interface Specials { champion: string; runnerUp: string; thirdPlace: string; goldenBoot: string; goldenBall: string }
+interface TopThree { first: string; second: string; third: string }
+interface Specials { champion: string; runnerUp: string; thirdPlace: string; goldenBoot: TopThree; goldenBall: TopThree }
 interface RawKO { round: Stage; homeTla: string; awayTla: string; advancingTeamTla: string }
 interface ParticipantPredictions {
   groupStage: Record<string, GroupPrediction>
@@ -251,8 +252,17 @@ function parseFile(filepath: string): { preds: ParticipantPredictions; resolved:
     champion: tla(valAA(findRowByW('campeón'))) ?? '',
     runnerUp: tla(valAA(findRowByW('subcampeón'))) ?? '',
     thirdPlace: tla(valAA(findRowByW('3º puesto'))) ?? '',
-    goldenBoot: canonicalPlayer(valAA(findRowByW('bota de oro'))),
-    goldenBall: canonicalPlayer(valAA(findRowByW('balón de oro'))),
+    // La Rier puntúa el top-3: oro/plata/bronce.
+    goldenBoot: {
+      first: canonicalPlayer(valAA(findRowByW('bota de oro'))),
+      second: canonicalPlayer(valAA(findRowByW('bota de plata'))),
+      third: canonicalPlayer(valAA(findRowByW('bota de bronce'))),
+    },
+    goldenBall: {
+      first: canonicalPlayer(valAA(findRowByW('balón de oro'))),
+      second: canonicalPlayer(valAA(findRowByW('balón de plata'))),
+      third: canonicalPlayer(valAA(findRowByW('balón de bronce'))),
+    },
   }
 
   return { preds: { groupStage, knockout, specials }, resolved, total: koOrdered.length }
@@ -271,7 +281,7 @@ function main() {
       predictions[participant] = preds
       console.log(
         `✓ ${participant}: ${Object.keys(preds.groupStage).length} grupo · ` +
-        `${total} KO (${resolved} ubicados en slot) · champ=${preds.specials.champion}, boot=${preds.specials.goldenBoot}`
+        `${total} KO (${resolved} ubicados en slot) · champ=${preds.specials.champion}, boot=[${preds.specials.goldenBoot.first}|${preds.specials.goldenBoot.second}|${preds.specials.goldenBoot.third}]`
       )
     } catch (err) {
       console.error(`Error parsing ${filename}:`, err)

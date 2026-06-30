@@ -48,6 +48,11 @@ function predLabel(homeTla: string, awayTla: string, advancing: string): string 
   return `${h} − ${a} · ${w}`
 }
 
+// Pichichi/balón: top-3 (oro/plata/bronce) → texto para comparar y mostrar.
+function top3Str(t: { first: string; second: string; third: string }): string {
+  return [t.first, t.second, t.third].filter(Boolean).join(' · ')
+}
+
 export default function H2HPage({ params }: { params: Promise<{ p1: string; p2: string }> }) {
   const { p1: p1Raw, p2: p2Raw } = use(params)
   const p1 = decodeURIComponent(p1Raw)
@@ -158,8 +163,8 @@ export default function H2HPage({ params }: { params: Promise<{ p1: string; p2: 
     { key: 'champ',  label: 'Campeón',     v1: preds1.specials.champion,  v2: preds2.specials.champion },
     { key: 'runner', label: 'Subcampeón',  v1: preds1.specials.runnerUp,  v2: preds2.specials.runnerUp },
     { key: 'third',  label: '3er puesto',  v1: preds1.specials.thirdPlace, v2: preds2.specials.thirdPlace },
-    { key: 'pich',   label: 'Pichichi',    v1: preds1.specials.goldenBoot, v2: preds2.specials.goldenBoot },
-    { key: 'ball',   label: 'Balón de Oro',v1: preds1.specials.goldenBall, v2: preds2.specials.goldenBall },
+    { key: 'pich',   label: 'Pichichi',    v1: top3Str(preds1.specials.goldenBoot), v2: top3Str(preds2.specials.goldenBoot) },
+    { key: 'ball',   label: 'Balón de Oro',v1: top3Str(preds1.specials.goldenBall), v2: top3Str(preds2.specials.goldenBall) },
   ]
 
   // ---- Counters (sólo cuentan partidos con ganador no-pending) ----

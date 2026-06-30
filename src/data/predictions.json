@@ -592,8 +592,16 @@
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "FRA",
-      "goldenBoot": "Kylian Mbappé",
-      "goldenBall": "Lamine Yamal"
+      "goldenBoot": {
+        "first": "Kylian Mbappé",
+        "second": "Harry Kane",
+        "third": "Cristiano Ronaldo"
+      },
+      "goldenBall": {
+        "first": "Lamine Yamal",
+        "second": "Vitinha",
+        "third": "Kylian Mbappé"
+      }
     }
   },
   "City": {
@@ -1189,8 +1197,16 @@
       "champion": "POR",
       "runnerUp": "ESP",
       "thirdPlace": "ENG",
-      "goldenBoot": "Harry Kane",
-      "goldenBall": "Vitinha"
+      "goldenBoot": {
+        "first": "Harry Kane",
+        "second": "Kylian Mbappé",
+        "third": "Lamine Yamal"
+      },
+      "goldenBall": {
+        "first": "Vitinha",
+        "second": "Pedri",
+        "third": "Ousmane Dembélé"
+      }
     }
   },
   "Miguel": {
@@ -1786,8 +1802,16 @@
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "FRA",
-      "goldenBoot": "Mikel Oyarzabal",
-      "goldenBall": "Pedri"
+      "goldenBoot": {
+        "first": "Mikel Oyarzabal",
+        "second": "Cristiano Ronaldo",
+        "third": "Kylian Mbappé"
+      },
+      "goldenBall": {
+        "first": "Pedri",
+        "second": "Vitinha",
+        "third": "Kylian Mbappé"
+      }
     }
   },
   "Tola": {
@@ -2383,8 +2407,16 @@
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "ENG",
-      "goldenBoot": "Kylian Mbappé",
-      "goldenBall": "Pedri"
+      "goldenBoot": {
+        "first": "Kylian Mbappé",
+        "second": "Harry Kane",
+        "third": "Cristiano Ronaldo"
+      },
+      "goldenBall": {
+        "first": "Pedri",
+        "second": "Vitinha",
+        "third": "Lamine Yamal"
+      }
     }
   },
   "Julito": {
@@ -2980,8 +3012,16 @@
       "champion": "NED",
       "runnerUp": "ESP",
       "thirdPlace": "FRA",
-      "goldenBoot": "Kylian Mbappé",
-      "goldenBall": "Kylian Mbappé"
+      "goldenBoot": {
+        "first": "Kylian Mbappé",
+        "second": "Harry Kane",
+        "third": "Memphis Depay"
+      },
+      "goldenBall": {
+        "first": "Kylian Mbappé",
+        "second": "Pedri",
+        "third": "Vitinha"
+      }
     }
   },
   "Tacho": {
@@ -3577,8 +3617,16 @@
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "GER",
-      "goldenBoot": "Mikel Oyarzabal",
-      "goldenBall": "Pedri"
+      "goldenBoot": {
+        "first": "Mikel Oyarzabal",
+        "second": "Cristiano Ronaldo",
+        "third": "Lautaro Martínez"
+      },
+      "goldenBall": {
+        "first": "Pedri",
+        "second": "Harry Kane",
+        "third": "Cristiano Ronaldo"
+      }
     }
   },
   "Gafas": {
@@ -4174,8 +4222,16 @@
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "BRA",
-      "goldenBoot": "Kylian Mbappé",
-      "goldenBall": "Pedri"
+      "goldenBoot": {
+        "first": "Kylian Mbappé",
+        "second": "Cristiano Ronaldo",
+        "third": "Vinícius Júnior"
+      },
+      "goldenBall": {
+        "first": "Pedri",
+        "second": "Kylian Mbappé",
+        "third": "Vinícius Júnior"
+      }
     }
   },
   "Felipe Ramón": {
@@ -4771,8 +4827,16 @@
       "champion": "POR",
       "runnerUp": "FRA",
       "thirdPlace": "ESP",
-      "goldenBoot": "Kylian Mbappé",
-      "goldenBall": "Vitinha"
+      "goldenBoot": {
+        "first": "Kylian Mbappé",
+        "second": "Harry Kane",
+        "third": "Lionel Messi"
+      },
+      "goldenBall": {
+        "first": "Vitinha",
+        "second": "Pedri",
+        "third": "Diogo Costa"
+      }
     }
   },
   "Vaca": {
@@ -5368,8 +5432,16 @@
       "champion": "POR",
       "runnerUp": "CRO",
       "thirdPlace": "FRA",
-      "goldenBoot": "Cristiano Ronaldo",
-      "goldenBall": "Cristiano Ronaldo"
+      "goldenBoot": {
+        "first": "Cristiano Ronaldo",
+        "second": "Désiré Doué",
+        "third": "Erling Haaland"
+      },
+      "goldenBall": {
+        "first": "Cristiano Ronaldo",
+        "second": "Luka Modrić",
+        "third": "Ousmane Dembélé"
+      }
     }
   }
 }
