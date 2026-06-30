@@ -68,18 +68,18 @@ export function BestPredictionDaily({ matches }: BestPredictionDailyProps) {
 
   return (
     <section>
-      <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-1.5">
+      <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 flex items-center gap-1.5">
         <span>🏆</span>
         Mejor predicción del último partido
       </h2>
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm overflow-hidden">
         {/* Match header */}
-        <div className="px-3 py-2 border-b border-slate-50 flex items-center justify-between gap-2">
+        <div className="px-3 py-2 border-b border-slate-50 dark:border-slate-800 flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 min-w-0">
             {homeFlag
               ? <Image src={homeFlag} alt="" width={16} height={11} unoptimized className="rounded-sm" />
               : <IconFlagFallback width={16} height={11} />}
-            <span className="text-[10px] font-bold text-slate-700 truncate">{last.homeTeam.shortName}</span>
+            <span className="text-[10px] font-bold text-slate-700 dark:text-slate-200 truncate">{last.homeTeam.shortName}</span>
           </div>
           <Spoiler>
             <span className="text-xs font-black text-[#c8102e] shrink-0">
@@ -87,7 +87,7 @@ export function BestPredictionDaily({ matches }: BestPredictionDailyProps) {
             </span>
           </Spoiler>
           <div className="flex items-center gap-1.5 min-w-0 justify-end">
-            <span className="text-[10px] font-bold text-slate-700 truncate">{last.awayTeam.shortName}</span>
+            <span className="text-[10px] font-bold text-slate-700 dark:text-slate-200 truncate">{last.awayTeam.shortName}</span>
             {awayFlag
               ? <Image src={awayFlag} alt="" width={16} height={11} unoptimized className="rounded-sm" />
               : <IconFlagFallback width={16} height={11} />}
@@ -96,38 +96,38 @@ export function BestPredictionDaily({ matches }: BestPredictionDailyProps) {
 
         {/* Top scorers */}
         <Spoiler blockMode label="Resultado oculto · Toca para ver">
-        <div className="px-3 py-3 divide-y divide-slate-50">
+        <div className="px-3 py-3 divide-y divide-slate-50 dark:divide-slate-800">
           {winners.slice(0, 3).map((s, i) => (
             <Link
               key={s.name}
               href={`/predicciones/${encodeURIComponent(s.name)}`}
-              className="flex items-center gap-3 py-2 hover:bg-slate-50 -mx-3 px-3 transition-colors"
+              className="flex items-center gap-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-900 -mx-3 px-3 transition-colors"
             >
               <RankBadge rank={i + 1} />
-              <span className="flex-1 text-xs font-bold text-slate-800 truncate">{s.name}</span>
-              <span className="text-[10px] text-slate-400">predijo {s.display}</span>
+              <span className="flex-1 text-xs font-bold text-slate-800 dark:text-slate-100 truncate">{s.name}</span>
+              <span className="text-[10px] text-slate-400 dark:text-slate-500">predijo {s.display}</span>
               <span className="text-xs font-black text-[#c8102e]">+{s.points}</span>
             </Link>
           ))}
 
           {winners[0].points === 0 && (
-            <p className="text-[10px] text-slate-400 text-center pt-2">Nadie acertó este partido</p>
+            <p className="text-[10px] text-slate-400 dark:text-slate-500 text-center pt-2">Nadie acertó este partido</p>
           )}
         </div>
 
         {/* Bulk stats */}
-        <div className="px-3 py-2 border-t border-slate-100 grid grid-cols-3 gap-2 text-center">
+        <div className="px-3 py-2 border-t border-slate-100 dark:border-slate-800 grid grid-cols-3 gap-2 text-center">
           <div>
             <p className="text-sm font-black text-green-600 tabular-nums">{exactCount}</p>
-            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Exacto</p>
+            <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Exacto</p>
           </div>
           <div>
             <p className="text-sm font-black text-yellow-600 tabular-nums">{resultCount}</p>
-            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Signo</p>
+            <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Signo</p>
           </div>
           <div>
             <p className="text-sm font-black text-red-500 tabular-nums">{missCount}</p>
-            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Fallo</p>
+            <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Fallo</p>
           </div>
         </div>
         </Spoiler>

@@ -3,20 +3,15 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { AppHeader } from '@/components/AppHeader'
 import { BottomNav } from '@/components/BottomNav'
+import { MaintenanceScreen } from '@/components/MaintenanceScreen'
 import { SpoilerProvider } from '@/contexts/SpoilerContext'
-import { LiteProvider } from '@/contexts/LiteContext'
-import { PaywallProvider } from '@/contexts/PaywallContext'
 import { IdentityProvider } from '@/contexts/IdentityContext'
-import { PaywallModal } from '@/components/PaywallModal'
 import { IdentityModal } from '@/components/IdentityModal'
-import { SiteLocked } from '@/components/SiteLocked'
+import { MAINTENANCE_MODE } from '@/lib/maintenance'
+import { NO_FLASH_SCRIPT } from '@/lib/use-theme'
 import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({ subsets: ['latin'] })
-
-// Web cerrada al público: muestra la pantalla de bloqueo en lugar de la app.
-// Para reabrir, poner SITE_LOCKED en false.
-const SITE_LOCKED = false
 
 export const metadata: Metadata = {
   title: 'Porra Rier WC 2026',
@@ -31,28 +26,27 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
-      <body className={`${inter.className} bg-slate-100 min-h-screen`}>
-        {SITE_LOCKED ? (
-          <SiteLocked />
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <meta name="theme-color" content="#f1f5f9" />
+        <script dangerouslySetInnerHTML={{ __html: NO_FLASH_SCRIPT }} />
+      </head>
+      <body className={`${inter.className} bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-50  min-h-screen`}>
+        {MAINTENANCE_MODE ? (
+          <MaintenanceScreen />
         ) : (
-        <LiteProvider>
-          <PaywallProvider>
-            <IdentityProvider>
-              <SpoilerProvider>
-                <div className="max-w-md mx-auto bg-slate-100 min-h-screen flex flex-col">
-                  <AppHeader />
-                  <main className="flex-1 overflow-y-auto pb-20">
-                    {children}
-                  </main>
-                  <BottomNav />
-                </div>
-              </SpoilerProvider>
-              <PaywallModal />
-              <IdentityModal />
-            </IdentityProvider>
-          </PaywallProvider>
-        </LiteProvider>
+          <IdentityProvider>
+            <SpoilerProvider>
+              <div className="max-w-md mx-auto bg-slate-100 dark:bg-slate-950 min-h-screen flex flex-col">
+                <AppHeader />
+                <main className="flex-1 overflow-y-auto pb-20">
+                  {children}
+                </main>
+                <BottomNav />
+              </div>
+            </SpoilerProvider>
+            <IdentityModal />
+          </IdentityProvider>
         )}
         <Analytics />
       </body>

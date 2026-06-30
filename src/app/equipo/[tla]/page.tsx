@@ -10,8 +10,6 @@ import { TeamSquad } from '@/components/team/TeamSquad'
 import { TeamScorers } from '@/components/team/TeamScorers'
 import { TeamPorraSection } from '@/components/team/TeamPorraSection'
 import { TeamNews } from '@/components/team/TeamNews'
-import { PremiumGate } from '@/components/PremiumGate'
-import { useLite } from '@/contexts/LiteContext'
 import { TLA_TO_EXCEL_NAME } from '@/lib/team-map'
 import type { Match } from '@/lib/types'
 
@@ -21,42 +19,18 @@ export default function TeamPage({ params }: { params: Promise<{ tla: string }> 
   const router = useRouter()
   const [matches, setMatches] = useState<Match[]>([])
   const [loading, setLoading] = useState(true)
-  const { isPremium, ready: liteReady } = useLite()
 
   useEffect(() => {
-    if (!isPremium) { setLoading(false); return }
     fetch('/api/matches')
       .then(r => r.json())
       .then(d => { setMatches(d.matches ?? []); setLoading(false) })
       .catch(() => setLoading(false))
-  }, [isPremium])
-
-  if (liteReady && !isPremium) {
-    const tname = TLA_TO_EXCEL_NAME[tla] ?? tla
-    return (
-      <div className="p-3">
-        <button
-          onClick={() => router.back()}
-          className="text-[11px] text-slate-400 mb-2 flex items-center gap-1 hover:text-slate-700"
-        >
-          ← Volver
-        </button>
-        <PremiumGate
-          mode="replace"
-          feature="la página del equipo"
-          title={`🇺🇳 ${tname}`}
-          description="Plantilla oficial, último 11, calendario completo del equipo, goleadores propios, noticias y clasificación de su grupo"
-        >
-          <div />
-        </PremiumGate>
-      </div>
-    )
-  }
+  }, [])
 
   const teamName = TLA_TO_EXCEL_NAME[tla]
   if (!teamName) {
     return (
-      <div className="p-4 text-center text-sm text-slate-400">
+      <div className="p-4 text-center text-sm text-slate-400 dark:text-slate-500">
         Equipo no encontrado
       </div>
     )
@@ -81,7 +55,7 @@ export default function TeamPage({ params }: { params: Promise<{ tla: string }> 
     <div className="p-3 pb-4">
       <button
         onClick={() => router.back()}
-        className="text-[11px] text-slate-400 mb-2 flex items-center gap-1 hover:text-slate-700"
+        className="text-[11px] text-slate-400 dark:text-slate-500 mb-2 flex items-center gap-1 hover:text-slate-700 dark:text-slate-200"
       >
         ← Volver
       </button>
@@ -89,7 +63,7 @@ export default function TeamPage({ params }: { params: Promise<{ tla: string }> 
       <TeamHero tla={tla} group={groupKey} position={position} totalTeams={totalTeams} />
 
       {loading ? (
-        <div className="bg-white rounded-xl p-6 text-center text-sm text-slate-400 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-xl p-6 text-center text-sm text-slate-400 dark:text-slate-500 shadow-sm">
           Cargando datos…
         </div>
       ) : (

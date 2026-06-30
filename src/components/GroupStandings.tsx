@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { getFlagUrl } from '@/lib/team-map'
 import { IconFlagFallback } from '@/components/icons'
 import { Spoiler } from '@/components/Spoiler'
-import { PremiumGate } from '@/components/PremiumGate'
 import type { Match } from '@/lib/types'
 
 interface TeamRow {
@@ -67,16 +66,9 @@ export function GroupStandings({ matches, group, highlightTla }: GroupStandingsP
   const hasPlayed = rows.some(r => r.pj > 0)
 
   return (
-    <PremiumGate
-      mode="replace"
-      feature={`la clasificación del grupo ${group}`}
-      title={`📊 Grupo ${group}`}
-      description="Tabla en tiempo real con PJ · G · E · P · GF · GC · DG · Puntos"
-      compact
-    >
-    <div className="bg-white rounded-xl shadow-sm mb-3 overflow-hidden">
-      <div className="px-3 py-2 border-b border-slate-50">
-        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">
+    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm mb-3 overflow-hidden">
+      <div className="px-3 py-2 border-b border-slate-50 dark:border-slate-800">
+        <span className="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">
           Clasificación Grupo {group}
         </span>
       </div>
@@ -84,7 +76,6 @@ export function GroupStandings({ matches, group, highlightTla }: GroupStandingsP
         <_GroupTable rows={rows} highlightTla={highlightTla} />
       </Spoiler> : <_GroupTable rows={rows} highlightTla={highlightTla} />}
     </div>
-    </PremiumGate>
   )
 }
 
@@ -94,7 +85,7 @@ function _GroupTable({ rows, highlightTla }: TableProps) {
     <>
       <table className="w-full">
         <thead>
-          <tr className="text-[8px] font-bold text-slate-400 uppercase">
+          <tr className="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase">
             <th className="pl-3 py-1.5 text-left w-5">#</th>
             <th className="py-1.5 text-left">Equipo</th>
             <th className="py-1.5 text-center w-6">PJ</th>
@@ -111,9 +102,9 @@ function _GroupTable({ rows, highlightTla }: TableProps) {
             const isQualifying = i < 2
             const isHighlighted = row.tla === highlightTla
             return (
-              <tr key={row.tla} className={`border-t border-slate-50 ${isHighlighted ? 'bg-red-50' : isQualifying ? 'bg-green-50/50' : ''}`}>
+              <tr key={row.tla} className={`border-t border-slate-50 dark:border-slate-800 ${isHighlighted ? 'bg-red-50' : isQualifying ? 'bg-green-50/50' : ''}`}>
                 <td className="pl-3 py-2">
-                  <span className={`text-[10px] font-black ${isHighlighted ? 'text-[#c8102e]' : 'text-slate-400'}`}>{i + 1}</span>
+                  <span className={`text-[10px] font-black ${isHighlighted ? 'text-[#c8102e]' : 'text-slate-400 dark:text-slate-500'}`}>{i + 1}</span>
                 </td>
                 <td className="py-2">
                   <Link href={`/equipo/${row.tla}`} className="flex items-center gap-1.5">
@@ -121,14 +112,14 @@ function _GroupTable({ rows, highlightTla }: TableProps) {
                       ? <Image src={flagUrl} alt="" width={14} height={10} unoptimized className="rounded-sm shrink-0" />
                       : <IconFlagFallback width={14} height={10} />
                     }
-                    <span className={`text-[10px] font-semibold truncate ${isHighlighted ? 'text-[#c8102e]' : 'text-slate-800'}`}>{row.name}</span>
+                    <span className={`text-[10px] font-semibold truncate ${isHighlighted ? 'text-[#c8102e]' : 'text-slate-800 dark:text-slate-100'}`}>{row.name}</span>
                   </Link>
                 </td>
-                <td className="py-2 text-center text-[10px] text-slate-500">{row.pj}</td>
-                <td className="py-2 text-center text-[10px] text-slate-500">{row.w}</td>
-                <td className="py-2 text-center text-[10px] text-slate-500">{row.d}</td>
-                <td className="py-2 text-center text-[10px] text-slate-500">{row.l}</td>
-                <td className="py-2 text-center text-[10px] text-slate-500">
+                <td className="py-2 text-center text-[10px] text-slate-500 dark:text-slate-400 ">{row.pj}</td>
+                <td className="py-2 text-center text-[10px] text-slate-500 dark:text-slate-400 ">{row.w}</td>
+                <td className="py-2 text-center text-[10px] text-slate-500 dark:text-slate-400 ">{row.d}</td>
+                <td className="py-2 text-center text-[10px] text-slate-500 dark:text-slate-400 ">{row.l}</td>
+                <td className="py-2 text-center text-[10px] text-slate-500 dark:text-slate-400 ">
                   {row.gf - row.ga > 0 ? `+${row.gf - row.ga}` : row.gf - row.ga}
                 </td>
                 <td className="pr-3 py-2 text-center">

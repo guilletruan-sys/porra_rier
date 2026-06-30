@@ -33,24 +33,24 @@ export function TeamScorers({ tla }: TeamScorersProps) {
 
   return (
     <section className="mb-4">
-      <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">
+      <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
         Goleadores del equipo
       </h2>
-      <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm divide-y divide-slate-50 dark:divide-slate-800">
         {scorers.map((s, i) => (
           <Link
             key={s.player.id}
             href={`/jugador/${s.player.id}`}
-            className="flex items-center gap-3 px-3 py-2.5 hover:bg-slate-50 transition-colors"
+            className="flex items-center gap-3 px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-900 transition-colors"
           >
-            <span className="text-xs font-black text-slate-400 w-5 text-center">{i + 1}</span>
+            <span className="text-xs font-black text-slate-400 dark:text-slate-500 w-5 text-center">{i + 1}</span>
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-bold text-slate-800 truncate">{s.player.name}</p>
-              <p className="text-[10px] text-slate-400">{s.playedMatches} PJ · {s.assists ?? 0} asist.</p>
+              <p className="text-xs font-bold text-slate-800 dark:text-slate-100 truncate">{s.player.name}</p>
+              <p className="text-[10px] text-slate-400 dark:text-slate-500">{s.playedMatches} PJ · {s.assists ?? 0} asist.</p>
             </div>
             <div className="text-right">
               <span className="text-base font-black text-[#c8102e]">{s.goals}</span>
-              <span className="text-[9px] text-slate-400 block">goles</span>
+              <span className="text-[9px] text-slate-400 dark:text-slate-500 block">goles</span>
             </div>
           </Link>
         ))}

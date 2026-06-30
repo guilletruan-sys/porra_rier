@@ -25,6 +25,12 @@ export interface Score {
   winner: MatchResult
   fullTime: { home: number | null; away: number | null }
   halfTime: { home: number | null; away: number | null }
+  // Presentes en eliminatorias que van más allá del tiempo reglamentario.
+  // OJO: football-data mete los penaltis dentro de `fullTime` (p.ej. 1-1 + pen 3-4 → fullTime 4-5).
+  duration?: string  // 'REGULAR' | 'EXTRA_TIME' | 'PENALTY_SHOOTOUT'
+  regularTime?: { home: number | null; away: number | null }
+  extraTime?: { home: number | null; away: number | null }
+  penalties?: { home: number | null; away: number | null }
 }
 
 export interface Match {
@@ -110,19 +116,16 @@ export interface GroupPrediction {
 }
 
 export interface KnockoutPrediction {
-  advancingTeamTla: string   // TLA of team predicted to advance
+  slot: string               // official FIFA bracket slot ("2A-2B", "W73-W75", …)
+  homeTla: string            // TLA of the team this participant predicted on the home side
+  awayTla: string            // TLA of the team this participant predicted on the away side
+  advancingTeamTla: string   // TLA of the team predicted to advance from this matchup
   round: Stage               // which knockout round this prediction belongs to
 }
 
-export interface TopThree {
-  first: string              // 🥇 Oro  (3 pts si acierta)
-  second: string             // 🥈 Plata (2 pts si acierta)
-  third: string              // 🥉 Bronce (1 pt si acierta)
-}
-
 export interface SpecialPredictions {
-  goldenBoot: TopThree       // top scorer top-3 picks
-  goldenBall: TopThree       // best player top-3 picks
+  goldenBoot: string         // player name
+  goldenBall: string         // player name
   champion: string           // team TLA
   runnerUp: string           // team TLA
   thirdPlace: string         // team TLA
@@ -153,11 +156,27 @@ export interface ParticipantScore {
   groupStagePoints: number
   knockoutPoints: number
   specialsPoints: number
+  /**
+   * Puntos que YA se sabe que se van a sumar al cerrar la fase de grupos
+   * pero todavía no están consolidados (típicamente: r32_qualify cuando
+   * football-data ya publicó algunos TLAs en R32 pero aún quedan grupos).
+   * No se suman a totalPoints; existen sólo para mostrarlos como avance.
+   */
+  pendingKnockoutPoints?: number
+  /**
+   * Puntos de KO/especiales que el participante todavía tiene VIVOS (en juego):
+   * predicciones cuyo equipo sigue en el cuadro y aún no se han consolidado ni
+   * perdido. No se suman a totalPoints; sirven para mostrar cuánto puede cambiar.
+   */
+  inPlayKnockoutPoints?: number
   breakdown: MatchPoints[]
   previousRank?: number
 }
 
 export interface RankingEntry extends ParticipantScore {
   rank: number
-  rankDelta: number   // positive = moved up, negative = moved down
+  rankDelta: number     // positive = moved up, negative = moved down
+  pointsDelta: number   // points gained (positive) or lost (negative) by the latest scoring event
+  deltaStatus?: 'finished' | 'live'   // 'live' = delta is due to an in-play match (may revert); 'finished' = consolidated
+  tied?: boolean        // true when sharing rank with the previous entry after applying every official tiebreaker
 }

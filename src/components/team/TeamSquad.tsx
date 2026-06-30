@@ -38,17 +38,17 @@ export function TeamSquad({ tla }: TeamSquadProps) {
 
   return (
     <section className="mb-4">
-      <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center justify-between">
+      <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 flex items-center justify-between">
         <span>Plantilla</span>
-        <span className="text-[10px] font-bold text-slate-300">{team.players.length} jugadores</span>
+        <span className="text-[10px] font-bold text-slate-300 dark:text-slate-600">{team.players.length} jugadores</span>
       </h2>
-      <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50 overflow-hidden">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm divide-y divide-slate-50 dark:divide-slate-800 overflow-hidden">
         {POSITION_ORDER.filter(p => byPos.has(p)).map(pos => {
           const players = byPos.get(pos)!
           return (
             <div key={pos}>
-              <div className="px-3 py-1.5 bg-slate-50 border-b border-slate-100">
-                <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">
+              <div className="px-3 py-1.5 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+                <span className="text-[9px] font-black text-slate-500 dark:text-slate-400  uppercase tracking-widest">
                   {POSITION_LABEL[pos]} · {players.length}
                 </span>
               </div>
@@ -56,14 +56,14 @@ export function TeamSquad({ tla }: TeamSquadProps) {
                 <Link
                   href={`/jugador/${p.id}`}
                   key={`${p.id}-${p.name}`}
-                  className="flex items-center gap-3 px-3 py-2 hover:bg-slate-50 transition-colors"
+                  className="flex items-center gap-3 px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-900 transition-colors"
                 >
                   <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-[#c8102e]/10 text-[10px] font-black text-[#c8102e] shrink-0">
                     {p.number || '–'}
                   </span>
-                  <span className="text-[11px] font-bold text-slate-800 flex-1 truncate">{p.name}</span>
+                  <span className="text-[11px] font-bold text-slate-800 dark:text-slate-100 flex-1 truncate">{p.name}</span>
                   {p.age != null && (
-                    <span className="text-[10px] text-slate-400 shrink-0">{p.age}a</span>
+                    <span className="text-[10px] text-slate-400 dark:text-slate-500 shrink-0">{p.age}a</span>
                   )}
                 </Link>
               ))}

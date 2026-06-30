@@ -3,8 +3,6 @@ import { use, useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { PremiumGate } from '@/components/PremiumGate'
-import { useLite } from '@/contexts/LiteContext'
 import type { Match } from '@/lib/types'
 
 interface PersonCurrentTeam {
@@ -59,10 +57,8 @@ export default function PlayerPage({ params }: { params: Promise<{ id: string }>
   const [wiki, setWiki] = useState<WikiInfo | null>(null)
   const [stats, setStats] = useState<WcStats | null>(null)
   const [loading, setLoading] = useState(true)
-  const { isPremium, ready: liteReady } = useLite()
 
   useEffect(() => {
-    if (!isPremium) { setLoading(false); return }
     fetch(`/api/persons/${pid}`)
       .then(r => r.json())
       .then(d => setPerson(d.person ?? null))
@@ -120,31 +116,11 @@ export default function PlayerPage({ params }: { params: Promise<{ id: string }>
     return () => { cancelled = true }
   }, [person, pid])
 
-  if (liteReady && !isPremium) {
-    return (
-      <div className="p-3">
-        <button
-          onClick={() => router.back()}
-          className="text-[11px] text-slate-400 mb-2 flex items-center gap-1 hover:text-slate-700"
-        >
-          ← Volver
-        </button>
-        <PremiumGate
-          mode="replace"
-          feature="el perfil del jugador"
-          title="🧑 Ficha del jugador"
-          description="Foto, club actual, posición, edad y estadísticas del Mundial"
-        >
-          <div />
-        </PremiumGate>
-      </div>
-    )
-  }
   if (loading) {
-    return <div className="p-4 text-center text-sm text-slate-400">Cargando…</div>
+    return <div className="p-4 text-center text-sm text-slate-400 dark:text-slate-500">Cargando…</div>
   }
   if (!person) {
-    return <div className="p-4 text-center text-sm text-slate-400">Jugador no encontrado</div>
+    return <div className="p-4 text-center text-sm text-slate-400 dark:text-slate-500">Jugador no encontrado</div>
   }
 
   const age = ageFromDob(person.dateOfBirth)
@@ -153,14 +129,14 @@ export default function PlayerPage({ params }: { params: Promise<{ id: string }>
     <div className="p-3 pb-4">
       <button
         onClick={() => router.back()}
-        className="text-[11px] text-slate-400 mb-2 flex items-center gap-1 hover:text-slate-700"
+        className="text-[11px] text-slate-400 dark:text-slate-500 mb-2 flex items-center gap-1 hover:text-slate-700 dark:text-slate-200"
       >
         ← Volver
       </button>
 
       <div className="bg-gradient-to-br from-[#c8102e] to-[#006341] text-white px-4 py-5 -mx-3 mb-3">
         <div className="flex items-center gap-4">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl w-20 h-20 flex items-center justify-center shrink-0 overflow-hidden">
+          <div className="bg-white/10 dark:bg-slate-800/10 backdrop-blur-sm rounded-xl w-20 h-20 flex items-center justify-center shrink-0 overflow-hidden">
             {wiki?.thumbnail
               ? <img src={wiki.thumbnail} alt={person.name} className="w-full h-full object-cover" />
               : <span className="text-2xl font-black">{person.shirtNumber ?? '–'}</span>}
@@ -182,19 +158,19 @@ export default function PlayerPage({ params }: { params: Promise<{ id: string }>
       {/* Current club — prefer Wikipedia (real club) over football-data (returns the national team during WC) */}
       {(wiki?.club || person.currentTeam) && (
         <section className="mb-4">
-          <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">
+          <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
             Club actual
           </h2>
-          <div className="bg-white rounded-xl shadow-sm px-3 py-3 flex items-center gap-3">
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm px-3 py-3 flex items-center gap-3">
             {!wiki?.club && person.currentTeam?.crest && (
               <Image src={person.currentTeam.crest} alt="" width={36} height={36} unoptimized className="rounded shrink-0" />
             )}
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-bold text-slate-800 truncate">
+              <p className="text-sm font-bold text-slate-800 dark:text-slate-100 truncate">
                 {wiki?.club ?? person.currentTeam?.name}
               </p>
               {!wiki?.club && person.currentTeam?.area?.name && (
-                <p className="text-[10px] text-slate-400">{person.currentTeam.area.name}</p>
+                <p className="text-[10px] text-slate-400 dark:text-slate-500">{person.currentTeam.area.name}</p>
               )}
             </div>
           </div>
@@ -204,27 +180,27 @@ export default function PlayerPage({ params }: { params: Promise<{ id: string }>
       {/* WC stats */}
       {stats && (
         <section className="mb-4">
-          <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">
+          <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
             Mundial 2026
           </h2>
-          <div className="bg-white rounded-xl shadow-sm px-3 py-3 grid grid-cols-4 gap-2 mb-2">
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm px-3 py-3 grid grid-cols-4 gap-2 mb-2">
             <Stat label="PJ" value={stats.appearances} />
             <Stat label="Goles" value={stats.goals} highlight={stats.goals > 0} />
             <Stat label="Asist." value={stats.assists} />
             <Stat label="🟨" value={`${stats.yellow}${stats.red ? ` 🟥${stats.red}` : ''}`} />
           </div>
           {stats.matches.length > 0 && (
-            <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50 mt-2">
+            <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm divide-y divide-slate-50 dark:divide-slate-800 mt-2">
               {stats.matches.map(m => (
                 <Link
                   key={m.id}
                   href={`/equipo/${m.homeTeam.tla}`}
-                  className="flex items-center justify-between px-3 py-2 hover:bg-slate-50"
+                  className="flex items-center justify-between px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-900"
                 >
-                  <span className="text-[11px] font-semibold text-slate-700 truncate">
+                  <span className="text-[11px] font-semibold text-slate-700 dark:text-slate-200 truncate">
                     {m.homeTeam.shortName} – {m.awayTeam.shortName}
                   </span>
-                  <span className="text-[10px] text-slate-400">
+                  <span className="text-[10px] text-slate-400 dark:text-slate-500">
                     {m.score.fullTime.home ?? 0}-{m.score.fullTime.away ?? 0}
                   </span>
                 </Link>
@@ -240,8 +216,8 @@ export default function PlayerPage({ params }: { params: Promise<{ id: string }>
 function Stat({ label, value, highlight }: { label: string; value: string | number; highlight?: boolean }) {
   return (
     <div className="text-center">
-      <p className={`text-base font-black tabular-nums ${highlight ? 'text-[#c8102e]' : 'text-slate-800'}`}>{value}</p>
-      <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">{label}</p>
+      <p className={`text-base font-black tabular-nums ${highlight ? 'text-[#c8102e]' : 'text-slate-800 dark:text-slate-100'}`}>{value}</p>
+      <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-0.5">{label}</p>
     </div>
   )
 }

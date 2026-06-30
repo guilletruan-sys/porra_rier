@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { getFlagUrl, TLA_TO_EXCEL_NAME, getMatchKey } from '@/lib/team-map'
 import { IconFlagFallback } from '@/components/icons'
 import { PredictionGrid } from '@/components/PredictionGrid'
+import { MatchStakes } from '@/components/MatchStakes'
 import participants from '@/data/participants.json'
 import predictionsRaw from '@/data/predictions.json'
 import type { Match, PredictionsData, PickResult } from '@/lib/types'
@@ -53,6 +54,8 @@ export function MatchPreviewSheet({ match, onClose }: MatchPreviewSheetProps) {
   const stageLabel = STAGE_LABEL[stage] ?? stage
   const groupLabel = group ? ` · Grupo ${group.replace('GROUP_', '')}` : ''
 
+  const isKnockout = stage !== 'GROUP_STAGE'
+
   // Aggregate predicted scores for this match across participants
   const matchKey = getMatchKey(homeTeam.tla, awayTeam.tla)
   const picks: { name: string; pick: PickResult; home: number; away: number }[] = []
@@ -86,7 +89,7 @@ export function MatchPreviewSheet({ match, onClose }: MatchPreviewSheetProps) {
       onClick={onClose}
     >
       <div
-        className="bg-white w-full sm:max-w-md sm:max-h-[90vh] max-h-[90dvh] rounded-t-2xl sm:rounded-2xl shadow-2xl flex flex-col"
+        className="bg-white dark:bg-slate-900 w-full sm:max-w-md sm:max-h-[90vh] max-h-[90dvh] rounded-t-2xl sm:rounded-2xl shadow-2xl flex flex-col"
         onClick={e => e.stopPropagation()}
       >
         {/* Handle bar (mobile) */}
@@ -96,13 +99,13 @@ export function MatchPreviewSheet({ match, onClose }: MatchPreviewSheetProps) {
 
         {/* Header */}
         <div className="px-4 pt-3 pb-2 flex items-center justify-between shrink-0">
-          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+          <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">
             {stageLabel}{groupLabel}
           </p>
           <button
             onClick={onClose}
             aria-label="Cerrar"
-            className="text-slate-400 text-xl leading-none w-6 h-6 flex items-center justify-center hover:text-slate-700"
+            className="text-slate-400 dark:text-slate-500 text-xl leading-none w-6 h-6 flex items-center justify-center hover:text-slate-700 dark:text-slate-200"
           >
             ×
           </button>
@@ -114,11 +117,11 @@ export function MatchPreviewSheet({ match, onClose }: MatchPreviewSheetProps) {
             {homeFlag
               ? <Image src={homeFlag} alt="" width={48} height={34} unoptimized className="rounded-sm shadow-sm" />
               : <IconFlagFallback width={48} height={34} />}
-            <span className="text-xs font-bold text-slate-800 text-center">{homeName}</span>
+            <span className="text-xs font-bold text-slate-800 dark:text-slate-100 text-center">{homeName}</span>
           </div>
           <div className="flex flex-col items-center shrink-0 gap-1">
-            <span className="text-xl font-black text-slate-300">vs</span>
-            <span className="text-[10px] text-slate-400 px-2 py-0.5 bg-slate-100 rounded-full whitespace-nowrap">
+            <span className="text-xl font-black text-slate-300 dark:text-slate-600">vs</span>
+            <span className="text-[10px] text-slate-400 dark:text-slate-500 px-2 py-0.5 bg-slate-100 dark:bg-slate-950 rounded-full whitespace-nowrap">
               Por jugar
             </span>
           </div>
@@ -126,39 +129,46 @@ export function MatchPreviewSheet({ match, onClose }: MatchPreviewSheetProps) {
             {awayFlag
               ? <Image src={awayFlag} alt="" width={48} height={34} unoptimized className="rounded-sm shadow-sm" />
               : <IconFlagFallback width={48} height={34} />}
-            <span className="text-xs font-bold text-slate-800 text-center">{awayName}</span>
+            <span className="text-xs font-bold text-slate-800 dark:text-slate-100 text-center">{awayName}</span>
           </div>
         </div>
 
         {/* Scrollable middle */}
         <div className="flex-1 overflow-y-auto overscroll-contain">
           {/* Date */}
-          <div className="px-4 py-2 border-t border-slate-100">
-            <p className="text-[11px] text-slate-500 capitalize">{formatFullDate(utcDate)}</p>
+          <div className="px-4 py-2 border-t border-slate-100 dark:border-slate-800">
+            <p className="text-[11px] text-slate-500 dark:text-slate-400  capitalize">{formatFullDate(utcDate)}</p>
           </div>
+
+          {/* Eliminatorias: quién puntúa según el resultado */}
+          {isKnockout && (
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <MatchStakes match={match} />
+            </div>
+          )}
 
           {/* Aggregate predictions stats */}
           {totalPicks > 0 && (
-            <div className="px-4 py-3 border-t border-slate-100">
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
                 Lo que dice la porra
               </p>
               <div className="grid grid-cols-3 gap-2 mb-3">
                 <div className="text-center">
-                  <p className="text-base font-black text-slate-800">{totalPicks}</p>
-                  <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Predicciones</p>
+                  <p className="text-base font-black text-slate-800 dark:text-slate-100">{totalPicks}</p>
+                  <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Predicciones</p>
                 </div>
                 <div className="text-center">
                   <p className="text-base font-black text-[#c8102e]">{avgGoals}</p>
-                  <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Media goles</p>
+                  <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Media goles</p>
                 </div>
                 <div className="text-center">
                   {winningPick && (
                     <>
-                      <p className="text-base font-black text-slate-800">
+                      <p className="text-base font-black text-slate-800 dark:text-slate-100">
                         {winningPick[0] === 'home' ? '1' : winningPick[0] === 'draw' ? 'X' : '2'}
                       </p>
-                      <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Mayoría</p>
+                      <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Mayoría</p>
                     </>
                   )}
                 </div>
@@ -167,10 +177,10 @@ export function MatchPreviewSheet({ match, onClose }: MatchPreviewSheetProps) {
               {/* Most popular scores */}
               {topScores.length > 0 && (
                 <div>
-                  <p className="text-[10px] font-bold text-slate-500 mb-1">Marcadores más predichos</p>
+                  <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400  mb-1">Marcadores más predichos</p>
                   <div className="flex gap-2 flex-wrap">
                     {topScores.map(([score, count]) => (
-                      <span key={score} className="bg-slate-100 text-slate-700 text-[11px] font-bold px-2 py-1 rounded-lg">
+                      <span key={score} className="bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-200 text-[11px] font-bold px-2 py-1 rounded-lg">
                         {score} · {count} {count === 1 ? 'voto' : 'votos'}
                       </span>
                     ))}
@@ -182,8 +192,8 @@ export function MatchPreviewSheet({ match, onClose }: MatchPreviewSheetProps) {
 
           {/* Per-participant predictions (reuses 1X2 bar + grid) */}
           {totalPicks > 0 && (
-            <div className="px-4 py-3 border-t border-slate-100">
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
                 Predicciones de cada uno
               </p>
               <PredictionGrid match={match} predictions={predictions} participants={participants as string[]} />

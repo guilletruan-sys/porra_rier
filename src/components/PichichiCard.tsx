@@ -25,38 +25,38 @@ export function PichichiCard() {
 
   return (
     <section>
-      <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-1.5">
+      <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 flex items-center gap-1.5">
         <IconBall size={13} className="text-[#c8102e]" />
         Pichichi
       </h2>
       {loading ? (
-        <div className="bg-white rounded-xl p-4 text-center text-sm text-slate-400 shadow-sm">Cargando…</div>
+        <div className="bg-white dark:bg-slate-900 rounded-xl p-4 text-center text-sm text-slate-400 dark:text-slate-500 shadow-sm">Cargando…</div>
       ) : top.length === 0 ? (
-        <div className="bg-white rounded-xl p-4 text-center text-sm text-slate-400 shadow-sm">Sin goles todavía</div>
+        <div className="bg-white dark:bg-slate-900 rounded-xl p-4 text-center text-sm text-slate-400 dark:text-slate-500 shadow-sm">Sin goles todavía</div>
       ) : (
         <Spoiler blockMode label="Pichichi oculto · Toca para ver">
-        <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50">
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm divide-y divide-slate-50 dark:divide-slate-800">
           {top.map((s, i) => {
             const flagUrl = getFlagUrl(s.team.tla)
             return (
               <Link
                 key={s.player.id}
                 href={`/jugador/${s.player.id}`}
-                className="flex items-center gap-3 px-3 py-2.5 hover:bg-slate-50 transition-colors"
+                className="flex items-center gap-3 px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-900 transition-colors"
               >
                 <RankBadge rank={i + 1} />
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-bold text-slate-800 truncate">{s.player.name}</p>
+                  <p className="text-xs font-bold text-slate-800 dark:text-slate-100 truncate">{s.player.name}</p>
                   <div className="flex items-center gap-1.5 mt-0.5">
                     {flagUrl
                       ? <Image src={flagUrl} alt="" width={12} height={9} unoptimized className="rounded-sm" />
                       : <IconFlagFallback width={12} height={9} />}
-                    <span className="text-[10px] text-slate-500">{s.team.shortName}</span>
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 ">{s.team.shortName}</span>
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className={`text-lg font-black leading-none ${i === 0 ? 'text-[#c8102e]' : 'text-slate-700'}`}>{s.goals}</span>
-                  <span className="text-[9px] text-slate-400 block">goles</span>
+                  <span className={`text-lg font-black leading-none ${i === 0 ? 'text-[#c8102e]' : 'text-slate-700 dark:text-slate-200'}`}>{s.goals}</span>
+                  <span className="text-[9px] text-slate-400 dark:text-slate-500 block">goles</span>
                 </div>
               </Link>
             )

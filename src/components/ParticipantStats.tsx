@@ -100,10 +100,10 @@ export function ParticipantStats({ preds, matches }: ParticipantStatsProps) {
 
   return (
     <section>
-      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">Stats</p>
+      <p className="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">Stats</p>
 
       {/* Top row: hit % + breakdown */}
-      <div className="bg-white rounded-xl shadow-sm px-3 py-3 mb-2 grid grid-cols-4 gap-2 text-center">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm px-3 py-3 mb-2 grid grid-cols-4 gap-2 text-center">
         <Stat label="% acierto" value={`${hitPct}%`} highlight />
         <Stat label="Exactos" value={s.exact} colorClass="text-green-600" />
         <Stat label="Signo" value={s.result} colorClass="text-yellow-600" />
@@ -111,8 +111,8 @@ export function ParticipantStats({ preds, matches }: ParticipantStatsProps) {
       </div>
 
       {/* 1X2 tendency bar */}
-      <div className="bg-white rounded-xl shadow-sm px-3 py-3 mb-2">
-        <p className="text-[10px] font-bold text-slate-500 mb-2">Tu tendencia 1X2 (de {totalPicks} predicciones)</p>
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm px-3 py-3 mb-2">
+        <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400  mb-2">Tu tendencia 1X2 (de {totalPicks} predicciones)</p>
         {totalPicks > 0 && (
           <>
             <div className="flex gap-1 h-2 rounded-full overflow-hidden mb-2">
@@ -131,17 +131,17 @@ export function ParticipantStats({ preds, matches }: ParticipantStatsProps) {
 
       {/* Best day + streak */}
       <div className="grid grid-cols-2 gap-2">
-        <div className="bg-white rounded-xl shadow-sm px-3 py-3 text-center">
-          <p className="text-[9px] font-black text-slate-400 uppercase tracking-wider">Mejor día</p>
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm px-3 py-3 text-center">
+          <p className="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-wider">Mejor día</p>
           <p className="text-lg font-black text-[#c8102e] mt-1">+{s.bestDayPoints}</p>
-          {s.bestDayLabel && <p className="text-[10px] text-slate-500 truncate mt-0.5 capitalize">{s.bestDayLabel}</p>}
+          {s.bestDayLabel && <p className="text-[10px] text-slate-500 dark:text-slate-400  truncate mt-0.5 capitalize">{s.bestDayLabel}</p>}
         </div>
-        <div className="bg-white rounded-xl shadow-sm px-3 py-3 text-center">
-          <p className="text-[9px] font-black text-slate-400 uppercase tracking-wider">Racha actual</p>
-          <p className="text-lg font-black text-slate-800 mt-1">
-            {s.currentStreak} <span className="text-xs font-bold text-slate-400">seguidos</span>
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm px-3 py-3 text-center">
+          <p className="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-wider">Racha actual</p>
+          <p className="text-lg font-black text-slate-800 dark:text-slate-100 mt-1">
+            {s.currentStreak} <span className="text-xs font-bold text-slate-400 dark:text-slate-500">seguidos</span>
           </p>
-          <p className="text-[10px] text-slate-400 mt-0.5">
+          <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-0.5">
             {s.currentStreak === 0 ? 'sin puntos en el último' : 'partidos con puntos'}
           </p>
         </div>
@@ -158,8 +158,8 @@ function Stat({ label, value, highlight, colorClass }: {
 }) {
   return (
     <div>
-      <p className={`text-base font-black tabular-nums ${highlight ? 'text-[#c8102e]' : colorClass ?? 'text-slate-800'}`}>{value}</p>
-      <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">{label}</p>
+      <p className={`text-base font-black tabular-nums ${highlight ? 'text-[#c8102e]' : colorClass ?? 'text-slate-800 dark:text-slate-100'}`}>{value}</p>
+      <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-0.5">{label}</p>
     </div>
   )
 }

@@ -66,14 +66,14 @@ export function TeamStatsChips({ tla, matches }: TeamStatsChipsProps) {
 
   if (s.pj === 0 && avgAge == null) {
     return (
-      <div className="bg-white rounded-xl shadow-sm px-3 py-3 mb-3 text-center text-xs text-slate-400">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm px-3 py-3 mb-3 text-center text-xs text-slate-400 dark:text-slate-500">
         Sin partidos jugados todavía
       </div>
     )
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm px-3 py-3 mb-3">
+    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm px-3 py-3 mb-3">
       <div className="grid grid-cols-4 gap-2 mb-3">
         {s.pj > 0 ? (
           <>
@@ -92,15 +92,15 @@ export function TeamStatsChips({ tla, matches }: TeamStatsChipsProps) {
         )}
       </div>
       {s.pj > 0 && avgAge != null && (
-        <div className="text-center text-[10px] text-slate-400 mb-2">
-          Edad media de la plantilla: <span className="font-bold text-slate-600">{avgAge}</span> años
+        <div className="text-center text-[10px] text-slate-400 dark:text-slate-500 mb-2">
+          Edad media de la plantilla: <span className="font-bold text-slate-600 dark:text-slate-300 ">{avgAge}</span> años
         </div>
       )}
       <div>
-        <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Últimos 5</p>
+        <p className="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5">Últimos 5</p>
         <div className="flex gap-1">
           {s.formLast5.length === 0 ? (
-            <span className="text-[10px] text-slate-400">—</span>
+            <span className="text-[10px] text-slate-400 dark:text-slate-500">—</span>
           ) : (
             s.formLast5.map((r, i) => (
               <span key={i} className={`inline-flex items-center justify-center w-5 h-5 rounded text-[10px] font-black ${FORM_STYLES[r]}`}>
@@ -117,8 +117,8 @@ export function TeamStatsChips({ tla, matches }: TeamStatsChipsProps) {
 function Stat({ label, value, highlight }: { label: string; value: string | number; highlight?: boolean }) {
   return (
     <div className="text-center">
-      <p className={`text-sm font-black ${highlight ? 'text-[#c8102e]' : 'text-slate-800'} tabular-nums`}>{value}</p>
-      <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">{label}</p>
+      <p className={`text-sm font-black ${highlight ? 'text-[#c8102e]' : 'text-slate-800 dark:text-slate-100'} tabular-nums`}>{value}</p>
+      <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-0.5">{label}</p>
     </div>
   )
 }

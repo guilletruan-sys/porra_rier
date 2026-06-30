@@ -4,13 +4,14 @@ import type { Match, PredictionsData, PickResult } from '@/lib/types'
 import { getMatchKey } from '@/lib/team-map'
 import { scoreGroupMatch } from '@/lib/scoring'
 import { useSpoiler } from '@/contexts/SpoilerContext'
-import { useLite } from '@/contexts/LiteContext'
 import { Spoiler } from '@/components/Spoiler'
 
 interface PredictionGridProps {
   match: Match
   predictions: PredictionsData
   participants: string[]
+  /** Mapping participant name → current ranking position. Optional. */
+  ranks?: Record<string, number>
 }
 
 const PICK_LABEL: Record<PickResult, string> = { home: '1', draw: 'X', away: '2' }
@@ -25,15 +26,22 @@ const BAR_CLS: Record<PickResult, string> = {
   away: 'bg-violet-400',
 }
 
-export function PredictionGrid({ match, predictions, participants }: PredictionGridProps) {
+export function PredictionGrid({ match, predictions, participants, ranks }: PredictionGridProps) {
   const matchKey = getMatchKey(match.homeTeam.tla, match.awayTeam.tla)
   const { hidden } = useSpoiler()
-  const { isPremium } = useLite()
   const reallyFinished = match.status === 'FINISHED' || match.status === 'IN_PLAY'
-  // In lite mode, hide the score-derived coloring/points badges entirely
-  const isFinished = reallyFinished && !hidden && isPremium
+  const isFinished = reallyFinished && !hidden
 
-  const rows = participants.map(name => {
+  const sortedParticipants = ranks && Object.keys(ranks).length > 0
+    ? [...participants].sort((a, b) => {
+        const ra = ranks[a] ?? Infinity
+        const rb = ranks[b] ?? Infinity
+        if (ra !== rb) return ra - rb
+        return a.localeCompare(b)
+      })
+    : participants
+
+  const rows = sortedParticipants.map(name => {
     const pred = predictions[name]?.groupStage[matchKey]
     if (!pred) return { name, pick: null as PickResult | null, display: '—', points: 0, reason: 'pending' as const }
     const { points, reason } = scoreGroupMatch(pred, match)
@@ -45,11 +53,11 @@ export function PredictionGrid({ match, predictions, participants }: PredictionG
   const total = counts.home + counts.draw + counts.away
 
   const bgClass = (reason: string) => {
-    if (!isFinished) return 'bg-white'
+    if (!isFinished) return 'bg-white dark:bg-slate-900'
     if (reason === 'exact') return 'bg-green-50'
     if (reason === 'result') return 'bg-yellow-50'
     if (reason === 'miss') return 'bg-red-50'
-    return 'bg-white'
+    return 'bg-white dark:bg-slate-900'
   }
 
   const ptsBadge = (reason: string, points: number) => {
@@ -70,7 +78,7 @@ export function PredictionGrid({ match, predictions, participants }: PredictionG
     <div className="space-y-2">
       {/* 1X2 distribution bar */}
       {total > 0 && (
-        <div className="bg-white rounded-xl shadow-sm px-3 py-2.5 space-y-1.5">
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm px-3 py-2.5 space-y-1.5">
           <div className="flex gap-1 h-2 rounded-full overflow-hidden">
             {(['home', 'draw', 'away'] as PickResult[]).map(pick =>
               counts[pick] > 0 ? (
@@ -88,7 +96,7 @@ export function PredictionGrid({ match, predictions, participants }: PredictionG
                 <span className={`text-[9px] font-black px-1.5 py-0.5 rounded ${PICK_CLS[pick]}`}>
                   {PICK_LABEL[pick]}
                 </span>
-                <span className="text-[9px] font-semibold text-slate-500">{counts[pick]}</span>
+                <span className="text-[9px] font-semibold text-slate-500 dark:text-slate-400 ">{counts[pick]}</span>
               </div>
             ))}
           </div>
@@ -96,10 +104,17 @@ export function PredictionGrid({ match, predictions, participants }: PredictionG
       )}
 
       {/* Participant rows */}
-      <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50">
-        {rows.map(({ name, pick, display, points, reason }) => (
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm divide-y divide-slate-50 dark:divide-slate-800">
+        {rows.map(({ name, pick, display, points, reason }) => {
+          const rank = ranks?.[name]
+          return (
           <div key={name} className={`flex items-center gap-2 px-3 py-2.5 ${bgClass(reason)}`}>
-            <Link href={`/predicciones/${encodeURIComponent(name)}`} className="flex-1 text-xs font-semibold text-slate-700 underline decoration-dotted underline-offset-2">
+            {rank && (
+              <span className="text-[9px] font-black text-slate-400 dark:text-slate-500 tabular-nums w-5 text-right shrink-0">
+                {rank}º
+              </span>
+            )}
+            <Link href={`/predicciones/${encodeURIComponent(name)}`} className="flex-1 text-xs font-semibold text-slate-700 dark:text-slate-200 underline decoration-dotted underline-offset-2">
               {name}
             </Link>
             {pick && (
@@ -107,10 +122,11 @@ export function PredictionGrid({ match, predictions, participants }: PredictionG
                 {PICK_LABEL[pick]}
               </span>
             )}
-            <span className="text-xs font-bold text-slate-500">{display}</span>
+            <span className="text-xs font-bold text-slate-500 dark:text-slate-400 ">{display}</span>
             {ptsBadge(reason, points)}
           </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

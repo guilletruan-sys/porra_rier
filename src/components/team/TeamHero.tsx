@@ -35,7 +35,7 @@ export function TeamHero({ tla, group, position, totalTeams }: TeamHeroProps) {
   return (
     <div className="bg-gradient-to-br from-[#c8102e] to-[#006341] text-white px-4 py-5 -mx-3 mb-3">
       <div className="flex items-center gap-4">
-        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2 shrink-0">
+        <div className="bg-white/10 dark:bg-slate-800/10 backdrop-blur-sm rounded-xl p-2 shrink-0">
           {flagUrl
             ? <Image src={flagUrl} alt="" width={60} height={42} unoptimized className="rounded-sm shadow-lg" />
             : <IconFlagFallback width={60} height={42} className="rounded-sm" />}

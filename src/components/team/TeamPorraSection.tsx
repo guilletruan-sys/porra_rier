@@ -36,10 +36,9 @@ export function TeamPorraSection({ tla }: TeamPorraSectionProps) {
     if (p.specials.thirdPlace === tla) thirds.push(name)
 
     let predictedInR32 = false
-    for (const [key, pred] of Object.entries(p.knockout)) {
+    for (const pred of Object.values(p.knockout)) {
       if (pred.round === 'ROUND_OF_32') {
-        const [h, a] = key.split('_')
-        if (h === tla || a === tla) predictedInR32 = true
+        if (pred.homeTla === tla || pred.awayTla === tla) predictedInR32 = true
       }
       if (pred.advancingTeamTla === tla) {
         const round = pred.round
@@ -62,16 +61,16 @@ export function TeamPorraSection({ tla }: TeamPorraSectionProps) {
 
   return (
     <section className="mb-4">
-      <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">
+      <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
         La porra dice
       </h2>
-      <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50">
-        {champions.length > 0 && <Row label="🏆 Campeón" names={champions} highlight />}
-        {runnerUps.length > 0 && <Row label="🥈 Subcampeón" names={runnerUps} />}
-        {thirds.length > 0 && <Row label="🥉 3er puesto" names={thirds} />}
-        {r32Qualifiers.length > 0 && <Row label="Llega a Dieciseisavos" names={r32Qualifiers} />}
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm divide-y divide-slate-50 dark:divide-slate-800">
+        {champions.length > 0 && <Row label="🏆 Lo ven campeón" names={champions} highlight />}
+        {runnerUps.length > 0 && <Row label="🥈 Lo ven subcampeón" names={runnerUps} />}
+        {thirds.length > 0 && <Row label="🥉 Lo ven en 3er puesto" names={thirds} />}
+        {r32Qualifiers.length > 0 && <Row label="Lo ponen en Dieciseisavos" names={r32Qualifiers} />}
         {advancingRounds.map(r => (
-          <Row key={r} label={`Llega a ${REACHES_LABEL[r]}`} names={byRound[r]} />
+          <Row key={r} label={`Lo ven llegar a ${REACHES_LABEL[r]}`} names={byRound[r]} />
         ))}
       </div>
     </section>
@@ -82,12 +81,12 @@ function Row({ label, names, highlight }: { label: string; names: string[]; high
   return (
     <div className="px-3 py-2.5">
       <div className="flex items-center gap-2 mb-1">
-        <span className="text-[11px] font-bold text-slate-700 flex-1">{label}</span>
-        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${highlight ? 'bg-red-50 text-[#c8102e]' : 'bg-slate-100 text-slate-500'}`}>
+        <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200 flex-1">{label}</span>
+        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${highlight ? 'bg-red-50 text-[#c8102e]' : 'bg-slate-100 dark:bg-slate-950 text-slate-500 dark:text-slate-400 '}`}>
           {names.length}
         </span>
       </div>
-      <p className="text-[10px] text-slate-500">{[...names].sort().join(' · ')}</p>
+      <p className="text-[10px] text-slate-500 dark:text-slate-400 ">{[...names].sort().join(' · ')}</p>
     </div>
   )
 }

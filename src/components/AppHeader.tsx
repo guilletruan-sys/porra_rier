@@ -1,29 +1,38 @@
 'use client'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { useLite } from '@/contexts/LiteContext'
+import { useSpoiler } from '@/contexts/SpoilerContext'
+import { useTheme } from '@/lib/use-theme'
 import { useIdentity } from '@/contexts/IdentityContext'
-import { usePaywall } from '@/contexts/PaywallContext'
 
 interface AppHeaderProps {
   title?: string
   subtitle?: string
 }
 
-export function AppHeader({ title = 'Porra', subtitle }: AppHeaderProps) {
+export function AppHeader({ title = 'Porra Rier WC 2026', subtitle }: AppHeaderProps) {
+  const [isLive, setIsLive] = useState(false)
   const [refreshing, setRefreshing] = useState(false)
-  const { isPremium } = useLite()
+  const { hidden, toggle } = useSpoiler()
+  const { theme, toggle: toggleTheme } = useTheme()
   const { name, openPicker } = useIdentity()
-  const { showPaywall } = usePaywall()
-  const [showProMenu, setShowProMenu] = useState(false)
 
   useEffect(() => {
-    // Auto-close pro menu on outside click
-    if (!showProMenu) return
-    const onDoc = () => setShowProMenu(false)
-    document.addEventListener('click', onDoc)
-    return () => document.removeEventListener('click', onDoc)
-  }, [showProMenu])
+    const check = () =>
+      fetch('/api/matches', { cache: 'no-store' })
+        .then(r => r.json())
+        .then(d => {
+          const live = (d.matches ?? []).some(
+            (m: { status: string }) => m.status === 'IN_PLAY' || m.status === 'PAUSED'
+          )
+          setIsLive(live)
+        })
+        .catch(() => {})
+
+    check()
+    const interval = setInterval(check, 60_000)
+    return () => clearInterval(interval)
+  }, [])
 
   const handleRefresh = () => {
     setRefreshing(true)
@@ -32,45 +41,79 @@ export function AppHeader({ title = 'Porra', subtitle }: AppHeaderProps) {
 
   return (
     <header className="bg-gradient-to-r from-[#c8102e] to-[#006341] px-4 py-3 text-white">
-      <div className="flex items-center justify-between gap-2">
-        <div className="flex items-center gap-2 min-w-0">
-          <Image src="/icon.png" alt="Porra" width={28} height={28} className="rounded-sm" />
-          <h1 className="text-sm font-black tracking-tight truncate">{title}</h1>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Image src="/icon.png" alt="Porra Rier" width={28} height={28} className="rounded-sm" />
+          <h1 className="text-sm font-black tracking-tight">{title}</h1>
         </div>
-        <div className="flex items-center gap-1.5 shrink-0">
-          {/* Identity pill */}
+        <div className="flex items-center gap-2">
           <button
             onClick={openPicker}
-            className="text-[10px] font-bold text-white/90 bg-white/15 hover:bg-white/25 px-2 py-1 rounded-full max-w-[100px] truncate"
+            className="text-[10px] font-bold text-white/90 bg-white/15 hover:bg-white/25 px-2 py-1 rounded-full max-w-[110px] truncate"
             aria-label="Cambiar quién soy"
           >
             {name ? `Soy ${name}` : '¿Quién eres?'}
           </button>
-
-          {/* Pro CTA / status */}
-          {isPremium ? (
-            <span className="text-[9px] font-black bg-gradient-to-br from-amber-400 to-amber-600 text-white px-2 py-1 rounded-full uppercase tracking-wider shadow-sm">
-              PRO
-            </span>
-          ) : (
-            <button
-              onClick={(e) => { e.stopPropagation(); showPaywall() }}
-              className="text-[9px] font-black bg-gradient-to-br from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-white px-2 py-1 rounded-full uppercase tracking-wider shadow-sm active:scale-95 transition-all"
-              aria-label="Mejorar a Pro"
+          {isLive && (
+            <a
+              href="https://www.cope.es/programas/tiempo-de-juego"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Escuchar retransmisión en la COPE"
+              className="animate-pulse bg-green-600 hover:bg-green-700 text-white text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1"
             >
-              Mejorar a Pro
-            </button>
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3.24 6.15C2.51 6.43 2 7.17 2 8v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H8.3l8.26-3.34L15.88 1 3.24 6.15zM7 20c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm13-8h-2v-2h-2v2H4V8h16v4z"/>
+              </svg>
+              EN VIVO · COPE
+            </a>
           )}
-
+          <button
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}
+            title={theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}
+            className="p-1 rounded-full hover:bg-white/10 dark:hover:bg-slate-800/10 active:bg-white/20 dark:active:bg-slate-800/20 transition-colors text-white"
+          >
+            {theme === 'dark' ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            )}
+          </button>
+          <button
+            onClick={toggle}
+            aria-label={hidden ? 'Mostrar resultados' : 'Ocultar resultados'}
+            title={hidden ? 'Mostrar resultados' : 'Ocultar resultados'}
+            className={`p-1 rounded-full hover:bg-white/10 dark:hover:bg-slate-800/10 active:bg-white/20 dark:active:bg-slate-800/20 transition-colors ${hidden ? 'bg-white/20 dark:bg-slate-800/20' : ''}`}
+          >
+            {hidden ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 11 8 11 8a13.16 13.16 0 0 1-1.67 2.68" />
+                <path d="M6.61 6.61A13.526 13.526 0 0 0 1 12s4 8 11 8a9.74 9.74 0 0 0 5.39-1.61" />
+                <line x1="2" y1="2" x2="22" y2="22" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            )}
+          </button>
           <button
             onClick={handleRefresh}
             disabled={refreshing}
             aria-label="Actualizar"
-            className="p-1 rounded-full hover:bg-white/10 active:bg-white/20 transition-colors"
+            className="p-1 rounded-full hover:bg-white/10 dark:hover:bg-slate-800/10 active:bg-white/20 dark:active:bg-slate-800/20 transition-colors"
           >
             <svg
-              width="16"
-              height="16"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"

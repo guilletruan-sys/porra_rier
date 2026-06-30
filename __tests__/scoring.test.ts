@@ -69,17 +69,20 @@ const makeKnockoutMatch = (homeTla: string, awayTla: string, winnerTla: string, 
 })
 
 describe('knockout scoring via calculateParticipantScore', () => {
+  const mkKO = (slot: string, homeTla: string, awayTla: string, advancingTeamTla: string, round: Stage) =>
+    ({ slot, homeTla, awayTla, advancingTeamTla, round })
+
   const basePredictions = (knockout: PredictionsData['x']['knockout']): PredictionsData => ({
     'Tester': {
       groupStage: {},
       knockout,
-      specials: { goldenBoot: { first: '', second: '', third: '' }, goldenBall: { first: '', second: '', third: '' }, champion: '', runnerUp: '', thirdPlace: '' },
+      specials: { goldenBoot: '', goldenBall: '', champion: '', runnerUp: '', thirdPlace: '' },
     }
   })
 
   it('awards 3 pts when a predicted R32 team appears in the actual R32', () => {
     const predictions = basePredictions({
-      'MEX_RSA': { advancingTeamTla: 'MEX', round: 'ROUND_OF_32' },
+      's1': mkKO('s1', 'MEX', 'RSA', 'MEX', 'ROUND_OF_32'),
     })
     const match = makeKnockoutMatch('MEX', 'BRA', 'MEX', 'ROUND_OF_32')
     const score = calculateParticipantScore('Tester', predictions, [match])
@@ -89,9 +92,8 @@ describe('knockout scoring via calculateParticipantScore', () => {
 
   it('awards 3 pts for each team correctly predicted in R32 bracket (both teams in matchup)', () => {
     const predictions = basePredictions({
-      'MEX_RSA': { advancingTeamTla: 'MEX', round: 'ROUND_OF_32' },
+      's1': mkKO('s1', 'MEX', 'RSA', 'MEX', 'ROUND_OF_32'),
     })
-    // Real match: MEX vs RSA — both teams were in prediction → 3+3 = 6 pts for R32 qualify + 5 pts for MEX winning
     const match = makeKnockoutMatch('MEX', 'RSA', 'MEX', 'ROUND_OF_32')
     const score = calculateParticipantScore('Tester', predictions, [match])
     expect(score.knockoutPoints).toBe(11) // 3 (MEX qualify) + 3 (RSA qualify) + 5 (MEX advances)
@@ -99,7 +101,7 @@ describe('knockout scoring via calculateParticipantScore', () => {
 
   it('awards 0 pts when R32 team was not predicted in bracket', () => {
     const predictions = basePredictions({
-      'FRA_GER': { advancingTeamTla: 'FRA', round: 'ROUND_OF_32' },
+      's1': mkKO('s1', 'FRA', 'GER', 'FRA', 'ROUND_OF_32'),
     })
     const match = makeKnockoutMatch('MEX', 'BRA', 'MEX', 'ROUND_OF_32')
     const score = calculateParticipantScore('Tester', predictions, [match])
@@ -108,7 +110,7 @@ describe('knockout scoring via calculateParticipantScore', () => {
 
   it('awards 5 pts for correctly predicted R32 winner (advances to R16)', () => {
     const predictions = basePredictions({
-      'MEX_RSA': { advancingTeamTla: 'MEX', round: 'ROUND_OF_32' },
+      's1': mkKO('s1', 'MEX', 'RSA', 'MEX', 'ROUND_OF_32'),
     })
     const match = makeKnockoutMatch('MEX', 'BRA', 'MEX', 'ROUND_OF_32')
     const score = calculateParticipantScore('Tester', predictions, [match])
@@ -118,7 +120,7 @@ describe('knockout scoring via calculateParticipantScore', () => {
 
   it('awards 7 pts for correctly predicted R16 winner (advances to QF)', () => {
     const predictions = basePredictions({
-      'MEX_RSA': { advancingTeamTla: 'MEX', round: 'ROUND_OF_16' },
+      's1': mkKO('s1', 'MEX', 'RSA', 'MEX', 'ROUND_OF_16'),
     })
     const match = makeKnockoutMatch('MEX', 'BRA', 'MEX', 'ROUND_OF_16')
     const score = calculateParticipantScore('Tester', predictions, [match])
@@ -127,7 +129,7 @@ describe('knockout scoring via calculateParticipantScore', () => {
 
   it('awards 10 pts for correctly predicted QF winner (advances to SF)', () => {
     const predictions = basePredictions({
-      'MEX_RSA': { advancingTeamTla: 'MEX', round: 'QUARTER_FINALS' },
+      's1': mkKO('s1', 'MEX', 'RSA', 'MEX', 'QUARTER_FINALS'),
     })
     const match = makeKnockoutMatch('MEX', 'BRA', 'MEX', 'QUARTER_FINALS')
     const score = calculateParticipantScore('Tester', predictions, [match])
@@ -136,18 +138,16 @@ describe('knockout scoring via calculateParticipantScore', () => {
 
   it('awards 0 pts when predicted wrong R32 winner', () => {
     const predictions = basePredictions({
-      'MEX_RSA': { advancingTeamTla: 'RSA', round: 'ROUND_OF_32' },
+      's1': mkKO('s1', 'MEX', 'RSA', 'RSA', 'ROUND_OF_32'),
     })
-    // Real winner is MEX, not RSA
     const match = makeKnockoutMatch('MEX', 'RSA', 'MEX', 'ROUND_OF_32')
     const score = calculateParticipantScore('Tester', predictions, [match])
-    // Both MEX and RSA qualify → 6 pts, but advancing pick (RSA) was wrong → no 5 pts
     expect(score.knockoutPoints).toBe(6)
   })
 
   it('does not score FINAL or THIRD_PLACE matches (handled by specials)', () => {
     const predictions = basePredictions({
-      'MEX_RSA': { advancingTeamTla: 'MEX', round: 'FINAL' },
+      's1': mkKO('s1', 'MEX', 'RSA', 'MEX', 'FINAL'),
     })
     const finalMatch = makeKnockoutMatch('MEX', 'RSA', 'MEX', 'FINAL')
     const score = calculateParticipantScore('Tester', predictions, [finalMatch])
@@ -155,49 +155,32 @@ describe('knockout scoring via calculateParticipantScore', () => {
   })
 
   it('does not double-count R32 qualify pts for same team', () => {
-    // Participant has two R32 predictions featuring MEX (shouldn't give 3+3 for same team)
     const predictions = basePredictions({
-      'MEX_RSA': { advancingTeamTla: 'MEX', round: 'ROUND_OF_32' },
-      'MEX_BRA': { advancingTeamTla: 'MEX', round: 'ROUND_OF_32' },
+      's1': mkKO('s1', 'MEX', 'RSA', 'MEX', 'ROUND_OF_32'),
+      's2': mkKO('s2', 'MEX', 'BRA', 'MEX', 'ROUND_OF_32'),
     })
     const match = makeKnockoutMatch('MEX', 'RSA', 'MEX', 'ROUND_OF_32')
     const score = calculateParticipantScore('Tester', predictions, [match])
     const qualifyPts = score.breakdown.filter(b => b.reason === 'r32_qualify')
-    // MEX and RSA should each be credited once despite multiple predictions with MEX
     const mexCredits = qualifyPts.filter(b => b.matchKey.includes('MEX'))
     expect(mexCredits).toHaveLength(1)
   })
 })
 
-describe('scoreSpecials (3/2/1 top-3 for Bota/Balón)', () => {
+describe('scoreSpecials', () => {
   const specials = {
-    goldenBoot: { first: 'Mbappé', second: 'Kane', third: 'Cristiano' },
-    goldenBall: { first: 'Vinicius', second: 'Pedri', third: 'Yamal' },
+    goldenBoot: 'Mbappé',
+    goldenBall: 'Vinicius',
     champion: 'FRA',
     runnerUp: 'BRA',
     thirdPlace: 'ESP',
   }
 
-  it('gives 3 pts when Bota Oro hits the actual top scorer', () => {
-    expect(scoreSpecials(specials, { goldenBoot: { first: 'Mbappé' } })).toBe(3)
+  it('gives 5 pts for correct golden boot', () => {
+    expect(scoreSpecials(specials, { goldenBoot: 'Mbappé' })).toBe(5)
   })
-  it('gives 2 pts when Bota Plata hits the 2nd top scorer', () => {
-    expect(scoreSpecials(specials, { goldenBoot: { second: 'Kane' } })).toBe(2)
-  })
-  it('gives 1 pt when Bota Bronce hits the 3rd top scorer', () => {
-    expect(scoreSpecials(specials, { goldenBoot: { third: 'Cristiano' } })).toBe(1)
-  })
-  it('sums all three slots independently (max 6 per category)', () => {
-    expect(scoreSpecials(specials, {
-      goldenBoot: { first: 'Mbappé', second: 'Kane', third: 'Cristiano' },
-    })).toBe(6)
-  })
-  it('combines Bota + Balón + specials', () => {
-    expect(scoreSpecials(specials, {
-      goldenBoot: { first: 'Mbappé' },
-      goldenBall: { first: 'Vinicius' },
-      champion: 'FRA',
-    })).toBe(3 + 3 + 30)
+  it('gives 5 pts for correct golden ball', () => {
+    expect(scoreSpecials(specials, { goldenBall: 'Vinicius' })).toBe(5)
   })
   it('gives 30 pts for correct champion', () => {
     expect(scoreSpecials(specials, { champion: 'FRA' })).toBe(30)
@@ -208,11 +191,11 @@ describe('scoreSpecials (3/2/1 top-3 for Bota/Balón)', () => {
   it('gives 15 pts for correct 3rd place', () => {
     expect(scoreSpecials(specials, { thirdPlace: 'ESP' })).toBe(15)
   })
-  it('gives 0 pts when nothing matches', () => {
-    expect(scoreSpecials(specials, { champion: 'ARG', goldenBoot: { first: 'Messi' } })).toBe(0)
+  it('gives 0 pts for all wrong', () => {
+    expect(scoreSpecials(specials, { champion: 'ARG', goldenBoot: 'Messi' })).toBe(0)
   })
   it('is case-insensitive for player names', () => {
-    expect(scoreSpecials(specials, { goldenBoot: { first: 'MBAPPÉ' } })).toBe(3)
+    expect(scoreSpecials(specials, { goldenBoot: 'MBAPPÉ' })).toBe(5)
   })
 })
 
@@ -240,7 +223,7 @@ describe('calculateParticipantScore', () => {
           'MEX_RSA': { homeGoals: 2, awayGoals: 1, pick: 'home' },  // exact: 4 pts
         },
         knockout: {},
-        specials: { goldenBoot: { first: '', second: '', third: '' }, goldenBall: { first: '', second: '', third: '' }, champion: '', runnerUp: '', thirdPlace: '' },
+        specials: { goldenBoot: '', goldenBall: '', champion: '', runnerUp: '', thirdPlace: '' },
       }
     }
     const score = calculateParticipantScore('Tester', predictions, [finishedMatch])
@@ -258,7 +241,7 @@ describe('calculateParticipantScore', () => {
           'BRA_MAR': { homeGoals: 1, awayGoals: 0, pick: 'home' },
         },
         knockout: {},
-        specials: { goldenBoot: { first: '', second: '', third: '' }, goldenBall: { first: '', second: '', third: '' }, champion: '', runnerUp: '', thirdPlace: '' },
+        specials: { goldenBoot: '', goldenBall: '', champion: '', runnerUp: '', thirdPlace: '' },
       }
     }
     const score = calculateParticipantScore('Tester', predictions, [finishedMatch, scheduledMatch])

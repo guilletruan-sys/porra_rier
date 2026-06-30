@@ -37,8 +37,8 @@ export function RankingChart({ history, participants }: RankingChartProps) {
   const total = participants.length
 
   return (
-    <div className="bg-white rounded-xl shadow-sm p-3 mb-4">
-      <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-1.5">
+    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm p-3 mb-4">
+      <p className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-3 flex items-center gap-1.5">
         <IconTrending size={13} className="text-[#c8102e]" />
         Evolución de posiciones
       </p>
@@ -80,7 +80,7 @@ export function RankingChart({ history, participants }: RankingChartProps) {
       </ResponsiveContainer>
       <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2">
         {top4.map((name, i) => (
-          <span key={name} className="flex items-center gap-1 text-[9px] text-slate-500">
+          <span key={name} className="flex items-center gap-1 text-[9px] text-slate-500 dark:text-slate-400 ">
             <span
               className="inline-block w-3 h-0.5 rounded"
               style={{ backgroundColor: COLORS[i % COLORS.length] }}

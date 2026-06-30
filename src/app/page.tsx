@@ -1,14 +1,15 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { MatchCard } from '@/components/MatchCard'
+import { MatchCard, type MatchCardOdds } from '@/components/MatchCard'
+import { LiveRankingBanner, type LiveMatchSummary } from '@/components/LiveRankingBanner'
+import { getMatchKey } from '@/lib/team-map'
 import { PichichiCard } from '@/components/PichichiCard'
 import { ChampionsWidget } from '@/components/ChampionsWidget'
+import { PlayerPicksWidget } from '@/components/PlayerPicksWidget'
 import { LiveBanner } from '@/components/LiveBanner'
 import { NextMatchCountdown } from '@/components/NextMatchCountdown'
 import { BestPredictionDaily } from '@/components/BestPredictionDaily'
-import { PremiumGate } from '@/components/PremiumGate'
-import { useLite } from '@/contexts/LiteContext'
 import { IconBall, IconTrophy, RankBadge } from '@/components/icons'
 import type { Match, RankingEntry } from '@/lib/types'
 
@@ -34,10 +35,11 @@ function dayLabel(key: string): string {
 export default function HomePage() {
   const [allMatches, setAllMatches] = useState<Match[]>([])
   const [ranking, setRanking] = useState<RankingEntry[]>([])
+  const [liveMatches, setLiveMatches] = useState<LiveMatchSummary[]>([])
+  const [odds, setOdds] = useState<Record<string, MatchCardOdds>>({})
   const [loading, setLoading] = useState(true)
   const containerRef = useRef<HTMLDivElement | null>(null)
   const todayRef = useRef<HTMLDivElement | null>(null)
-  const { isPremium, ready: liteReady } = useLite()
 
   useEffect(() => {
     let cancelled = false
@@ -51,8 +53,9 @@ export default function HomePage() {
         )
         setAllMatches(sorted)
         if (initial) setLoading(false)
+        // Poll every 30s only while there's a live match
         const hasLive = sorted.some((m: Match) => m.status === 'IN_PLAY' || m.status === 'PAUSED')
-        if (hasLive && !interval && isPremium) {
+        if (hasLive && !interval) {
           interval = setInterval(() => loadMatches(false), 10_000)
         } else if (!hasLive && interval) {
           clearInterval(interval); interval = null
@@ -61,8 +64,13 @@ export default function HomePage() {
 
     Promise.all([
       loadMatches(true),
-      fetch('/api/ranking').then(r => r.json()).catch(() => ({ ranking: [] })).then(d => {
-        if (!cancelled) setRanking(d.ranking ?? [])
+      fetch('/api/ranking', { cache: 'no-store' }).then(r => r.json()).catch(() => ({ ranking: [] })).then(d => {
+        if (cancelled) return
+        setRanking(d.ranking ?? [])
+        setLiveMatches(d.liveMatches ?? [])
+      }),
+      fetch('/api/odds').then(r => r.json()).catch(() => ({ odds: {} })).then(d => {
+        if (!cancelled) setOdds(d.odds ?? {})
       }),
     ])
 
@@ -70,7 +78,7 @@ export default function HomePage() {
       cancelled = true
       if (interval) clearInterval(interval)
     }
-  }, [isPremium])
+  }, [])
 
   useEffect(() => {
     if (containerRef.current && todayRef.current) {
@@ -87,157 +95,123 @@ export default function HomePage() {
   }
   const days = [...matchesByDay.keys()]
 
+  // Pick the anchor day: today if present, otherwise the first future day, otherwise the last
   let anchorDay = today
   if (!matchesByDay.has(today)) {
     anchorDay = days.find(d => d >= today) ?? days[days.length - 1] ?? today
   }
 
-  // In lite mode, only show TODAY in the calendar (or first future day if today empty)
-  const liteCalendarDays = liteReady && !isPremium
-    ? days.filter(d => d === anchorDay).slice(0, 1)
-    : days
-
   const top5 = ranking.slice(0, 5)
-  const liteRanking = liteReady && !isPremium ? top5.slice(0, 3) : top5
 
   return (
     <div className="p-3 space-y-4">
 
-      {/* Live banner — Pro only */}
-      <PremiumGate
-        mode="replace"
-        feature="el banner en directo"
-        title="🔴 En directo"
-        description="Marcador, minuto y enlace a la COPE durante los partidos"
-        compact
-      >
-        <LiveBanner matches={allMatches} />
-      </PremiumGate>
+      {/* Live banner — only when there's an in-play match */}
+      <LiveBanner matches={allMatches} />
 
-      {/* Countdown to next match — free */}
+      {/* Countdown to next match — only when no live match */}
       <NextMatchCountdown matches={allMatches} />
 
       {/* Calendar */}
       <section>
-        <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-1.5">
+        <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 flex items-center gap-1.5">
           <IconBall size={13} className="text-[#c8102e]" />
-          {isPremium ? 'Calendario' : 'Partidos de hoy'}
+          Calendario
         </h2>
         {loading ? (
-          <div className="bg-white rounded-xl p-4 text-center text-sm text-slate-400 shadow-sm">Cargando…</div>
+          <div className="bg-white dark:bg-slate-900 rounded-xl p-4 text-center text-sm text-slate-400 dark:text-slate-500 shadow-sm">Cargando…</div>
         ) : days.length === 0 ? (
-          <div className="bg-white rounded-xl p-4 text-center text-sm text-slate-400 shadow-sm">
+          <div className="bg-white dark:bg-slate-900 rounded-xl p-4 text-center text-sm text-slate-400 dark:text-slate-500 shadow-sm">
             Sin partidos
           </div>
         ) : (
-          <>
-            <div
-              ref={containerRef}
-              className={`bg-white rounded-xl shadow-sm p-2 space-y-3 ${isPremium ? 'max-h-[60vh] overflow-y-auto' : ''}`}
-            >
-              {liteCalendarDays.map(d => (
-                <div key={d} ref={d === anchorDay ? todayRef : null}>
-                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest px-1 py-1 sticky top-0 bg-white capitalize">
-                    {dayLabel(d)}
-                  </p>
-                  <div className="space-y-2">
-                    {matchesByDay.get(d)!.map(m => <MatchCard key={m.id} match={m} />)}
-                  </div>
+          <div
+            ref={containerRef}
+            className="max-h-[40vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-xl shadow-sm p-2 space-y-3"
+          >
+            {days.map(d => (
+              <div key={d} ref={d === anchorDay ? todayRef : null}>
+                <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-1 py-1 sticky top-0 bg-white dark:bg-slate-900 capitalize">
+                  {dayLabel(d)}
+                </p>
+                <div className="space-y-2">
+                  {matchesByDay.get(d)!.map(m => (
+                    <MatchCard
+                      key={m.id}
+                      match={m}
+                      odds={m.homeTeam?.tla && m.awayTeam?.tla
+                        ? odds[getMatchKey(m.homeTeam.tla, m.awayTeam.tla)]
+                        : undefined}
+                    />
+                  ))}
                 </div>
-              ))}
-            </div>
-            {!isPremium && liteReady && days.length > liteCalendarDays.length && (
-              <div className="mt-2">
-                <PremiumGate
-                  mode="replace"
-                  feature="el calendario completo"
-                  title="Calendario completo"
-                  description={`${days.length - liteCalendarDays.length} días más con todos los partidos del Mundial`}
-                  compact
-                >
-                  <div />
-                </PremiumGate>
               </div>
-            )}
-          </>
+            ))}
+          </div>
         )}
       </section>
 
-      {/* Best prediction — Pro */}
-      <PremiumGate
-        mode="replace"
-        feature="la mejor predicción del último partido"
-        title="🏆 Mejor predicción del día"
-        description="Quién ha clavado el último partido jugado"
-        compact
-      >
-        <BestPredictionDaily matches={allMatches} />
-      </PremiumGate>
+      {/* Best prediction of the last finished match */}
+      <BestPredictionDaily matches={allMatches} />
 
       {/* Mini ranking */}
       <section>
         <div className="flex items-center justify-between mb-2">
-          <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
+          <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
             <IconTrophy size={13} className="text-[#c8102e]" />
             Clasificación
           </h2>
           <Link href="/ranking" className="text-[10px] font-bold text-[#c8102e]">Ver todo →</Link>
         </div>
+        <LiveRankingBanner matches={liveMatches} compact />
         {loading ? null : top5.length === 0 ? (
-          <div className="bg-white rounded-xl p-4 text-center text-sm text-slate-400 shadow-sm">Sin datos</div>
+          <div className="bg-white dark:bg-slate-900 rounded-xl p-4 text-center text-sm text-slate-400 dark:text-slate-500 shadow-sm">Sin datos</div>
         ) : (
-          <>
-            <div className="bg-white rounded-xl shadow-sm divide-y divide-slate-50">
-              {liteRanking.map((entry) => (
-                <div key={entry.name} className="flex items-center gap-2 px-3 py-2.5">
-                  <div className="w-6 flex justify-center shrink-0">
-                    <RankBadge rank={entry.rank} />
-                  </div>
-                  <span className="flex-1 text-xs font-semibold text-slate-800">{entry.name}</span>
-                  <span className={`text-xs font-bold ${entry.rank === 1 ? 'text-[#c8102e]' : 'text-slate-500'}`}>
-                    {entry.totalPoints} pts
-                  </span>
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm divide-y divide-slate-50 dark:divide-slate-800">
+            {top5.map((entry) => (
+              <div key={entry.name} className="flex items-center gap-2 px-3 py-2.5">
+                <div className="w-6 flex justify-center shrink-0">
+                  <RankBadge rank={entry.rank} />
                 </div>
-              ))}
-            </div>
-            {!isPremium && liteReady && top5.length > liteRanking.length && (
-              <div className="mt-2">
-                <PremiumGate
-                  mode="replace"
-                  feature="el ranking completo"
-                  title="Ranking completo"
-                  description={`${ranking.length - liteRanking.length} participantes más por debajo del podio`}
-                  compact
-                >
-                  <div />
-                </PremiumGate>
+                <span className="flex-1 text-xs font-semibold text-slate-800 dark:text-slate-100">{entry.name}</span>
+                {(entry.rankDelta !== 0 || entry.pointsDelta !== 0) && (
+                  <span
+                    className={`flex items-center gap-0.5 text-[9px] font-bold ${
+                      entry.deltaStatus === 'live'
+                        ? 'text-orange-500 animate-pulse'
+                        : (entry.rankDelta > 0 || entry.pointsDelta > 0)
+                          ? 'text-green-500'
+                          : 'text-red-400'
+                    }`}
+                  >
+                    {entry.rankDelta !== 0 && (
+                      <span>{entry.rankDelta > 0 ? `↑${entry.rankDelta}` : `↓${Math.abs(entry.rankDelta)}`}</span>
+                    )}
+                    {entry.pointsDelta !== 0 && (
+                      <span>{entry.pointsDelta > 0 ? `+${entry.pointsDelta}` : `${entry.pointsDelta}`}</span>
+                    )}
+                  </span>
+                )}
+                <span className={`text-xs font-bold ${entry.rank === 1 ? 'text-[#c8102e]' : 'text-slate-500 dark:text-slate-400 '}`}>
+                  {entry.totalPoints} pts
+                </span>
               </div>
-            )}
-          </>
+            ))}
+          </div>
         )}
       </section>
 
-      {/* Pichichi — Pro */}
-      <PremiumGate
-        mode="replace"
-        feature="la card del Pichichi"
-        title="⚽ Pichichi"
-        description="El máximo goleador del Mundial en tiempo real"
-        compact
-      >
-        <PichichiCard />
-      </PremiumGate>
+      {/* Pichichi */}
+      <PichichiCard />
 
-      {/* Champions — Pro */}
-      <PremiumGate
-        mode="replace"
-        feature="el widget de campeones"
-        title="🏆 ¿Quién será campeón?"
-        description="Resumen de a qué equipo apostó cada participante"
-        compact
-      >
-        <ChampionsWidget />
-      </PremiumGate>
+      {/* Champions */}
+      <ChampionsWidget />
+
+      {/* Pichichi picks (Golden Boot) */}
+      <PlayerPicksWidget kind="goldenBoot" icon="⚽" title="¿Quién será el Pichichi?" />
+
+      {/* Golden Ball picks */}
+      <PlayerPicksWidget kind="goldenBall" icon="🥇" title="¿Quién será el Balón de Oro?" />
 
     </div>
   )

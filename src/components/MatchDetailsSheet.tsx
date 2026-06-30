@@ -1,15 +1,26 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Image from 'next/image'
-import { getFlagUrl, TLA_TO_EXCEL_NAME } from '@/lib/team-map'
+import { getFlagUrl, getMatchKey, TLA_TO_EXCEL_NAME } from '@/lib/team-map'
 import { IconFlagFallback } from '@/components/icons'
 import { MatchLineupPitch } from '@/components/MatchLineupPitch'
-import type { Match, MatchDetails, MatchGoal, MatchBooking, MatchSubstitution } from '@/lib/types'
+import { PredictionGrid } from '@/components/PredictionGrid'
+import { LiveStakesGrid } from '@/components/LiveStakesGrid'
+import { ScoreText } from '@/components/ScoreText'
+import { displayScore } from '@/lib/score-format'
+import { useParticipantRanks } from '@/lib/use-participant-ranks'
+import participantsList from '@/data/participants.json'
+import predictionsRaw from '@/data/predictions.json'
+import type { Match, MatchDetails, MatchGoal, MatchBooking, MatchSubstitution, PredictionsData } from '@/lib/types'
+
+const predictions = predictionsRaw as PredictionsData
 
 interface MatchDetailsSheetProps {
   match: Match
   onClose: () => void
 }
+
+interface DecimalOddsLike { home: number; draw: number; away: number }
 
 const STAGE_LABEL: Record<string, string> = {
   GROUP_STAGE: 'Fase de grupos',
@@ -53,6 +64,15 @@ function buildTimeline(details: MatchDetails): TimelineEvent[] {
 export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
   const [details, setDetails] = useState<MatchDetails | null>(null)
   const [loading, setLoading] = useState(true)
+  const [odds, setOdds] = useState<DecimalOddsLike | null>(null)
+  const ranks = useParticipantRanks()
+  // El status puede cambiar en vivo: usamos la versión más reciente del detalle si está disponible.
+  const liveStatus = details?.status ?? match.status
+  const liveScore = details?.score ?? match.score
+  const liveMinute = details?.minute ?? match.minute ?? null
+  const liveInjury = details?.injuryTime ?? match.injuryTime ?? null
+
+  const isLive = liveStatus === 'IN_PLAY' || liveStatus === 'PAUSED'
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
@@ -65,13 +85,44 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
   }, [onClose])
 
   useEffect(() => {
-    fetch(`/api/match/${match.id}`)
+    if (!match.homeTeam?.tla || !match.awayTeam?.tla) return
+    const k = getMatchKey(match.homeTeam.tla, match.awayTeam.tla)
+    let cancelled = false
+    fetch('/api/odds')
       .then(r => r.json())
-      .then(d => { setDetails(d.match ?? null); setLoading(false) })
-      .catch(() => setLoading(false))
+      .then(d => {
+        if (cancelled) return
+        const found = d?.odds?.[k]
+        if (found && typeof found.home === 'number') setOdds(found)
+      })
+      .catch(() => { /* sin cuotas, no rompe nada */ })
+    return () => { cancelled = true }
+  }, [match.homeTeam?.tla, match.awayTeam?.tla])
+
+  useEffect(() => {
+    let cancelled = false
+    let interval: ReturnType<typeof setInterval> | null = null
+    const load = (initial: boolean) =>
+      fetch(`/api/match/${match.id}`)
+        .then(r => r.json())
+        .then(d => {
+          if (cancelled) return
+          const next = (d.match ?? null) as MatchDetails | null
+          setDetails(next)
+          if (initial) setLoading(false)
+          const nowLive = next?.status === 'IN_PLAY' || next?.status === 'PAUSED'
+          if (nowLive && !interval) interval = setInterval(() => load(false), 15_000)
+          else if (!nowLive && interval) { clearInterval(interval); interval = null }
+        })
+        .catch(() => { if (initial) setLoading(false) })
+    load(true)
+    return () => {
+      cancelled = true
+      if (interval) clearInterval(interval)
+    }
   }, [match.id])
 
-  const { homeTeam, awayTeam, score, utcDate, stage, group } = match
+  const { homeTeam, awayTeam, utcDate, stage, group } = match
   const homeFlag = getFlagUrl(homeTeam.tla)
   const awayFlag = getFlagUrl(awayTeam.tla)
   const homeName = TLA_TO_EXCEL_NAME[homeTeam.tla] ?? homeTeam.shortName
@@ -82,7 +133,8 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
   const ytQuery = encodeURIComponent(`resumen ${homeName} ${awayName} mundial 2026`)
   const ytUrl = `https://www.youtube.com/results?search_query=${ytQuery}`
 
-  const timeline = details ? buildTimeline(details) : []
+  const timelineAsc = useMemo(() => details ? buildTimeline(details) : [], [details])
+  const timeline = isLive ? [...timelineAsc].reverse() : timelineAsc
   const hasEvents = timeline.length > 0
 
   return (
@@ -91,7 +143,7 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
       onClick={onClose}
     >
       <div
-        className="bg-white w-full sm:max-w-md sm:max-h-[90vh] max-h-[90dvh] rounded-t-2xl sm:rounded-2xl shadow-2xl flex flex-col"
+        className="bg-white dark:bg-slate-900 w-full sm:max-w-md sm:max-h-[90vh] max-h-[90dvh] rounded-t-2xl sm:rounded-2xl shadow-2xl flex flex-col"
         onClick={e => e.stopPropagation()}
       >
         {/* Handle bar (mobile) */}
@@ -101,13 +153,13 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
 
         {/* Header */}
         <div className="px-4 pt-3 pb-2 flex items-center justify-between shrink-0">
-          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+          <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">
             {stageLabel}{groupLabel}
           </p>
           <button
             onClick={onClose}
             aria-label="Cerrar"
-            className="text-slate-400 text-xl leading-none w-6 h-6 flex items-center justify-center hover:text-slate-700"
+            className="text-slate-400 dark:text-slate-500 text-xl leading-none w-6 h-6 flex items-center justify-center hover:text-slate-700 dark:text-slate-200"
           >
             ×
           </button>
@@ -119,15 +171,24 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
             {homeFlag
               ? <Image src={homeFlag} alt="" width={48} height={34} unoptimized className="rounded-sm shadow-sm" />
               : <IconFlagFallback width={48} height={34} />}
-            <span className="text-xs font-bold text-slate-800 text-center">{homeName}</span>
+            <span className="text-xs font-bold text-slate-800 dark:text-slate-100 text-center">{homeName}</span>
           </div>
           <div className="flex flex-col items-center shrink-0">
-            <span className="text-3xl font-black text-slate-800 tabular-nums">
-              {score.fullTime.home ?? 0} – {score.fullTime.away ?? 0}
+            <span className="text-3xl font-black text-slate-800 dark:text-slate-100 tabular-nums">
+              <ScoreText score={liveScore} />
             </span>
-            {(score.halfTime.home != null || score.halfTime.away != null) && (
-              <span className="text-[10px] text-slate-400 mt-1">
-                Descanso: {score.halfTime.home ?? 0}–{score.halfTime.away ?? 0}
+            <LiveStatusBadge status={liveStatus} minute={liveMinute} injuryTime={liveInjury} />
+            {(() => {
+              const pens = displayScore(liveScore).pens
+              return pens ? (
+                <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 mt-1">
+                  Penaltis: {pens.home}–{pens.away}
+                </span>
+              ) : null
+            })()}
+            {(liveScore.halfTime.home != null || liveScore.halfTime.away != null) && (
+              <span className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
+                Descanso: {liveScore.halfTime.home ?? 0}–{liveScore.halfTime.away ?? 0}
               </span>
             )}
           </div>
@@ -135,16 +196,67 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
             {awayFlag
               ? <Image src={awayFlag} alt="" width={48} height={34} unoptimized className="rounded-sm shadow-sm" />
               : <IconFlagFallback width={48} height={34} />}
-            <span className="text-xs font-bold text-slate-800 text-center">{awayName}</span>
+            <span className="text-xs font-bold text-slate-800 dark:text-slate-100 text-center">{awayName}</span>
           </div>
         </div>
 
-        {/* Scrollable middle: meta + timeline */}
+        {/* Scrollable middle */}
         <div className="flex-1 overflow-y-auto overscroll-contain">
-          <div className="px-4 py-2 border-t border-slate-100 space-y-0.5">
-            <p className="text-[11px] text-slate-500 capitalize">{formatFullDate(utcDate)}</p>
+          {/* Cuotas pre-partido */}
+          {odds && (
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
+                Cuotas pre-partido
+              </p>
+              <MatchOddsRow odds={odds} />
+            </div>
+          )}
+
+          {/* Estadísticas derivadas (sólo cuando hay eventos: live o finalizado con eventos) */}
+          {details && hasEvents && (
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
+                Estadísticas
+              </p>
+              <LiveMatchSummary details={details} homeTeamId={homeTeam.id} awayTeamId={awayTeam.id} />
+            </div>
+          )}
+
+          {/* En juego ahora — puntos que sumaría cada participante si el partido acabase con el marcador actual */}
+          {isLive && (
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-[10px] font-black text-[#c8102e] uppercase tracking-widest mb-2 flex items-center gap-1">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#c8102e] animate-pulse" />
+                En juego ahora
+              </p>
+              <LiveStakesGrid
+                match={{ ...match, status: liveStatus, score: liveScore }}
+                predictions={predictions}
+                participants={participantsList as string[]}
+                ranks={ranks}
+              />
+            </div>
+          )}
+
+          {/* Apuestas de cada participante (sólo fase de grupos — los KO se predicen por slot) */}
+          {match.stage === 'GROUP_STAGE' && (
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
+                Predicciones de la porra
+              </p>
+              <PredictionGrid
+                match={match}
+                predictions={predictions}
+                participants={participantsList as string[]}
+                ranks={ranks}
+              />
+            </div>
+          )}
+
+          <div className="px-4 py-2 border-t border-slate-100 dark:border-slate-800 space-y-0.5">
+            <p className="text-[11px] text-slate-500 dark:text-slate-400  capitalize">{formatFullDate(utcDate)}</p>
             {details?.venue && (
-              <p className="text-[10px] text-slate-400">
+              <p className="text-[10px] text-slate-400 dark:text-slate-500">
                 🏟 {details.venue}
                 {details.attendance ? ` · ${details.attendance.toLocaleString('es-ES')} espectadores` : ''}
               </p>
@@ -152,20 +264,20 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
             {details?.referees && details.referees.length > 0 && (() => {
               const main = details.referees.find(r => r.type === 'REFEREE')
               return main ? (
-                <p className="text-[10px] text-slate-400">🟨 Árbitro: {main.name} ({main.nationality})</p>
+                <p className="text-[10px] text-slate-400 dark:text-slate-500">🟨 Árbitro: {main.name} ({main.nationality})</p>
               ) : null
             })()}
           </div>
 
           {loading && (
-            <div className="px-4 py-3 border-t border-slate-100">
-              <p className="text-xs text-slate-400 text-center">Cargando eventos…</p>
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-xs text-slate-400 dark:text-slate-500 text-center">Cargando eventos…</p>
             </div>
           )}
           {!loading && hasEvents && (
-            <div className="px-4 py-3 border-t border-slate-100">
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">
-                Resumen del partido
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
+                {isLive ? 'En directo' : 'Resumen del partido'}
               </p>
               <ul className="space-y-1.5">
                 {timeline.map((ev, i) => (
@@ -181,8 +293,8 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
             </div>
           )}
           {!loading && details && (details.homeLineup?.length === 11 || details.awayLineup?.length === 11) && (
-            <div className="px-4 py-3 border-t border-slate-100">
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">
+            <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
                 Alineaciones
               </p>
               <MatchLineupPitch
@@ -199,7 +311,7 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
 
         {/* YouTube CTA — sticky bottom */}
         <div
-          className="px-4 py-3 border-t border-slate-100 shrink-0"
+          className="px-4 py-3 border-t border-slate-100 dark:border-slate-800 shrink-0"
           style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 12px)' }}
         >
           <a
@@ -214,6 +326,131 @@ export function MatchDetailsSheet({ match, onClose }: MatchDetailsSheetProps) {
             Ver resumen en YouTube
           </a>
         </div>
+      </div>
+    </div>
+  )
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Subcomponentes                                                            */
+/* -------------------------------------------------------------------------- */
+
+function LiveStatusBadge({ status, minute, injuryTime }: { status: string; minute: number | null; injuryTime: number | null }) {
+  if (status === 'IN_PLAY') {
+    const tag = minute != null
+      ? `${minute}'${injuryTime ? `+${injuryTime}` : ''}`
+      : 'EN VIVO'
+    return (
+      <span className="inline-flex items-center gap-1 mt-1 text-[10px] font-black text-red-600 bg-red-50 px-2 py-0.5 rounded-full">
+        <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+        EN VIVO · {tag}
+      </span>
+    )
+  }
+  if (status === 'PAUSED') {
+    return (
+      <span className="inline-flex items-center gap-1 mt-1 text-[10px] font-black text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">
+        DESCANSO
+      </span>
+    )
+  }
+  if (status === 'FINISHED') {
+    return (
+      <span className="inline-flex items-center gap-1 mt-1 text-[10px] font-black text-slate-500 dark:text-slate-400  bg-slate-100 dark:bg-slate-950 px-2 py-0.5 rounded-full">
+        FINALIZADO
+      </span>
+    )
+  }
+  return null
+}
+
+function OddsItem({ label, odd, prob, color }: { label: string; odd: number; prob: number; color: string }) {
+  return (
+    <div className={`flex-1 flex flex-col items-center gap-0.5 ${color} rounded-lg py-1.5 px-1`}>
+      <span className="text-[9px] font-black uppercase tracking-widest opacity-80">{label}</span>
+      <span className="text-sm font-black tabular-nums">{odd.toFixed(2)}</span>
+      <span className="text-[9px] font-bold opacity-70 tabular-nums">{Math.round(prob * 100)}%</span>
+    </div>
+  )
+}
+
+function MatchOddsRow({ odds }: { odds: DecimalOddsLike }) {
+  // Probabilidades implícitas: 1/odd, normalizadas para que sumen 100% (descontando overround).
+  const raw = { home: 1 / odds.home, draw: 1 / odds.draw, away: 1 / odds.away }
+  const sum = raw.home + raw.draw + raw.away
+  const probs = { home: raw.home / sum, draw: raw.draw / sum, away: raw.away / sum }
+
+  return (
+    <div className="flex gap-2">
+      <OddsItem label="1" odd={odds.home} prob={probs.home} color="bg-blue-50 text-blue-700" />
+      <OddsItem label="X" odd={odds.draw} prob={probs.draw} color="bg-amber-50 text-amber-700" />
+      <OddsItem label="2" odd={odds.away} prob={probs.away} color="bg-violet-50 text-violet-700" />
+    </div>
+  )
+}
+
+function LiveMatchSummary({ details, homeTeamId, awayTeamId }: { details: MatchDetails; homeTeamId: number; awayTeamId: number }) {
+  type Counter = { home: number; away: number }
+  const empty = (): Counter => ({ home: 0, away: 0 })
+
+  const goals = empty()
+  const yellow = empty()
+  const red = empty()
+  const subs = empty()
+
+  const sideOf = (teamId: number): 'home' | 'away' | null =>
+    teamId === homeTeamId ? 'home' : teamId === awayTeamId ? 'away' : null
+
+  for (const g of details.goals) {
+    const s = sideOf(g.team.id); if (!s) continue
+    // Goles en propia puerta cuentan para el equipo CONTRARIO en la app actual:
+    // football-data los etiqueta con `team` = equipo del jugador autor, así que
+    // los reflejamos al rival visualmente.
+    if (g.type === 'OWN') goals[s === 'home' ? 'away' : 'home']++
+    else goals[s]++
+  }
+  for (const b of details.bookings) {
+    const s = sideOf(b.team.id); if (!s) continue
+    if (b.card === 'YELLOW') yellow[s]++
+    else if (b.card === 'RED' || b.card === 'YELLOW_RED') red[s]++
+  }
+  for (const su of details.substitutions ?? []) {
+    const s = sideOf(su.team.id); if (!s) continue
+    subs[s]++
+  }
+
+  const rows: { label: string; counter: Counter }[] = [
+    { label: 'Goles', counter: goals },
+    { label: 'Amarillas', counter: yellow },
+    { label: 'Rojas', counter: red },
+    { label: 'Cambios', counter: subs },
+  ].filter(r => r.counter.home + r.counter.away > 0)
+
+  if (rows.length === 0) return null
+
+  return (
+    <div className="space-y-2">
+      {rows.map(r => (
+        <StatBar key={r.label} label={r.label} home={r.counter.home} away={r.counter.away} />
+      ))}
+    </div>
+  )
+}
+
+function StatBar({ label, home, away }: { label: string; home: number; away: number }) {
+  const total = home + away
+  const homePct = total === 0 ? 50 : (home / total) * 100
+  const awayPct = total === 0 ? 50 : (away / total) * 100
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-0.5">
+        <span className="text-[10px] font-black text-blue-700 tabular-nums w-5 text-center">{home}</span>
+        <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400  uppercase tracking-widest">{label}</span>
+        <span className="text-[10px] font-black text-violet-700 tabular-nums w-5 text-center">{away}</span>
+      </div>
+      <div className="flex h-1.5 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-950">
+        <div className="bg-blue-400" style={{ width: `${homePct}%` }} />
+        <div className="bg-violet-400" style={{ width: `${awayPct}%` }} />
       </div>
     </div>
   )
@@ -275,15 +512,15 @@ function TimelineRow({
 
   return (
     <li className="flex items-center gap-2 py-1.5">
-      <span className="text-[10px] font-bold text-slate-400 w-8 shrink-0 tabular-nums">{minute}</span>
+      <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 w-8 shrink-0 tabular-nums">{minute}</span>
       <span className="w-5 flex justify-center shrink-0">{icon}</span>
       <div className="flex items-center gap-1.5 flex-1 min-w-0">
         {flagUrl
           ? <Image src={flagUrl} alt="" width={12} height={9} unoptimized className="rounded-sm shrink-0" />
           : <IconFlagFallback width={12} height={9} />}
-        <span className="text-xs font-semibold text-slate-700 truncate">{main}</span>
+        <span className="text-xs font-semibold text-slate-700 dark:text-slate-200 truncate">{main}</span>
       </div>
-      <span className="text-[10px] text-slate-400 shrink-0">{detail}</span>
+      <span className="text-[10px] text-slate-400 dark:text-slate-500 shrink-0">{detail}</span>
     </li>
   )
 }

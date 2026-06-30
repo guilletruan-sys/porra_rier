@@ -52,13 +52,12 @@ export function IconFlagFallback({ width = 14, height = 10, className = '' }: { 
 }
 
 export function RankBadge({ rank }: { rank: number }) {
-  if (rank > 3) {
-    return <span className="text-xs font-black text-slate-400">{rank}</span>
+  if (rank > 2) {
+    return <span className="text-xs font-black text-slate-400 dark:text-slate-500">{rank}</span>
   }
   const styles: Record<number, string> = {
     1: 'bg-gradient-to-br from-amber-300 to-amber-600',
     2: 'bg-gradient-to-br from-slate-300 to-slate-500',
-    3: 'bg-gradient-to-br from-orange-400 to-orange-700',
   }
   return (
     <span className={`inline-flex items-center justify-center w-6 h-6 rounded-md text-[11px] font-black text-white shadow-sm ${styles[rank]}`}>

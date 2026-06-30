@@ -19,7 +19,7 @@ export function Spoiler({ children, blockMode = false, label = 'Resultado oculto
       <button
         type="button"
         onClick={(e) => { e.stopPropagation(); e.preventDefault(); setRevealed(true) }}
-        className="block w-full text-center py-6 px-3 bg-slate-50 rounded-xl text-slate-400 text-xs font-semibold hover:bg-slate-100 transition-colors"
+        className="block w-full text-center py-6 px-3 bg-slate-50 dark:bg-slate-900 rounded-xl text-slate-400 dark:text-slate-500 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 dark:bg-slate-950 transition-colors"
       >
         <span className="inline-flex items-center gap-2">
           <EyeOffIcon />

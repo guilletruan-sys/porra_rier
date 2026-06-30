@@ -102,16 +102,16 @@ export function MatchLineupPitch({
   const awayPositioned = hasAway ? placeTeam(awayLineup!, awayFormation, 'top') : []
 
   return (
-    <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-      <div className="px-3 py-2 border-b border-slate-50 flex items-center justify-between">
+    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm overflow-hidden">
+      <div className="px-3 py-2 border-b border-slate-50 dark:border-slate-800 flex items-center justify-between">
         <div className="flex items-center gap-2 text-[10px] font-bold">
           <span className="inline-block w-2 h-2 rounded-full bg-[#c8102e]" />
-          <span className="text-slate-700 truncate max-w-[80px]">{homeName}</span>
-          <span className="text-slate-400">{homeFormation ?? '—'}</span>
+          <span className="text-slate-700 dark:text-slate-200 truncate max-w-[80px]">{homeName}</span>
+          <span className="text-slate-400 dark:text-slate-500">{homeFormation ?? '—'}</span>
         </div>
         <div className="flex items-center gap-2 text-[10px] font-bold">
-          <span className="text-slate-400">{awayFormation ?? '—'}</span>
-          <span className="text-slate-700 truncate max-w-[80px]">{awayName}</span>
+          <span className="text-slate-400 dark:text-slate-500">{awayFormation ?? '—'}</span>
+          <span className="text-slate-700 dark:text-slate-200 truncate max-w-[80px]">{awayName}</span>
           <span className="inline-block w-2 h-2 rounded-full bg-[#1d4ed8]" />
         </div>
       </div>
@@ -155,7 +155,7 @@ function PlayerChip({ id, x, y, number, name, color }: {
       className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center active:scale-95 transition-transform"
       style={{ left: `${x}%`, top: `${y}%` }}
     >
-      <div className={`w-7 h-7 rounded-full shadow-md flex items-center justify-center text-[10px] font-black border-2 ${isHome ? 'bg-white border-[#c8102e] text-[#c8102e]' : 'bg-[#1d4ed8] border-white text-white'}`}>
+      <div className={`w-7 h-7 rounded-full shadow-md flex items-center justify-center text-[10px] font-black border-2 ${isHome ? 'bg-white dark:bg-slate-900 border-[#c8102e] text-[#c8102e]' : 'bg-[#1d4ed8] border-white text-white'}`}>
         {number}
       </div>
       <span

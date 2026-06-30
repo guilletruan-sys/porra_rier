@@ -2,7 +2,7 @@
 // Pure parse functions with no file I/O — safe to import in tests and production code.
 
 import { EXCEL_NAME_TO_TLA } from './team-map'
-import type { GroupPrediction, KnockoutPrediction, PickResult } from './types'
+import type { GroupPrediction, PickResult, Stage } from './types'
 
 export function parseGroupPrediction(raw: string): GroupPrediction | null {
   if (!raw || raw === 'Pendiente' || raw === '-' || raw === '') return null
@@ -19,7 +19,15 @@ export function parseGroupPrediction(raw: string): GroupPrediction | null {
   return { homeGoals, awayGoals, pick }
 }
 
-export function parseKnockoutPrediction(raw: string, round: KnockoutPrediction['round'] = 'ROUND_OF_32'): KnockoutPrediction | null {
+// Lighter form of knockout prediction returned by the standalone parser. The full
+// KnockoutPrediction in types.ts includes slot/homeTla/awayTla, which require the
+// surrounding row context that's only available inside the extractor script.
+export interface SimpleKnockoutPrediction {
+  advancingTeamTla: string
+  round: Stage
+}
+
+export function parseKnockoutPrediction(raw: string, round: Stage = 'ROUND_OF_32'): SimpleKnockoutPrediction | null {
   if (!raw || raw === 'Pendiente' || raw === '-' || raw === '') return null
   const tla = EXCEL_NAME_TO_TLA[raw.trim()]
   if (!tla) return null

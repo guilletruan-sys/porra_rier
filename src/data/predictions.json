@@ -363,149 +363,237 @@
       }
     },
     "knockout": {
-      "CZE_CAN": {
-        "advancingTeamTla": "CAN",
-        "round": "ROUND_OF_32"
-      },
-      "BRA_JPN": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_32"
-      },
-      "GER_PAR": {
+      "1E-3ABCDF": {
+        "slot": "1E-3ABCDF",
+        "homeTla": "GER",
+        "awayTla": "PAR",
         "advancingTeamTla": "GER",
         "round": "ROUND_OF_32"
       },
-      "NED_MAR": {
-        "advancingTeamTla": "NED",
-        "round": "ROUND_OF_32"
-      },
-      "ECU_NOR": {
-        "advancingTeamTla": "NOR",
-        "round": "ROUND_OF_32"
-      },
-      "FRA_SWE": {
+      "1I-3CDFGH": {
+        "slot": "1I-3CDFGH",
+        "homeTla": "FRA",
+        "awayTla": "SWE",
         "advancingTeamTla": "FRA",
         "round": "ROUND_OF_32"
       },
-      "MEX_CIV": {
-        "advancingTeamTla": "MEX",
+      "2A-2B": {
+        "slot": "2A-2B",
+        "homeTla": "CZE",
+        "awayTla": "CAN",
+        "advancingTeamTla": "CAN",
         "round": "ROUND_OF_32"
       },
-      "ENG_SEN": {
-        "advancingTeamTla": "ENG",
+      "1F-2C": {
+        "slot": "1F-2C",
+        "homeTla": "NED",
+        "awayTla": "MAR",
+        "advancingTeamTla": "NED",
         "round": "ROUND_OF_32"
       },
-      "BEL_KOR": {
-        "advancingTeamTla": "BEL",
-        "round": "ROUND_OF_32"
-      },
-      "USA_ALG": {
-        "advancingTeamTla": "USA",
-        "round": "ROUND_OF_32"
-      },
-      "ESP_AUT": {
-        "advancingTeamTla": "ESP",
-        "round": "ROUND_OF_32"
-      },
-      "COL_CRO": {
+      "2K-2L": {
+        "slot": "2K-2L",
+        "homeTla": "COL",
+        "awayTla": "CRO",
         "advancingTeamTla": "COL",
         "round": "ROUND_OF_32"
       },
-      "SUI_IRN": {
-        "advancingTeamTla": "SUI",
+      "1H-2J": {
+        "slot": "1H-2J",
+        "homeTla": "ESP",
+        "awayTla": "AUT",
+        "advancingTeamTla": "ESP",
         "round": "ROUND_OF_32"
       },
-      "TUR_EGY": {
+      "1D-3BEFIJ": {
+        "slot": "1D-3BEFIJ",
+        "homeTla": "USA",
+        "awayTla": "ALG",
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "1G-3AEHIJ": {
+        "slot": "1G-3AEHIJ",
+        "homeTla": "BEL",
+        "awayTla": "KOR",
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "1C-2F": {
+        "slot": "1C-2F",
+        "homeTla": "BRA",
+        "awayTla": "JPN",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "2E-2I": {
+        "slot": "2E-2I",
+        "homeTla": "ECU",
+        "awayTla": "NOR",
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "1A-3CEFHI": {
+        "slot": "1A-3CEFHI",
+        "homeTla": "MEX",
+        "awayTla": "CIV",
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "1L-3EHIJK": {
+        "slot": "1L-3EHIJK",
+        "homeTla": "ENG",
+        "awayTla": "SEN",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "2D-2G": {
+        "slot": "2D-2G",
+        "homeTla": "TUR",
+        "awayTla": "EGY",
         "advancingTeamTla": "TUR",
         "round": "ROUND_OF_32"
       },
-      "ARG_URU": {
+      "1J-2H": {
+        "slot": "1J-2H",
+        "homeTla": "ARG",
+        "awayTla": "URU",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_32"
       },
-      "POR_GHA": {
+      "1B-3EFGIJ": {
+        "slot": "1B-3EFGIJ",
+        "homeTla": "SUI",
+        "awayTla": "IRN",
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "1K-3DEIJL": {
+        "slot": "1K-3DEIJL",
+        "homeTla": "POR",
+        "awayTla": "GHA",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_32"
       },
-      "CAN_NED": {
+      "W74-W77": {
+        "slot": "W74-W77",
+        "homeTla": "GER",
+        "awayTla": "FRA",
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "W73-W75": {
+        "slot": "W73-W75",
+        "homeTla": "CAN",
+        "awayTla": "NED",
         "advancingTeamTla": "NED",
         "round": "ROUND_OF_16"
       },
-      "GER_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_16"
-      },
-      "BRA_NOR": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_16"
-      },
-      "MEX_ENG": {
-        "advancingTeamTla": "ENG",
-        "round": "ROUND_OF_16"
-      },
-      "COL_ESP": {
+      "W83-W84": {
+        "slot": "W83-W84",
+        "homeTla": "COL",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "ROUND_OF_16"
       },
-      "USA_BEL": {
+      "W81-W82": {
+        "slot": "W81-W82",
+        "homeTla": "USA",
+        "awayTla": "BEL",
         "advancingTeamTla": "BEL",
         "round": "ROUND_OF_16"
       },
-      "ARG_TUR": {
+      "W76-W78": {
+        "slot": "W76-W78",
+        "homeTla": "BRA",
+        "awayTla": "NOR",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "W79-W80": {
+        "slot": "W79-W80",
+        "homeTla": "MEX",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "W86-W88": {
+        "slot": "W86-W88",
+        "homeTla": "ARG",
+        "awayTla": "TUR",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_16"
       },
-      "SUI_POR": {
+      "W85-W87": {
+        "slot": "W85-W87",
+        "homeTla": "SUI",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_16"
       },
-      "FRA_NED": {
+      "W89-W90": {
+        "slot": "W89-W90",
+        "homeTla": "FRA",
+        "awayTla": "NED",
         "advancingTeamTla": "FRA",
         "round": "QUARTER_FINALS"
       },
-      "ESP_BEL": {
+      "W93-W94": {
+        "slot": "W93-W94",
+        "homeTla": "ESP",
+        "awayTla": "BEL",
         "advancingTeamTla": "ESP",
         "round": "QUARTER_FINALS"
       },
-      "BRA_ENG": {
+      "W91-W92": {
+        "slot": "W91-W92",
+        "homeTla": "BRA",
+        "awayTla": "ENG",
         "advancingTeamTla": "ENG",
         "round": "QUARTER_FINALS"
       },
-      "ARG_POR": {
+      "W95-W96": {
+        "slot": "W95-W96",
+        "homeTla": "ARG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "QUARTER_FINALS"
       },
-      "FRA_ESP": {
+      "W97-W98": {
+        "slot": "W97-W98",
+        "homeTla": "FRA",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "SEMI_FINALS"
       },
-      "ENG_POR": {
+      "W99-W100": {
+        "slot": "W99-W100",
+        "homeTla": "ENG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "SEMI_FINALS"
       },
-      "FRA_ENG": {
-        "advancingTeamTla": "FRA",
-        "round": "THIRD_PLACE"
-      },
-      "ESP_POR": {
+      "W101-W102": {
+        "slot": "W101-W102",
+        "homeTla": "ESP",
+        "awayTla": "POR",
         "advancingTeamTla": "ESP",
         "round": "FINAL"
+      },
+      "L101-L102": {
+        "slot": "L101-L102",
+        "homeTla": "FRA",
+        "awayTla": "ENG",
+        "advancingTeamTla": "FRA",
+        "round": "THIRD_PLACE"
       }
     },
     "specials": {
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "FRA",
-      "goldenBoot": {
-        "first": "Kylian Mbappé",
-        "second": "Harry Kane",
-        "third": "Cristiano Ronaldo"
-      },
-      "goldenBall": {
-        "first": "Lamine Yamal",
-        "second": "Vitinha",
-        "third": "Kylian Mbappé"
-      }
+      "goldenBoot": "Kylian Mbappé",
+      "goldenBall": "Lamine Yamal"
     }
   },
   "City": {
@@ -872,149 +960,237 @@
       }
     },
     "knockout": {
-      "KOR_BIH": {
-        "advancingTeamTla": "KOR",
-        "round": "ROUND_OF_32"
-      },
-      "BRA_SWE": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_32"
-      },
-      "GER_AUS": {
+      "1E-3ABCDF": {
+        "slot": "1E-3ABCDF",
+        "homeTla": "GER",
+        "awayTla": "AUS",
         "advancingTeamTla": "GER",
         "round": "ROUND_OF_32"
       },
-      "NED_MAR": {
-        "advancingTeamTla": "NED",
-        "round": "ROUND_OF_32"
-      },
-      "CIV_NOR": {
-        "advancingTeamTla": "NOR",
-        "round": "ROUND_OF_32"
-      },
-      "FRA_JPN": {
+      "1I-3CDFGH": {
+        "slot": "1I-3CDFGH",
+        "homeTla": "FRA",
+        "awayTla": "JPN",
         "advancingTeamTla": "FRA",
         "round": "ROUND_OF_32"
       },
-      "MEX_SCO": {
-        "advancingTeamTla": "MEX",
+      "2A-2B": {
+        "slot": "2A-2B",
+        "homeTla": "KOR",
+        "awayTla": "BIH",
+        "advancingTeamTla": "KOR",
         "round": "ROUND_OF_32"
       },
-      "ENG_SEN": {
-        "advancingTeamTla": "ENG",
+      "1F-2C": {
+        "slot": "1F-2C",
+        "homeTla": "NED",
+        "awayTla": "MAR",
+        "advancingTeamTla": "NED",
         "round": "ROUND_OF_32"
       },
-      "BEL_AUT": {
-        "advancingTeamTla": "BEL",
-        "round": "ROUND_OF_32"
-      },
-      "TUR_CAN": {
-        "advancingTeamTla": "TUR",
-        "round": "ROUND_OF_32"
-      },
-      "ESP_ALG": {
-        "advancingTeamTla": "ESP",
-        "round": "ROUND_OF_32"
-      },
-      "COL_CRO": {
+      "2K-2L": {
+        "slot": "2K-2L",
+        "homeTla": "COL",
+        "awayTla": "CRO",
         "advancingTeamTla": "COL",
         "round": "ROUND_OF_32"
       },
-      "SUI_NZL": {
-        "advancingTeamTla": "SUI",
+      "1H-2J": {
+        "slot": "1H-2J",
+        "homeTla": "ESP",
+        "awayTla": "ALG",
+        "advancingTeamTla": "ESP",
         "round": "ROUND_OF_32"
       },
-      "USA_EGY": {
+      "1D-3BEFIJ": {
+        "slot": "1D-3BEFIJ",
+        "homeTla": "TUR",
+        "awayTla": "CAN",
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "1G-3AEHIJ": {
+        "slot": "1G-3AEHIJ",
+        "homeTla": "BEL",
+        "awayTla": "AUT",
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "1C-2F": {
+        "slot": "1C-2F",
+        "homeTla": "BRA",
+        "awayTla": "SWE",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "2E-2I": {
+        "slot": "2E-2I",
+        "homeTla": "CIV",
+        "awayTla": "NOR",
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "1A-3CEFHI": {
+        "slot": "1A-3CEFHI",
+        "homeTla": "MEX",
+        "awayTla": "SCO",
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "1L-3EHIJK": {
+        "slot": "1L-3EHIJK",
+        "homeTla": "ENG",
+        "awayTla": "SEN",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "2D-2G": {
+        "slot": "2D-2G",
+        "homeTla": "USA",
+        "awayTla": "EGY",
         "advancingTeamTla": "USA",
         "round": "ROUND_OF_32"
       },
-      "ARG_URU": {
+      "1J-2H": {
+        "slot": "1J-2H",
+        "homeTla": "ARG",
+        "awayTla": "URU",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_32"
       },
-      "POR_ECU": {
+      "1B-3EFGIJ": {
+        "slot": "1B-3EFGIJ",
+        "homeTla": "SUI",
+        "awayTla": "NZL",
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "1K-3DEIJL": {
+        "slot": "1K-3DEIJL",
+        "homeTla": "POR",
+        "awayTla": "ECU",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_32"
       },
-      "KOR_NED": {
+      "W74-W77": {
+        "slot": "W74-W77",
+        "homeTla": "GER",
+        "awayTla": "FRA",
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "W73-W75": {
+        "slot": "W73-W75",
+        "homeTla": "KOR",
+        "awayTla": "NED",
         "advancingTeamTla": "NED",
         "round": "ROUND_OF_16"
       },
-      "GER_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_16"
-      },
-      "BRA_NOR": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_16"
-      },
-      "MEX_ENG": {
-        "advancingTeamTla": "ENG",
-        "round": "ROUND_OF_16"
-      },
-      "COL_ESP": {
+      "W83-W84": {
+        "slot": "W83-W84",
+        "homeTla": "COL",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "ROUND_OF_16"
       },
-      "TUR_BEL": {
+      "W81-W82": {
+        "slot": "W81-W82",
+        "homeTla": "TUR",
+        "awayTla": "BEL",
         "advancingTeamTla": "TUR",
         "round": "ROUND_OF_16"
       },
-      "ARG_USA": {
+      "W76-W78": {
+        "slot": "W76-W78",
+        "homeTla": "BRA",
+        "awayTla": "NOR",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "W79-W80": {
+        "slot": "W79-W80",
+        "homeTla": "MEX",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "W86-W88": {
+        "slot": "W86-W88",
+        "homeTla": "ARG",
+        "awayTla": "USA",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_16"
       },
-      "SUI_POR": {
+      "W85-W87": {
+        "slot": "W85-W87",
+        "homeTla": "SUI",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_16"
       },
-      "FRA_NED": {
+      "W89-W90": {
+        "slot": "W89-W90",
+        "homeTla": "FRA",
+        "awayTla": "NED",
         "advancingTeamTla": "FRA",
         "round": "QUARTER_FINALS"
       },
-      "ESP_TUR": {
+      "W93-W94": {
+        "slot": "W93-W94",
+        "homeTla": "ESP",
+        "awayTla": "TUR",
         "advancingTeamTla": "ESP",
         "round": "QUARTER_FINALS"
       },
-      "BRA_ENG": {
+      "W91-W92": {
+        "slot": "W91-W92",
+        "homeTla": "BRA",
+        "awayTla": "ENG",
         "advancingTeamTla": "ENG",
         "round": "QUARTER_FINALS"
       },
-      "ARG_POR": {
+      "W95-W96": {
+        "slot": "W95-W96",
+        "homeTla": "ARG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "QUARTER_FINALS"
       },
-      "FRA_ESP": {
+      "W97-W98": {
+        "slot": "W97-W98",
+        "homeTla": "FRA",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "SEMI_FINALS"
       },
-      "ENG_POR": {
+      "W99-W100": {
+        "slot": "W99-W100",
+        "homeTla": "ENG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "SEMI_FINALS"
       },
-      "FRA_ENG": {
-        "advancingTeamTla": "ENG",
-        "round": "THIRD_PLACE"
-      },
-      "ESP_POR": {
+      "W101-W102": {
+        "slot": "W101-W102",
+        "homeTla": "ESP",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "FINAL"
+      },
+      "L101-L102": {
+        "slot": "L101-L102",
+        "homeTla": "FRA",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ENG",
+        "round": "THIRD_PLACE"
       }
     },
     "specials": {
       "champion": "POR",
       "runnerUp": "ESP",
       "thirdPlace": "ENG",
-      "goldenBoot": {
-        "first": "Harry Kane",
-        "second": "Kylian Mbappé",
-        "third": "Lamine Yamal"
-      },
-      "goldenBall": {
-        "first": "Vitinha",
-        "second": "Pedri",
-        "third": "Ousmane Dembélé"
-      }
+      "goldenBoot": "Harry Kane",
+      "goldenBall": "Vitinha"
     }
   },
   "Miguel": {
@@ -1381,149 +1557,237 @@
       }
     },
     "knockout": {
-      "CZE_SUI": {
-        "advancingTeamTla": "CZE",
-        "round": "ROUND_OF_32"
-      },
-      "BRA_JPN": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_32"
-      },
-      "GER_SCO": {
+      "1E-3ABCDF": {
+        "slot": "1E-3ABCDF",
+        "homeTla": "GER",
+        "awayTla": "SCO",
         "advancingTeamTla": "GER",
         "round": "ROUND_OF_32"
       },
-      "NED_MAR": {
-        "advancingTeamTla": "MAR",
-        "round": "ROUND_OF_32"
-      },
-      "CIV_NOR": {
-        "advancingTeamTla": "NOR",
-        "round": "ROUND_OF_32"
-      },
-      "FRA_SWE": {
+      "1I-3CDFGH": {
+        "slot": "1I-3CDFGH",
+        "homeTla": "FRA",
+        "awayTla": "SWE",
         "advancingTeamTla": "FRA",
         "round": "ROUND_OF_32"
       },
-      "MEX_ECU": {
-        "advancingTeamTla": "MEX",
+      "2A-2B": {
+        "slot": "2A-2B",
+        "homeTla": "CZE",
+        "awayTla": "SUI",
+        "advancingTeamTla": "CZE",
         "round": "ROUND_OF_32"
       },
-      "ENG_COD": {
-        "advancingTeamTla": "ENG",
+      "1F-2C": {
+        "slot": "1F-2C",
+        "homeTla": "NED",
+        "awayTla": "MAR",
+        "advancingTeamTla": "MAR",
         "round": "ROUND_OF_32"
       },
-      "BEL_KOR": {
-        "advancingTeamTla": "BEL",
-        "round": "ROUND_OF_32"
-      },
-      "TUR_BIH": {
-        "advancingTeamTla": "TUR",
-        "round": "ROUND_OF_32"
-      },
-      "ESP_ALG": {
-        "advancingTeamTla": "ESP",
-        "round": "ROUND_OF_32"
-      },
-      "COL_CRO": {
+      "2K-2L": {
+        "slot": "2K-2L",
+        "homeTla": "COL",
+        "awayTla": "CRO",
         "advancingTeamTla": "CRO",
         "round": "ROUND_OF_32"
       },
-      "CAN_AUT": {
-        "advancingTeamTla": "CAN",
+      "1H-2J": {
+        "slot": "1H-2J",
+        "homeTla": "ESP",
+        "awayTla": "ALG",
+        "advancingTeamTla": "ESP",
         "round": "ROUND_OF_32"
       },
-      "USA_EGY": {
+      "1D-3BEFIJ": {
+        "slot": "1D-3BEFIJ",
+        "homeTla": "TUR",
+        "awayTla": "BIH",
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "1G-3AEHIJ": {
+        "slot": "1G-3AEHIJ",
+        "homeTla": "BEL",
+        "awayTla": "KOR",
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "1C-2F": {
+        "slot": "1C-2F",
+        "homeTla": "BRA",
+        "awayTla": "JPN",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "2E-2I": {
+        "slot": "2E-2I",
+        "homeTla": "CIV",
+        "awayTla": "NOR",
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "1A-3CEFHI": {
+        "slot": "1A-3CEFHI",
+        "homeTla": "MEX",
+        "awayTla": "ECU",
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "1L-3EHIJK": {
+        "slot": "1L-3EHIJK",
+        "homeTla": "ENG",
+        "awayTla": "COD",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "2D-2G": {
+        "slot": "2D-2G",
+        "homeTla": "USA",
+        "awayTla": "EGY",
         "advancingTeamTla": "USA",
         "round": "ROUND_OF_32"
       },
-      "ARG_URU": {
+      "1J-2H": {
+        "slot": "1J-2H",
+        "homeTla": "ARG",
+        "awayTla": "URU",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_32"
       },
-      "POR_SEN": {
+      "1B-3EFGIJ": {
+        "slot": "1B-3EFGIJ",
+        "homeTla": "CAN",
+        "awayTla": "AUT",
+        "advancingTeamTla": "CAN",
+        "round": "ROUND_OF_32"
+      },
+      "1K-3DEIJL": {
+        "slot": "1K-3DEIJL",
+        "homeTla": "POR",
+        "awayTla": "SEN",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_32"
       },
-      "CZE_MAR": {
+      "W74-W77": {
+        "slot": "W74-W77",
+        "homeTla": "GER",
+        "awayTla": "FRA",
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "W73-W75": {
+        "slot": "W73-W75",
+        "homeTla": "CZE",
+        "awayTla": "MAR",
         "advancingTeamTla": "MAR",
         "round": "ROUND_OF_16"
       },
-      "GER_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_16"
-      },
-      "BRA_NOR": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_16"
-      },
-      "MEX_ENG": {
-        "advancingTeamTla": "ENG",
-        "round": "ROUND_OF_16"
-      },
-      "CRO_ESP": {
+      "W83-W84": {
+        "slot": "W83-W84",
+        "homeTla": "CRO",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "ROUND_OF_16"
       },
-      "TUR_BEL": {
+      "W81-W82": {
+        "slot": "W81-W82",
+        "homeTla": "TUR",
+        "awayTla": "BEL",
         "advancingTeamTla": "TUR",
         "round": "ROUND_OF_16"
       },
-      "ARG_USA": {
+      "W76-W78": {
+        "slot": "W76-W78",
+        "homeTla": "BRA",
+        "awayTla": "NOR",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "W79-W80": {
+        "slot": "W79-W80",
+        "homeTla": "MEX",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "W86-W88": {
+        "slot": "W86-W88",
+        "homeTla": "ARG",
+        "awayTla": "USA",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_16"
       },
-      "CAN_POR": {
+      "W85-W87": {
+        "slot": "W85-W87",
+        "homeTla": "CAN",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_16"
       },
-      "FRA_MAR": {
+      "W89-W90": {
+        "slot": "W89-W90",
+        "homeTla": "FRA",
+        "awayTla": "MAR",
         "advancingTeamTla": "FRA",
         "round": "QUARTER_FINALS"
       },
-      "ESP_TUR": {
+      "W93-W94": {
+        "slot": "W93-W94",
+        "homeTla": "ESP",
+        "awayTla": "TUR",
         "advancingTeamTla": "ESP",
         "round": "QUARTER_FINALS"
       },
-      "BRA_ENG": {
+      "W91-W92": {
+        "slot": "W91-W92",
+        "homeTla": "BRA",
+        "awayTla": "ENG",
         "advancingTeamTla": "BRA",
         "round": "QUARTER_FINALS"
       },
-      "ARG_POR": {
+      "W95-W96": {
+        "slot": "W95-W96",
+        "homeTla": "ARG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "QUARTER_FINALS"
       },
-      "FRA_ESP": {
+      "W97-W98": {
+        "slot": "W97-W98",
+        "homeTla": "FRA",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "SEMI_FINALS"
       },
-      "BRA_POR": {
+      "W99-W100": {
+        "slot": "W99-W100",
+        "homeTla": "BRA",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "SEMI_FINALS"
       },
-      "FRA_BRA": {
-        "advancingTeamTla": "FRA",
-        "round": "THIRD_PLACE"
-      },
-      "ESP_POR": {
+      "W101-W102": {
+        "slot": "W101-W102",
+        "homeTla": "ESP",
+        "awayTla": "POR",
         "advancingTeamTla": "ESP",
         "round": "FINAL"
+      },
+      "L101-L102": {
+        "slot": "L101-L102",
+        "homeTla": "FRA",
+        "awayTla": "BRA",
+        "advancingTeamTla": "FRA",
+        "round": "THIRD_PLACE"
       }
     },
     "specials": {
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "FRA",
-      "goldenBoot": {
-        "first": "Mikel Oyarzabal",
-        "second": "Cristiano Ronaldo",
-        "third": "Kylian Mbappé"
-      },
-      "goldenBall": {
-        "first": "Pedri",
-        "second": "Vitinha",
-        "third": "Kylian Mbappé"
-      }
+      "goldenBoot": "Mikel Oyarzabal",
+      "goldenBall": "Pedri"
     }
   },
   "Tola": {
@@ -1890,149 +2154,237 @@
       }
     },
     "knockout": {
-      "KOR_BIH": {
-        "advancingTeamTla": "KOR",
-        "round": "ROUND_OF_32"
-      },
-      "BRA_JPN": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_32"
-      },
-      "GER_PAR": {
+      "1E-3ABCDF": {
+        "slot": "1E-3ABCDF",
+        "homeTla": "GER",
+        "awayTla": "PAR",
         "advancingTeamTla": "GER",
         "round": "ROUND_OF_32"
       },
-      "NED_MAR": {
-        "advancingTeamTla": "MAR",
-        "round": "ROUND_OF_32"
-      },
-      "ECU_NOR": {
-        "advancingTeamTla": "NOR",
-        "round": "ROUND_OF_32"
-      },
-      "FRA_SWE": {
+      "1I-3CDFGH": {
+        "slot": "1I-3CDFGH",
+        "homeTla": "FRA",
+        "awayTla": "SWE",
         "advancingTeamTla": "FRA",
         "round": "ROUND_OF_32"
       },
-      "MEX_SCO": {
-        "advancingTeamTla": "MEX",
+      "2A-2B": {
+        "slot": "2A-2B",
+        "homeTla": "KOR",
+        "awayTla": "BIH",
+        "advancingTeamTla": "KOR",
         "round": "ROUND_OF_32"
       },
-      "ENG_SEN": {
-        "advancingTeamTla": "ENG",
+      "1F-2C": {
+        "slot": "1F-2C",
+        "homeTla": "NED",
+        "awayTla": "MAR",
+        "advancingTeamTla": "MAR",
         "round": "ROUND_OF_32"
       },
-      "BEL_CIV": {
-        "advancingTeamTla": "BEL",
-        "round": "ROUND_OF_32"
-      },
-      "TUR_CAN": {
-        "advancingTeamTla": "TUR",
-        "round": "ROUND_OF_32"
-      },
-      "ESP_AUT": {
-        "advancingTeamTla": "ESP",
-        "round": "ROUND_OF_32"
-      },
-      "COL_CRO": {
+      "2K-2L": {
+        "slot": "2K-2L",
+        "homeTla": "COL",
+        "awayTla": "CRO",
         "advancingTeamTla": "COL",
         "round": "ROUND_OF_32"
       },
-      "SUI_ALG": {
-        "advancingTeamTla": "SUI",
+      "1H-2J": {
+        "slot": "1H-2J",
+        "homeTla": "ESP",
+        "awayTla": "AUT",
+        "advancingTeamTla": "ESP",
         "round": "ROUND_OF_32"
       },
-      "USA_EGY": {
+      "1D-3BEFIJ": {
+        "slot": "1D-3BEFIJ",
+        "homeTla": "TUR",
+        "awayTla": "CAN",
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "1G-3AEHIJ": {
+        "slot": "1G-3AEHIJ",
+        "homeTla": "BEL",
+        "awayTla": "CIV",
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "1C-2F": {
+        "slot": "1C-2F",
+        "homeTla": "BRA",
+        "awayTla": "JPN",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "2E-2I": {
+        "slot": "2E-2I",
+        "homeTla": "ECU",
+        "awayTla": "NOR",
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "1A-3CEFHI": {
+        "slot": "1A-3CEFHI",
+        "homeTla": "MEX",
+        "awayTla": "SCO",
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "1L-3EHIJK": {
+        "slot": "1L-3EHIJK",
+        "homeTla": "ENG",
+        "awayTla": "SEN",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "2D-2G": {
+        "slot": "2D-2G",
+        "homeTla": "USA",
+        "awayTla": "EGY",
         "advancingTeamTla": "EGY",
         "round": "ROUND_OF_32"
       },
-      "ARG_URU": {
+      "1J-2H": {
+        "slot": "1J-2H",
+        "homeTla": "ARG",
+        "awayTla": "URU",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_32"
       },
-      "POR_GHA": {
+      "1B-3EFGIJ": {
+        "slot": "1B-3EFGIJ",
+        "homeTla": "SUI",
+        "awayTla": "ALG",
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "1K-3DEIJL": {
+        "slot": "1K-3DEIJL",
+        "homeTla": "POR",
+        "awayTla": "GHA",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_32"
       },
-      "KOR_MAR": {
+      "W74-W77": {
+        "slot": "W74-W77",
+        "homeTla": "GER",
+        "awayTla": "FRA",
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "W73-W75": {
+        "slot": "W73-W75",
+        "homeTla": "KOR",
+        "awayTla": "MAR",
         "advancingTeamTla": "MAR",
         "round": "ROUND_OF_16"
       },
-      "GER_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_16"
-      },
-      "BRA_NOR": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_16"
-      },
-      "MEX_ENG": {
-        "advancingTeamTla": "ENG",
-        "round": "ROUND_OF_16"
-      },
-      "COL_ESP": {
+      "W83-W84": {
+        "slot": "W83-W84",
+        "homeTla": "COL",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "ROUND_OF_16"
       },
-      "TUR_BEL": {
+      "W81-W82": {
+        "slot": "W81-W82",
+        "homeTla": "TUR",
+        "awayTla": "BEL",
         "advancingTeamTla": "BEL",
         "round": "ROUND_OF_16"
       },
-      "ARG_EGY": {
+      "W76-W78": {
+        "slot": "W76-W78",
+        "homeTla": "BRA",
+        "awayTla": "NOR",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "W79-W80": {
+        "slot": "W79-W80",
+        "homeTla": "MEX",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "W86-W88": {
+        "slot": "W86-W88",
+        "homeTla": "ARG",
+        "awayTla": "EGY",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_16"
       },
-      "SUI_POR": {
+      "W85-W87": {
+        "slot": "W85-W87",
+        "homeTla": "SUI",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_16"
       },
-      "FRA_MAR": {
+      "W89-W90": {
+        "slot": "W89-W90",
+        "homeTla": "FRA",
+        "awayTla": "MAR",
         "advancingTeamTla": "FRA",
         "round": "QUARTER_FINALS"
       },
-      "ESP_BEL": {
+      "W93-W94": {
+        "slot": "W93-W94",
+        "homeTla": "ESP",
+        "awayTla": "BEL",
         "advancingTeamTla": "ESP",
         "round": "QUARTER_FINALS"
       },
-      "BRA_ENG": {
+      "W91-W92": {
+        "slot": "W91-W92",
+        "homeTla": "BRA",
+        "awayTla": "ENG",
         "advancingTeamTla": "ENG",
         "round": "QUARTER_FINALS"
       },
-      "ARG_POR": {
+      "W95-W96": {
+        "slot": "W95-W96",
+        "homeTla": "ARG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "QUARTER_FINALS"
       },
-      "FRA_ESP": {
+      "W97-W98": {
+        "slot": "W97-W98",
+        "homeTla": "FRA",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "SEMI_FINALS"
       },
-      "ENG_POR": {
+      "W99-W100": {
+        "slot": "W99-W100",
+        "homeTla": "ENG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "SEMI_FINALS"
       },
-      "FRA_ENG": {
-        "advancingTeamTla": "ENG",
-        "round": "THIRD_PLACE"
-      },
-      "ESP_POR": {
+      "W101-W102": {
+        "slot": "W101-W102",
+        "homeTla": "ESP",
+        "awayTla": "POR",
         "advancingTeamTla": "ESP",
         "round": "FINAL"
+      },
+      "L101-L102": {
+        "slot": "L101-L102",
+        "homeTla": "FRA",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ENG",
+        "round": "THIRD_PLACE"
       }
     },
     "specials": {
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "ENG",
-      "goldenBoot": {
-        "first": "Kylian Mbappé",
-        "second": "Harry Kane",
-        "third": "Cristiano Ronaldo"
-      },
-      "goldenBall": {
-        "first": "Pedri",
-        "second": "Vitinha",
-        "third": "Lamine Yamal"
-      }
+      "goldenBoot": "Kylian Mbappé",
+      "goldenBall": "Pedri"
     }
   },
   "Julito": {
@@ -2399,149 +2751,237 @@
       }
     },
     "knockout": {
-      "MEX_CAN": {
-        "advancingTeamTla": "MEX",
-        "round": "ROUND_OF_32"
-      },
-      "BRA_NED": {
-        "advancingTeamTla": "NED",
-        "round": "ROUND_OF_32"
-      },
-      "GER_USA": {
+      "1E-3ABCDF": {
+        "slot": "1E-3ABCDF",
+        "homeTla": "GER",
+        "awayTla": "USA",
         "advancingTeamTla": "USA",
         "round": "ROUND_OF_32"
       },
-      "SWE_MAR": {
-        "advancingTeamTla": "MAR",
-        "round": "ROUND_OF_32"
-      },
-      "ECU_NOR": {
-        "advancingTeamTla": "NOR",
-        "round": "ROUND_OF_32"
-      },
-      "FRA_JPN": {
+      "1I-3CDFGH": {
+        "slot": "1I-3CDFGH",
+        "homeTla": "FRA",
+        "awayTla": "JPN",
         "advancingTeamTla": "FRA",
         "round": "ROUND_OF_32"
       },
-      "KOR_CIV": {
-        "advancingTeamTla": "KOR",
-        "round": "ROUND_OF_32"
-      },
-      "ENG_COD": {
-        "advancingTeamTla": "ENG",
-        "round": "ROUND_OF_32"
-      },
-      "BEL_CZE": {
+      "2A-2B": {
+        "slot": "2A-2B",
+        "homeTla": "BEL",
+        "awayTla": "CZE",
         "advancingTeamTla": "BEL",
         "round": "ROUND_OF_32"
       },
-      "TUR_BIH": {
-        "advancingTeamTla": "TUR",
+      "1F-2C": {
+        "slot": "1F-2C",
+        "homeTla": "BRA",
+        "awayTla": "NED",
+        "advancingTeamTla": "NED",
         "round": "ROUND_OF_32"
       },
-      "ESP_AUT": {
-        "advancingTeamTla": "ESP",
-        "round": "ROUND_OF_32"
-      },
-      "COL_CRO": {
-        "advancingTeamTla": "COL",
-        "round": "ROUND_OF_32"
-      },
-      "SUI_SEN": {
-        "advancingTeamTla": "SEN",
-        "round": "ROUND_OF_32"
-      },
-      "AUS_EGY": {
-        "advancingTeamTla": "EGY",
-        "round": "ROUND_OF_32"
-      },
-      "ARG_URU": {
-        "advancingTeamTla": "URU",
-        "round": "ROUND_OF_32"
-      },
-      "POR_GHA": {
+      "2K-2L": {
+        "slot": "2K-2L",
+        "homeTla": "POR",
+        "awayTla": "GHA",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_32"
       },
-      "MEX_MAR": {
+      "1H-2J": {
+        "slot": "1H-2J",
+        "homeTla": "ESP",
+        "awayTla": "AUT",
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_32"
+      },
+      "1D-3BEFIJ": {
+        "slot": "1D-3BEFIJ",
+        "homeTla": "TUR",
+        "awayTla": "BIH",
+        "advancingTeamTla": "TUR",
+        "round": "ROUND_OF_32"
+      },
+      "1C-2F": {
+        "slot": "1C-2F",
+        "homeTla": "SWE",
+        "awayTla": "MAR",
+        "advancingTeamTla": "MAR",
+        "round": "ROUND_OF_32"
+      },
+      "2E-2I": {
+        "slot": "2E-2I",
+        "homeTla": "ECU",
+        "awayTla": "NOR",
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "1A-3CEFHI": {
+        "slot": "1A-3CEFHI",
+        "homeTla": "MEX",
+        "awayTla": "CAN",
         "advancingTeamTla": "MEX",
-        "round": "ROUND_OF_16"
+        "round": "ROUND_OF_32"
       },
-      "USA_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_16"
-      },
-      "NED_NOR": {
-        "advancingTeamTla": "NED",
-        "round": "ROUND_OF_16"
-      },
-      "KOR_ENG": {
+      "1L-3EHIJK": {
+        "slot": "1L-3EHIJK",
+        "homeTla": "ENG",
+        "awayTla": "COD",
         "advancingTeamTla": "ENG",
-        "round": "ROUND_OF_16"
+        "round": "ROUND_OF_32"
       },
-      "COL_ESP": {
-        "advancingTeamTla": "ESP",
-        "round": "ROUND_OF_16"
-      },
-      "TUR_BEL": {
-        "advancingTeamTla": "BEL",
-        "round": "ROUND_OF_16"
-      },
-      "URU_EGY": {
+      "1J-2H": {
+        "slot": "1J-2H",
+        "homeTla": "ARG",
+        "awayTla": "URU",
         "advancingTeamTla": "URU",
-        "round": "ROUND_OF_16"
+        "round": "ROUND_OF_32"
       },
-      "SEN_POR": {
+      "1B-3EFGIJ": {
+        "slot": "1B-3EFGIJ",
+        "homeTla": "SUI",
+        "awayTla": "SEN",
         "advancingTeamTla": "SEN",
-        "round": "ROUND_OF_16"
+        "round": "ROUND_OF_32"
       },
-      "FRA_MEX": {
+      "1K-3DEIJL": {
+        "slot": "1K-3DEIJL",
+        "homeTla": "COL",
+        "awayTla": "CRO",
+        "advancingTeamTla": "COL",
+        "round": "ROUND_OF_32"
+      },
+      "W74-W77": {
+        "slot": "W74-W77",
+        "homeTla": "USA",
+        "awayTla": "FRA",
         "advancingTeamTla": "FRA",
-        "round": "QUARTER_FINALS"
+        "round": "ROUND_OF_16"
       },
-      "ESP_BEL": {
-        "advancingTeamTla": "ESP",
-        "round": "QUARTER_FINALS"
-      },
-      "NED_ENG": {
+      "W101-W102": {
+        "slot": "W101-W102",
+        "homeTla": "ESP",
+        "awayTla": "NED",
         "advancingTeamTla": "NED",
-        "round": "QUARTER_FINALS"
+        "round": "FINAL"
       },
-      "URU_SEN": {
-        "advancingTeamTla": "SEN",
-        "round": "QUARTER_FINALS"
-      },
-      "FRA_ESP": {
-        "advancingTeamTla": "ESP",
-        "round": "SEMI_FINALS"
-      },
-      "NED_SEN": {
-        "advancingTeamTla": "NED",
-        "round": "SEMI_FINALS"
-      },
-      "FRA_SEN": {
+      "L101-L102": {
+        "slot": "L101-L102",
+        "homeTla": "FRA",
+        "awayTla": "SEN",
         "advancingTeamTla": "FRA",
         "round": "THIRD_PLACE"
       },
-      "ESP_NED": {
+      "ROUND_OF_32_KOR_CIV": {
+        "slot": "ROUND_OF_32_KOR_CIV",
+        "homeTla": "KOR",
+        "awayTla": "CIV",
+        "advancingTeamTla": "KOR",
+        "round": "ROUND_OF_32"
+      },
+      "ROUND_OF_32_AUS_EGY": {
+        "slot": "ROUND_OF_32_AUS_EGY",
+        "homeTla": "AUS",
+        "awayTla": "EGY",
+        "advancingTeamTla": "EGY",
+        "round": "ROUND_OF_32"
+      },
+      "ROUND_OF_16_MEX_MAR": {
+        "slot": "ROUND_OF_16_MEX_MAR",
+        "homeTla": "MEX",
+        "awayTla": "MAR",
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_16"
+      },
+      "ROUND_OF_16_NED_NOR": {
+        "slot": "ROUND_OF_16_NED_NOR",
+        "homeTla": "NED",
+        "awayTla": "NOR",
         "advancingTeamTla": "NED",
-        "round": "FINAL"
+        "round": "ROUND_OF_16"
+      },
+      "ROUND_OF_16_KOR_ENG": {
+        "slot": "ROUND_OF_16_KOR_ENG",
+        "homeTla": "KOR",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "ROUND_OF_16_COL_ESP": {
+        "slot": "ROUND_OF_16_COL_ESP",
+        "homeTla": "COL",
+        "awayTla": "ESP",
+        "advancingTeamTla": "ESP",
+        "round": "ROUND_OF_16"
+      },
+      "ROUND_OF_16_TUR_BEL": {
+        "slot": "ROUND_OF_16_TUR_BEL",
+        "homeTla": "TUR",
+        "awayTla": "BEL",
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_16"
+      },
+      "ROUND_OF_16_URU_EGY": {
+        "slot": "ROUND_OF_16_URU_EGY",
+        "homeTla": "URU",
+        "awayTla": "EGY",
+        "advancingTeamTla": "URU",
+        "round": "ROUND_OF_16"
+      },
+      "ROUND_OF_16_SEN_POR": {
+        "slot": "ROUND_OF_16_SEN_POR",
+        "homeTla": "SEN",
+        "awayTla": "POR",
+        "advancingTeamTla": "SEN",
+        "round": "ROUND_OF_16"
+      },
+      "QUARTER_FINALS_FRA_MEX": {
+        "slot": "QUARTER_FINALS_FRA_MEX",
+        "homeTla": "FRA",
+        "awayTla": "MEX",
+        "advancingTeamTla": "FRA",
+        "round": "QUARTER_FINALS"
+      },
+      "QUARTER_FINALS_ESP_BEL": {
+        "slot": "QUARTER_FINALS_ESP_BEL",
+        "homeTla": "ESP",
+        "awayTla": "BEL",
+        "advancingTeamTla": "ESP",
+        "round": "QUARTER_FINALS"
+      },
+      "QUARTER_FINALS_NED_ENG": {
+        "slot": "QUARTER_FINALS_NED_ENG",
+        "homeTla": "NED",
+        "awayTla": "ENG",
+        "advancingTeamTla": "NED",
+        "round": "QUARTER_FINALS"
+      },
+      "QUARTER_FINALS_URU_SEN": {
+        "slot": "QUARTER_FINALS_URU_SEN",
+        "homeTla": "URU",
+        "awayTla": "SEN",
+        "advancingTeamTla": "SEN",
+        "round": "QUARTER_FINALS"
+      },
+      "SEMI_FINALS_FRA_ESP": {
+        "slot": "SEMI_FINALS_FRA_ESP",
+        "homeTla": "FRA",
+        "awayTla": "ESP",
+        "advancingTeamTla": "ESP",
+        "round": "SEMI_FINALS"
+      },
+      "SEMI_FINALS_NED_SEN": {
+        "slot": "SEMI_FINALS_NED_SEN",
+        "homeTla": "NED",
+        "awayTla": "SEN",
+        "advancingTeamTla": "NED",
+        "round": "SEMI_FINALS"
       }
     },
     "specials": {
       "champion": "NED",
       "runnerUp": "ESP",
       "thirdPlace": "FRA",
-      "goldenBoot": {
-        "first": "Kylian Mbappé",
-        "second": "Harry Kane",
-        "third": "Memphis Depay"
-      },
-      "goldenBall": {
-        "first": "Kylian Mbappé",
-        "second": "Pedri",
-        "third": "Vitinha"
-      }
+      "goldenBoot": "Kylian Mbappé",
+      "goldenBall": "Kylian Mbappé"
     }
   },
   "Tacho": {
@@ -2908,149 +3348,237 @@
       }
     },
     "knockout": {
-      "RSA_CAN": {
-        "advancingTeamTla": "CAN",
-        "round": "ROUND_OF_32"
-      },
-      "BRA_SWE": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_32"
-      },
-      "GER_TUR": {
+      "1E-3ABCDF": {
+        "slot": "1E-3ABCDF",
+        "homeTla": "GER",
+        "awayTla": "TUR",
         "advancingTeamTla": "GER",
         "round": "ROUND_OF_32"
       },
-      "JPN_MAR": {
-        "advancingTeamTla": "JPN",
-        "round": "ROUND_OF_32"
-      },
-      "CIV_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_32"
-      },
-      "NOR_NED": {
+      "1I-3CDFGH": {
+        "slot": "1I-3CDFGH",
+        "homeTla": "NOR",
+        "awayTla": "NED",
         "advancingTeamTla": "NED",
         "round": "ROUND_OF_32"
       },
-      "MEX_SCO": {
-        "advancingTeamTla": "MEX",
+      "2A-2B": {
+        "slot": "2A-2B",
+        "homeTla": "RSA",
+        "awayTla": "CAN",
+        "advancingTeamTla": "CAN",
         "round": "ROUND_OF_32"
       },
-      "ENG_COD": {
-        "advancingTeamTla": "ENG",
+      "1F-2C": {
+        "slot": "1F-2C",
+        "homeTla": "JPN",
+        "awayTla": "MAR",
+        "advancingTeamTla": "JPN",
         "round": "ROUND_OF_32"
       },
-      "BEL_SEN": {
-        "advancingTeamTla": "BEL",
-        "round": "ROUND_OF_32"
-      },
-      "USA_ECU": {
-        "advancingTeamTla": "USA",
-        "round": "ROUND_OF_32"
-      },
-      "ESP_AUT": {
-        "advancingTeamTla": "ESP",
-        "round": "ROUND_OF_32"
-      },
-      "COL_CRO": {
+      "2K-2L": {
+        "slot": "2K-2L",
+        "homeTla": "COL",
+        "awayTla": "CRO",
         "advancingTeamTla": "CRO",
         "round": "ROUND_OF_32"
       },
-      "SUI_ALG": {
-        "advancingTeamTla": "SUI",
+      "1H-2J": {
+        "slot": "1H-2J",
+        "homeTla": "ESP",
+        "awayTla": "AUT",
+        "advancingTeamTla": "ESP",
         "round": "ROUND_OF_32"
       },
-      "PAR_EGY": {
+      "1D-3BEFIJ": {
+        "slot": "1D-3BEFIJ",
+        "homeTla": "USA",
+        "awayTla": "ECU",
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "1G-3AEHIJ": {
+        "slot": "1G-3AEHIJ",
+        "homeTla": "BEL",
+        "awayTla": "SEN",
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "1C-2F": {
+        "slot": "1C-2F",
+        "homeTla": "BRA",
+        "awayTla": "SWE",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "2E-2I": {
+        "slot": "2E-2I",
+        "homeTla": "CIV",
+        "awayTla": "FRA",
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_32"
+      },
+      "1A-3CEFHI": {
+        "slot": "1A-3CEFHI",
+        "homeTla": "MEX",
+        "awayTla": "SCO",
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "1L-3EHIJK": {
+        "slot": "1L-3EHIJK",
+        "homeTla": "ENG",
+        "awayTla": "COD",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "2D-2G": {
+        "slot": "2D-2G",
+        "homeTla": "PAR",
+        "awayTla": "EGY",
         "advancingTeamTla": "EGY",
         "round": "ROUND_OF_32"
       },
-      "ARG_URU": {
+      "1J-2H": {
+        "slot": "1J-2H",
+        "homeTla": "ARG",
+        "awayTla": "URU",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_32"
       },
-      "POR_GHA": {
+      "1B-3EFGIJ": {
+        "slot": "1B-3EFGIJ",
+        "homeTla": "SUI",
+        "awayTla": "ALG",
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "1K-3DEIJL": {
+        "slot": "1K-3DEIJL",
+        "homeTla": "POR",
+        "awayTla": "GHA",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_32"
       },
-      "CAN_JPN": {
+      "W74-W77": {
+        "slot": "W74-W77",
+        "homeTla": "GER",
+        "awayTla": "NED",
+        "advancingTeamTla": "GER",
+        "round": "ROUND_OF_16"
+      },
+      "W73-W75": {
+        "slot": "W73-W75",
+        "homeTla": "CAN",
+        "awayTla": "JPN",
         "advancingTeamTla": "JPN",
         "round": "ROUND_OF_16"
       },
-      "GER_NED": {
-        "advancingTeamTla": "GER",
-        "round": "ROUND_OF_16"
-      },
-      "BRA_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_16"
-      },
-      "MEX_ENG": {
-        "advancingTeamTla": "ENG",
-        "round": "ROUND_OF_16"
-      },
-      "CRO_ESP": {
+      "W83-W84": {
+        "slot": "W83-W84",
+        "homeTla": "CRO",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "ROUND_OF_16"
       },
-      "USA_BEL": {
+      "W81-W82": {
+        "slot": "W81-W82",
+        "homeTla": "USA",
+        "awayTla": "BEL",
         "advancingTeamTla": "BEL",
         "round": "ROUND_OF_16"
       },
-      "ARG_EGY": {
+      "W76-W78": {
+        "slot": "W76-W78",
+        "homeTla": "BRA",
+        "awayTla": "FRA",
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "W79-W80": {
+        "slot": "W79-W80",
+        "homeTla": "MEX",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "W86-W88": {
+        "slot": "W86-W88",
+        "homeTla": "ARG",
+        "awayTla": "EGY",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_16"
       },
-      "SUI_POR": {
+      "W85-W87": {
+        "slot": "W85-W87",
+        "homeTla": "SUI",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_16"
       },
-      "GER_JPN": {
+      "W89-W90": {
+        "slot": "W89-W90",
+        "homeTla": "GER",
+        "awayTla": "JPN",
         "advancingTeamTla": "GER",
         "round": "QUARTER_FINALS"
       },
-      "ESP_BEL": {
+      "W93-W94": {
+        "slot": "W93-W94",
+        "homeTla": "ESP",
+        "awayTla": "BEL",
         "advancingTeamTla": "ESP",
         "round": "QUARTER_FINALS"
       },
-      "FRA_ENG": {
+      "W91-W92": {
+        "slot": "W91-W92",
+        "homeTla": "FRA",
+        "awayTla": "ENG",
         "advancingTeamTla": "ENG",
         "round": "QUARTER_FINALS"
       },
-      "ARG_POR": {
+      "W95-W96": {
+        "slot": "W95-W96",
+        "homeTla": "ARG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "QUARTER_FINALS"
       },
-      "GER_ESP": {
+      "W97-W98": {
+        "slot": "W97-W98",
+        "homeTla": "GER",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "SEMI_FINALS"
       },
-      "ENG_POR": {
+      "W99-W100": {
+        "slot": "W99-W100",
+        "homeTla": "ENG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "SEMI_FINALS"
       },
-      "GER_ENG": {
-        "advancingTeamTla": "GER",
-        "round": "THIRD_PLACE"
-      },
-      "ESP_POR": {
+      "W101-W102": {
+        "slot": "W101-W102",
+        "homeTla": "ESP",
+        "awayTla": "POR",
         "advancingTeamTla": "ESP",
         "round": "FINAL"
+      },
+      "L101-L102": {
+        "slot": "L101-L102",
+        "homeTla": "GER",
+        "awayTla": "ENG",
+        "advancingTeamTla": "GER",
+        "round": "THIRD_PLACE"
       }
     },
     "specials": {
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "GER",
-      "goldenBoot": {
-        "first": "Mikel Oyarzabal",
-        "second": "Cristiano Ronaldo",
-        "third": "Lautaro Martínez"
-      },
-      "goldenBall": {
-        "first": "Pedri",
-        "second": "Harry Kane",
-        "third": "Cristiano Ronaldo"
-      }
+      "goldenBoot": "Mikel Oyarzabal",
+      "goldenBall": "Pedri"
     }
   },
   "Gafas": {
@@ -3417,149 +3945,237 @@
       }
     },
     "knockout": {
-      "CZE_CAN": {
-        "advancingTeamTla": "CAN",
-        "round": "ROUND_OF_32"
-      },
-      "BRA_SWE": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_32"
-      },
-      "GER_PAR": {
+      "1E-3ABCDF": {
+        "slot": "1E-3ABCDF",
+        "homeTla": "GER",
+        "awayTla": "PAR",
         "advancingTeamTla": "GER",
         "round": "ROUND_OF_32"
       },
-      "NED_MAR": {
-        "advancingTeamTla": "NED",
-        "round": "ROUND_OF_32"
-      },
-      "CIV_NOR": {
-        "advancingTeamTla": "NOR",
-        "round": "ROUND_OF_32"
-      },
-      "FRA_JPN": {
+      "1I-3CDFGH": {
+        "slot": "1I-3CDFGH",
+        "homeTla": "FRA",
+        "awayTla": "JPN",
         "advancingTeamTla": "FRA",
         "round": "ROUND_OF_32"
       },
-      "MEX_SCO": {
-        "advancingTeamTla": "MEX",
+      "2A-2B": {
+        "slot": "2A-2B",
+        "homeTla": "CZE",
+        "awayTla": "CAN",
+        "advancingTeamTla": "CAN",
         "round": "ROUND_OF_32"
       },
-      "ENG_SEN": {
-        "advancingTeamTla": "ENG",
+      "1F-2C": {
+        "slot": "1F-2C",
+        "homeTla": "NED",
+        "awayTla": "MAR",
+        "advancingTeamTla": "NED",
         "round": "ROUND_OF_32"
       },
-      "BEL_KOR": {
-        "advancingTeamTla": "BEL",
-        "round": "ROUND_OF_32"
-      },
-      "USA_ECU": {
-        "advancingTeamTla": "USA",
-        "round": "ROUND_OF_32"
-      },
-      "ESP_ALG": {
-        "advancingTeamTla": "ESP",
-        "round": "ROUND_OF_32"
-      },
-      "COL_GHA": {
+      "2K-2L": {
+        "slot": "2K-2L",
+        "homeTla": "COL",
+        "awayTla": "GHA",
         "advancingTeamTla": "COL",
         "round": "ROUND_OF_32"
       },
-      "SUI_AUT": {
-        "advancingTeamTla": "SUI",
+      "1H-2J": {
+        "slot": "1H-2J",
+        "homeTla": "ESP",
+        "awayTla": "ALG",
+        "advancingTeamTla": "ESP",
         "round": "ROUND_OF_32"
       },
-      "TUR_EGY": {
+      "1D-3BEFIJ": {
+        "slot": "1D-3BEFIJ",
+        "homeTla": "USA",
+        "awayTla": "ECU",
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "1G-3AEHIJ": {
+        "slot": "1G-3AEHIJ",
+        "homeTla": "BEL",
+        "awayTla": "KOR",
+        "advancingTeamTla": "BEL",
+        "round": "ROUND_OF_32"
+      },
+      "1C-2F": {
+        "slot": "1C-2F",
+        "homeTla": "BRA",
+        "awayTla": "SWE",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "2E-2I": {
+        "slot": "2E-2I",
+        "homeTla": "CIV",
+        "awayTla": "NOR",
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "1A-3CEFHI": {
+        "slot": "1A-3CEFHI",
+        "homeTla": "MEX",
+        "awayTla": "SCO",
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "1L-3EHIJK": {
+        "slot": "1L-3EHIJK",
+        "homeTla": "ENG",
+        "awayTla": "SEN",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "2D-2G": {
+        "slot": "2D-2G",
+        "homeTla": "TUR",
+        "awayTla": "EGY",
         "advancingTeamTla": "TUR",
         "round": "ROUND_OF_32"
       },
-      "ARG_URU": {
+      "1J-2H": {
+        "slot": "1J-2H",
+        "homeTla": "ARG",
+        "awayTla": "URU",
         "advancingTeamTla": "URU",
         "round": "ROUND_OF_32"
       },
-      "POR_CRO": {
+      "1B-3EFGIJ": {
+        "slot": "1B-3EFGIJ",
+        "homeTla": "SUI",
+        "awayTla": "AUT",
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "1K-3DEIJL": {
+        "slot": "1K-3DEIJL",
+        "homeTla": "POR",
+        "awayTla": "CRO",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_32"
       },
-      "CAN_NED": {
+      "W74-W77": {
+        "slot": "W74-W77",
+        "homeTla": "GER",
+        "awayTla": "FRA",
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "W73-W75": {
+        "slot": "W73-W75",
+        "homeTla": "CAN",
+        "awayTla": "NED",
         "advancingTeamTla": "NED",
         "round": "ROUND_OF_16"
       },
-      "GER_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_16"
-      },
-      "BRA_NOR": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_16"
-      },
-      "MEX_ENG": {
-        "advancingTeamTla": "MEX",
-        "round": "ROUND_OF_16"
-      },
-      "COL_ESP": {
+      "W83-W84": {
+        "slot": "W83-W84",
+        "homeTla": "COL",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "ROUND_OF_16"
       },
-      "USA_BEL": {
+      "W81-W82": {
+        "slot": "W81-W82",
+        "homeTla": "USA",
+        "awayTla": "BEL",
         "advancingTeamTla": "BEL",
         "round": "ROUND_OF_16"
       },
-      "URU_TUR": {
+      "W76-W78": {
+        "slot": "W76-W78",
+        "homeTla": "BRA",
+        "awayTla": "NOR",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "W79-W80": {
+        "slot": "W79-W80",
+        "homeTla": "MEX",
+        "awayTla": "ENG",
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_16"
+      },
+      "W86-W88": {
+        "slot": "W86-W88",
+        "homeTla": "URU",
+        "awayTla": "TUR",
         "advancingTeamTla": "URU",
         "round": "ROUND_OF_16"
       },
-      "SUI_POR": {
+      "W85-W87": {
+        "slot": "W85-W87",
+        "homeTla": "SUI",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_16"
       },
-      "FRA_NED": {
+      "W89-W90": {
+        "slot": "W89-W90",
+        "homeTla": "FRA",
+        "awayTla": "NED",
         "advancingTeamTla": "FRA",
         "round": "QUARTER_FINALS"
       },
-      "ESP_BEL": {
+      "W93-W94": {
+        "slot": "W93-W94",
+        "homeTla": "ESP",
+        "awayTla": "BEL",
         "advancingTeamTla": "ESP",
         "round": "QUARTER_FINALS"
       },
-      "BRA_MEX": {
+      "W91-W92": {
+        "slot": "W91-W92",
+        "homeTla": "BRA",
+        "awayTla": "MEX",
         "advancingTeamTla": "BRA",
         "round": "QUARTER_FINALS"
       },
-      "URU_POR": {
+      "W95-W96": {
+        "slot": "W95-W96",
+        "homeTla": "URU",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "QUARTER_FINALS"
       },
-      "FRA_ESP": {
+      "W97-W98": {
+        "slot": "W97-W98",
+        "homeTla": "FRA",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "SEMI_FINALS"
       },
-      "BRA_POR": {
+      "W99-W100": {
+        "slot": "W99-W100",
+        "homeTla": "BRA",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "SEMI_FINALS"
       },
-      "FRA_BRA": {
-        "advancingTeamTla": "BRA",
-        "round": "THIRD_PLACE"
-      },
-      "ESP_POR": {
+      "W101-W102": {
+        "slot": "W101-W102",
+        "homeTla": "ESP",
+        "awayTla": "POR",
         "advancingTeamTla": "ESP",
         "round": "FINAL"
+      },
+      "L101-L102": {
+        "slot": "L101-L102",
+        "homeTla": "FRA",
+        "awayTla": "BRA",
+        "advancingTeamTla": "BRA",
+        "round": "THIRD_PLACE"
       }
     },
     "specials": {
       "champion": "ESP",
       "runnerUp": "POR",
       "thirdPlace": "BRA",
-      "goldenBoot": {
-        "first": "Kylian Mbappé",
-        "second": "Cristiano Ronaldo",
-        "third": "Vinícius Júnior"
-      },
-      "goldenBall": {
-        "first": "Pedri",
-        "second": "Kylian Mbappé",
-        "third": "Vinícius Júnior"
-      }
+      "goldenBoot": "Kylian Mbappé",
+      "goldenBall": "Pedri"
     }
   },
   "Felipe Ramón": {
@@ -3926,149 +4542,237 @@
       }
     },
     "knockout": {
-      "KOR_BIH": {
-        "advancingTeamTla": "KOR",
-        "round": "ROUND_OF_32"
-      },
-      "BRA_NED": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_32"
-      },
-      "CIV_SCO": {
+      "1E-3ABCDF": {
+        "slot": "1E-3ABCDF",
+        "homeTla": "CIV",
+        "awayTla": "SCO",
         "advancingTeamTla": "CIV",
         "round": "ROUND_OF_32"
       },
-      "JPN_MAR": {
-        "advancingTeamTla": "MAR",
-        "round": "ROUND_OF_32"
-      },
-      "GER_NOR": {
-        "advancingTeamTla": "NOR",
-        "round": "ROUND_OF_32"
-      },
-      "FRA_KSA": {
+      "1I-3CDFGH": {
+        "slot": "1I-3CDFGH",
+        "homeTla": "FRA",
+        "awayTla": "KSA",
         "advancingTeamTla": "FRA",
         "round": "ROUND_OF_32"
       },
-      "MEX_ECU": {
-        "advancingTeamTla": "MEX",
+      "2A-2B": {
+        "slot": "2A-2B",
+        "homeTla": "KOR",
+        "awayTla": "BIH",
+        "advancingTeamTla": "KOR",
         "round": "ROUND_OF_32"
       },
-      "ENG_SEN": {
-        "advancingTeamTla": "ENG",
+      "1F-2C": {
+        "slot": "1F-2C",
+        "homeTla": "JPN",
+        "awayTla": "MAR",
+        "advancingTeamTla": "MAR",
         "round": "ROUND_OF_32"
       },
-      "EGY_CZE": {
-        "advancingTeamTla": "EGY",
-        "round": "ROUND_OF_32"
-      },
-      "USA_CAN": {
-        "advancingTeamTla": "USA",
-        "round": "ROUND_OF_32"
-      },
-      "ESP_ALG": {
-        "advancingTeamTla": "ESP",
-        "round": "ROUND_OF_32"
-      },
-      "COL_CRO": {
+      "2K-2L": {
+        "slot": "2K-2L",
+        "homeTla": "COL",
+        "awayTla": "CRO",
         "advancingTeamTla": "COL",
         "round": "ROUND_OF_32"
       },
-      "SUI_AUT": {
-        "advancingTeamTla": "SUI",
+      "1H-2J": {
+        "slot": "1H-2J",
+        "homeTla": "ESP",
+        "awayTla": "ALG",
+        "advancingTeamTla": "ESP",
         "round": "ROUND_OF_32"
       },
-      "TUR_BEL": {
+      "1D-3BEFIJ": {
+        "slot": "1D-3BEFIJ",
+        "homeTla": "USA",
+        "awayTla": "CAN",
+        "advancingTeamTla": "USA",
+        "round": "ROUND_OF_32"
+      },
+      "1G-3AEHIJ": {
+        "slot": "1G-3AEHIJ",
+        "homeTla": "EGY",
+        "awayTla": "CZE",
+        "advancingTeamTla": "EGY",
+        "round": "ROUND_OF_32"
+      },
+      "1C-2F": {
+        "slot": "1C-2F",
+        "homeTla": "BRA",
+        "awayTla": "NED",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "2E-2I": {
+        "slot": "2E-2I",
+        "homeTla": "GER",
+        "awayTla": "NOR",
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "1A-3CEFHI": {
+        "slot": "1A-3CEFHI",
+        "homeTla": "MEX",
+        "awayTla": "ECU",
+        "advancingTeamTla": "MEX",
+        "round": "ROUND_OF_32"
+      },
+      "1L-3EHIJK": {
+        "slot": "1L-3EHIJK",
+        "homeTla": "ENG",
+        "awayTla": "SEN",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_32"
+      },
+      "2D-2G": {
+        "slot": "2D-2G",
+        "homeTla": "TUR",
+        "awayTla": "BEL",
         "advancingTeamTla": "TUR",
         "round": "ROUND_OF_32"
       },
-      "ARG_URU": {
+      "1J-2H": {
+        "slot": "1J-2H",
+        "homeTla": "ARG",
+        "awayTla": "URU",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_32"
       },
-      "POR_GHA": {
+      "1B-3EFGIJ": {
+        "slot": "1B-3EFGIJ",
+        "homeTla": "SUI",
+        "awayTla": "AUT",
+        "advancingTeamTla": "SUI",
+        "round": "ROUND_OF_32"
+      },
+      "1K-3DEIJL": {
+        "slot": "1K-3DEIJL",
+        "homeTla": "POR",
+        "awayTla": "GHA",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_32"
       },
-      "KOR_MAR": {
+      "W74-W77": {
+        "slot": "W74-W77",
+        "homeTla": "CIV",
+        "awayTla": "FRA",
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "W73-W75": {
+        "slot": "W73-W75",
+        "homeTla": "KOR",
+        "awayTla": "MAR",
         "advancingTeamTla": "MAR",
         "round": "ROUND_OF_16"
       },
-      "CIV_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_16"
-      },
-      "BRA_NOR": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_16"
-      },
-      "MEX_ENG": {
-        "advancingTeamTla": "ENG",
-        "round": "ROUND_OF_16"
-      },
-      "COL_ESP": {
+      "W83-W84": {
+        "slot": "W83-W84",
+        "homeTla": "COL",
+        "awayTla": "ESP",
         "advancingTeamTla": "ESP",
         "round": "ROUND_OF_16"
       },
-      "USA_EGY": {
+      "W81-W82": {
+        "slot": "W81-W82",
+        "homeTla": "USA",
+        "awayTla": "EGY",
         "advancingTeamTla": "EGY",
         "round": "ROUND_OF_16"
       },
-      "ARG_TUR": {
+      "W76-W78": {
+        "slot": "W76-W78",
+        "homeTla": "BRA",
+        "awayTla": "NOR",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "W79-W80": {
+        "slot": "W79-W80",
+        "homeTla": "MEX",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ENG",
+        "round": "ROUND_OF_16"
+      },
+      "W86-W88": {
+        "slot": "W86-W88",
+        "homeTla": "ARG",
+        "awayTla": "TUR",
         "advancingTeamTla": "ARG",
         "round": "ROUND_OF_16"
       },
-      "SUI_POR": {
+      "W85-W87": {
+        "slot": "W85-W87",
+        "homeTla": "SUI",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_16"
       },
-      "FRA_MAR": {
+      "W89-W90": {
+        "slot": "W89-W90",
+        "homeTla": "FRA",
+        "awayTla": "MAR",
         "advancingTeamTla": "FRA",
         "round": "QUARTER_FINALS"
       },
-      "ESP_EGY": {
+      "W93-W94": {
+        "slot": "W93-W94",
+        "homeTla": "ESP",
+        "awayTla": "EGY",
         "advancingTeamTla": "ESP",
         "round": "QUARTER_FINALS"
       },
-      "BRA_ENG": {
+      "W91-W92": {
+        "slot": "W91-W92",
+        "homeTla": "BRA",
+        "awayTla": "ENG",
         "advancingTeamTla": "ENG",
         "round": "QUARTER_FINALS"
       },
-      "ARG_POR": {
+      "W95-W96": {
+        "slot": "W95-W96",
+        "homeTla": "ARG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "QUARTER_FINALS"
       },
-      "FRA_ESP": {
+      "W97-W98": {
+        "slot": "W97-W98",
+        "homeTla": "FRA",
+        "awayTla": "ESP",
         "advancingTeamTla": "FRA",
         "round": "SEMI_FINALS"
       },
-      "ENG_POR": {
+      "W99-W100": {
+        "slot": "W99-W100",
+        "homeTla": "ENG",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "SEMI_FINALS"
       },
-      "ESP_ENG": {
-        "advancingTeamTla": "ESP",
-        "round": "THIRD_PLACE"
-      },
-      "FRA_POR": {
+      "W101-W102": {
+        "slot": "W101-W102",
+        "homeTla": "FRA",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "FINAL"
+      },
+      "L101-L102": {
+        "slot": "L101-L102",
+        "homeTla": "ESP",
+        "awayTla": "ENG",
+        "advancingTeamTla": "ESP",
+        "round": "THIRD_PLACE"
       }
     },
     "specials": {
       "champion": "POR",
       "runnerUp": "FRA",
       "thirdPlace": "ESP",
-      "goldenBoot": {
-        "first": "Kylian Mbappé",
-        "second": "Harry Kane",
-        "third": "Lionel Messi"
-      },
-      "goldenBall": {
-        "first": "Vitinha",
-        "second": "Pedri",
-        "third": "Diogo Costa"
-      }
+      "goldenBoot": "Kylian Mbappé",
+      "goldenBall": "Vitinha"
     }
   },
   "Vaca": {
@@ -4435,149 +5139,237 @@
       }
     },
     "knockout": {
-      "MEX_BIH": {
-        "advancingTeamTla": "BIH",
-        "round": "ROUND_OF_32"
-      },
-      "BRA_JPN": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_32"
-      },
-      "GER_USA": {
+      "1E-3ABCDF": {
+        "slot": "1E-3ABCDF",
+        "homeTla": "GER",
+        "awayTla": "USA",
         "advancingTeamTla": "GER",
         "round": "ROUND_OF_32"
       },
-      "NED_MAR": {
-        "advancingTeamTla": "NED",
-        "round": "ROUND_OF_32"
-      },
-      "CIV_NOR": {
-        "advancingTeamTla": "NOR",
-        "round": "ROUND_OF_32"
-      },
-      "FRA_KSA": {
+      "1I-3CDFGH": {
+        "slot": "1I-3CDFGH",
+        "homeTla": "FRA",
+        "awayTla": "KSA",
         "advancingTeamTla": "FRA",
         "round": "ROUND_OF_32"
       },
-      "KOR_ECU": {
-        "advancingTeamTla": "ECU",
+      "2A-2B": {
+        "slot": "2A-2B",
+        "homeTla": "MEX",
+        "awayTla": "BIH",
+        "advancingTeamTla": "BIH",
         "round": "ROUND_OF_32"
       },
-      "ENG_SEN": {
-        "advancingTeamTla": "SEN",
+      "1F-2C": {
+        "slot": "1F-2C",
+        "homeTla": "NED",
+        "awayTla": "MAR",
+        "advancingTeamTla": "NED",
         "round": "ROUND_OF_32"
       },
-      "BEL_CZE": {
-        "advancingTeamTla": "BEL",
+      "2K-2L": {
+        "slot": "2K-2L",
+        "homeTla": "COL",
+        "awayTla": "CRO",
+        "advancingTeamTla": "CRO",
         "round": "ROUND_OF_32"
       },
-      "TUR_SUI": {
-        "advancingTeamTla": "TUR",
-        "round": "ROUND_OF_32"
-      },
-      "ESP_AUT": {
+      "1H-2J": {
+        "slot": "1H-2J",
+        "homeTla": "ESP",
+        "awayTla": "AUT",
         "advancingTeamTla": "ESP",
         "round": "ROUND_OF_32"
       },
-      "COL_CRO": {
-        "advancingTeamTla": "CRO",
+      "1D-3BEFIJ": {
+        "slot": "1D-3BEFIJ",
+        "homeTla": "TUR",
+        "awayTla": "SUI",
+        "advancingTeamTla": "TUR",
         "round": "ROUND_OF_32"
       },
-      "CAN_ALG": {
-        "advancingTeamTla": "CAN",
+      "1G-3AEHIJ": {
+        "slot": "1G-3AEHIJ",
+        "homeTla": "BEL",
+        "awayTla": "CZE",
+        "advancingTeamTla": "BEL",
         "round": "ROUND_OF_32"
       },
-      "PAR_EGY": {
+      "1C-2F": {
+        "slot": "1C-2F",
+        "homeTla": "BRA",
+        "awayTla": "JPN",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_32"
+      },
+      "2E-2I": {
+        "slot": "2E-2I",
+        "homeTla": "CIV",
+        "awayTla": "NOR",
+        "advancingTeamTla": "NOR",
+        "round": "ROUND_OF_32"
+      },
+      "1A-3CEFHI": {
+        "slot": "1A-3CEFHI",
+        "homeTla": "KOR",
+        "awayTla": "ECU",
+        "advancingTeamTla": "ECU",
+        "round": "ROUND_OF_32"
+      },
+      "1L-3EHIJK": {
+        "slot": "1L-3EHIJK",
+        "homeTla": "ENG",
+        "awayTla": "SEN",
+        "advancingTeamTla": "SEN",
+        "round": "ROUND_OF_32"
+      },
+      "2D-2G": {
+        "slot": "2D-2G",
+        "homeTla": "PAR",
+        "awayTla": "EGY",
         "advancingTeamTla": "PAR",
         "round": "ROUND_OF_32"
       },
-      "ARG_URU": {
+      "1J-2H": {
+        "slot": "1J-2H",
+        "homeTla": "ARG",
+        "awayTla": "URU",
         "advancingTeamTla": "URU",
         "round": "ROUND_OF_32"
       },
-      "POR_GHA": {
+      "1B-3EFGIJ": {
+        "slot": "1B-3EFGIJ",
+        "homeTla": "CAN",
+        "awayTla": "ALG",
+        "advancingTeamTla": "CAN",
+        "round": "ROUND_OF_32"
+      },
+      "1K-3DEIJL": {
+        "slot": "1K-3DEIJL",
+        "homeTla": "POR",
+        "awayTla": "GHA",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_32"
       },
-      "BIH_NED": {
+      "W74-W77": {
+        "slot": "W74-W77",
+        "homeTla": "GER",
+        "awayTla": "FRA",
+        "advancingTeamTla": "FRA",
+        "round": "ROUND_OF_16"
+      },
+      "W73-W75": {
+        "slot": "W73-W75",
+        "homeTla": "BIH",
+        "awayTla": "NED",
         "advancingTeamTla": "NED",
         "round": "ROUND_OF_16"
       },
-      "GER_FRA": {
-        "advancingTeamTla": "FRA",
-        "round": "ROUND_OF_16"
-      },
-      "BRA_NOR": {
-        "advancingTeamTla": "BRA",
-        "round": "ROUND_OF_16"
-      },
-      "ECU_SEN": {
-        "advancingTeamTla": "SEN",
-        "round": "ROUND_OF_16"
-      },
-      "CRO_ESP": {
+      "W83-W84": {
+        "slot": "W83-W84",
+        "homeTla": "CRO",
+        "awayTla": "ESP",
         "advancingTeamTla": "CRO",
         "round": "ROUND_OF_16"
       },
-      "TUR_BEL": {
+      "W81-W82": {
+        "slot": "W81-W82",
+        "homeTla": "TUR",
+        "awayTla": "BEL",
         "advancingTeamTla": "TUR",
         "round": "ROUND_OF_16"
       },
-      "URU_PAR": {
+      "W76-W78": {
+        "slot": "W76-W78",
+        "homeTla": "BRA",
+        "awayTla": "NOR",
+        "advancingTeamTla": "BRA",
+        "round": "ROUND_OF_16"
+      },
+      "W79-W80": {
+        "slot": "W79-W80",
+        "homeTla": "ECU",
+        "awayTla": "SEN",
+        "advancingTeamTla": "SEN",
+        "round": "ROUND_OF_16"
+      },
+      "W86-W88": {
+        "slot": "W86-W88",
+        "homeTla": "URU",
+        "awayTla": "PAR",
         "advancingTeamTla": "URU",
         "round": "ROUND_OF_16"
       },
-      "CAN_POR": {
+      "W85-W87": {
+        "slot": "W85-W87",
+        "homeTla": "CAN",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "ROUND_OF_16"
       },
-      "FRA_NED": {
+      "W89-W90": {
+        "slot": "W89-W90",
+        "homeTla": "FRA",
+        "awayTla": "NED",
         "advancingTeamTla": "FRA",
         "round": "QUARTER_FINALS"
       },
-      "CRO_TUR": {
+      "W93-W94": {
+        "slot": "W93-W94",
+        "homeTla": "CRO",
+        "awayTla": "TUR",
         "advancingTeamTla": "CRO",
         "round": "QUARTER_FINALS"
       },
-      "BRA_SEN": {
+      "W91-W92": {
+        "slot": "W91-W92",
+        "homeTla": "BRA",
+        "awayTla": "SEN",
         "advancingTeamTla": "SEN",
         "round": "QUARTER_FINALS"
       },
-      "URU_POR": {
+      "W95-W96": {
+        "slot": "W95-W96",
+        "homeTla": "URU",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "QUARTER_FINALS"
       },
-      "FRA_CRO": {
+      "W97-W98": {
+        "slot": "W97-W98",
+        "homeTla": "FRA",
+        "awayTla": "CRO",
         "advancingTeamTla": "CRO",
         "round": "SEMI_FINALS"
       },
-      "SEN_POR": {
+      "W99-W100": {
+        "slot": "W99-W100",
+        "homeTla": "SEN",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "SEMI_FINALS"
       },
-      "FRA_SEN": {
-        "advancingTeamTla": "FRA",
-        "round": "THIRD_PLACE"
-      },
-      "CRO_POR": {
+      "W101-W102": {
+        "slot": "W101-W102",
+        "homeTla": "CRO",
+        "awayTla": "POR",
         "advancingTeamTla": "POR",
         "round": "FINAL"
+      },
+      "L101-L102": {
+        "slot": "L101-L102",
+        "homeTla": "FRA",
+        "awayTla": "SEN",
+        "advancingTeamTla": "FRA",
+        "round": "THIRD_PLACE"
       }
     },
     "specials": {
       "champion": "POR",
       "runnerUp": "CRO",
       "thirdPlace": "FRA",
-      "goldenBoot": {
-        "first": "Cristiano Ronaldo",
-        "second": "Désiré Doué",
-        "third": "Erling Haaland"
-      },
-      "goldenBall": {
-        "first": "Cristiano Ronaldo",
-        "second": "Luka Modrić",
-        "third": "Ousmane Dembélé"
-      }
+      "goldenBoot": "Cristiano Ronaldo",
+      "goldenBall": "Cristiano Ronaldo"
     }
   }
 }

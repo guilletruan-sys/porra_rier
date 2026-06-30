@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useLite } from '@/contexts/LiteContext'
 
 function IconHome({ active }: { active: boolean }) {
   return active ? (
@@ -55,37 +54,44 @@ function IconRunner({ active }: { active: boolean }) {
   )
 }
 
+function IconBracket({ active }: { active: boolean }) {
+  const stroke = active ? '#c8102e' : '#94a3b8'
+  const fill = active ? '#c8102e' : 'none'
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="4" width="6" height="4" rx="1" fill={fill} stroke={stroke} />
+      <rect x="2" y="16" width="6" height="4" rx="1" fill={fill} stroke={stroke} />
+      <rect x="10" y="10" width="6" height="4" rx="1" fill={fill} stroke={stroke} />
+      <rect x="18" y="10" width="4" height="4" rx="1" fill={fill} stroke={stroke} />
+      <path d="M8 6h2v6" />
+      <path d="M8 18h2v-6" />
+      <path d="M16 12h2" />
+    </svg>
+  )
+}
+
 const NAV_ITEMS = [
   { href: '/', Icon: IconHome, label: 'Inicio' },
   { href: '/partidos', Icon: IconCalendar, label: 'Partidos' },
+  { href: '/cuadro', Icon: IconBracket, label: 'Cuadro' },
   { href: '/ranking', Icon: IconTrophy, label: 'Ranking' },
   { href: '/predicciones', Icon: IconUsers, label: 'Prediccs.' },
-  { href: '/goleadores', Icon: IconRunner, label: 'Goleadores' },
+  { href: '/goleadores', Icon: IconRunner, label: 'Golead.' },
 ]
-
-// Tabs that are entirely locked in lite mode
-const LITE_LOCKED_HREFS = new Set(['/goleadores'])
 
 export function BottomNav() {
   const pathname = usePathname()
-  const { isPremium } = useLite()
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 flex justify-around py-2 pb-4 z-50">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex justify-around py-2 pb-4 z-50">
       {NAV_ITEMS.map(({ href, Icon, label }) => {
         const active = pathname === href || (href !== '/' && pathname.startsWith(href))
-        const locked = !isPremium && LITE_LOCKED_HREFS.has(href)
         return (
-          <Link key={href} href={href} className="flex flex-col items-center gap-0.5 min-w-[56px] relative">
-            <div className={`flex items-center justify-center rounded-xl px-3 py-1 transition-colors ${active ? 'bg-red-50' : ''}`}>
+          <Link key={href} href={href} className="flex flex-col items-center gap-0.5 flex-1 min-w-0">
+            <div className={`flex items-center justify-center rounded-xl px-2 py-1 transition-colors ${active ? 'bg-red-50 dark:bg-red-950/40' : ''}`}>
               <Icon active={active} />
-              {locked && (
-                <span className="absolute top-0 right-2 inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-amber-500 text-white shadow">
-                  <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-                </span>
-              )}
             </div>
-            <span className={`text-[9px] font-semibold ${active ? 'text-[#c8102e]' : 'text-slate-400'}`}>
+            <span className={`text-[9px] font-semibold ${active ? 'text-[#c8102e]' : 'text-slate-400 dark:text-slate-500 '}`}>
               {label}
             </span>
           </Link>

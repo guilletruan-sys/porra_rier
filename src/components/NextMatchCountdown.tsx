@@ -58,21 +58,21 @@ export function NextMatchCountdown({ matches }: NextMatchCountdownProps) {
 
   return (
     <section>
-      <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-1.5">
+      <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 flex items-center gap-1.5">
         <span>⏰</span>
         Próximo partido
       </h2>
-      <div className="bg-white rounded-xl shadow-sm border border-slate-100 px-3 py-3">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 px-3 py-3">
         <div className="flex items-center justify-between gap-2 mb-2">
           <Link href={`/equipo/${upcoming.homeTeam.tla}`} className="flex items-center gap-1.5 flex-1 min-w-0 hover:opacity-80">
             {homeFlag
               ? <Image src={homeFlag} alt="" width={22} height={16} unoptimized className="rounded-sm" />
               : <IconFlagFallback width={22} height={16} />}
-            <span className="text-xs font-bold text-slate-800 truncate">{upcoming.homeTeam.shortName}</span>
+            <span className="text-xs font-bold text-slate-800 dark:text-slate-100 truncate">{upcoming.homeTeam.shortName}</span>
           </Link>
-          <span className="text-[10px] font-bold text-slate-400 shrink-0">vs</span>
+          <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 shrink-0">vs</span>
           <Link href={`/equipo/${upcoming.awayTeam.tla}`} className="flex items-center gap-1.5 flex-1 min-w-0 justify-end hover:opacity-80">
-            <span className="text-xs font-bold text-slate-800 truncate text-right">{upcoming.awayTeam.shortName}</span>
+            <span className="text-xs font-bold text-slate-800 dark:text-slate-100 truncate text-right">{upcoming.awayTeam.shortName}</span>
             {awayFlag
               ? <Image src={awayFlag} alt="" width={22} height={16} unoptimized className="rounded-sm" />
               : <IconFlagFallback width={22} height={16} />}

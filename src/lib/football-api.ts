@@ -1,5 +1,5 @@
 // src/lib/football-api.ts
-import type { Match, MatchDetails, Stage, Team } from './types'
+import type { Match, MatchDetails, Team } from './types'
 
 const BASE_URL = 'https://api.football-data.org/v4'
 const WC_CODE = 'WC'
@@ -9,21 +9,26 @@ const TLA_NORMALIZE: Record<string, string> = {
   URY: 'URU',
 }
 
-// football-data.org names the early knockout rounds LAST_32 / LAST_16; the app
-// uses the FIFA-style ROUND_OF_32 / ROUND_OF_16. The later rounds already match.
-const STAGE_NORMALIZE: Record<string, Stage> = {
+// football-data renamed several knockout stages for WC 2026. Map to our app's enum.
+const STAGE_NORMALIZE: Record<string, string> = {
   LAST_32: 'ROUND_OF_32',
   LAST_16: 'ROUND_OF_16',
 }
 
 function normalizeTeam(team: Team): Team {
+  if (!team || !team.tla) return team
   const tla = TLA_NORMALIZE[team.tla] ?? team.tla
   return tla === team.tla ? team : { ...team, tla }
 }
 
 function normalizeMatch(m: Match): Match {
   const stage = STAGE_NORMALIZE[m.stage] ?? m.stage
-  return { ...m, stage, homeTeam: normalizeTeam(m.homeTeam), awayTeam: normalizeTeam(m.awayTeam) }
+  return {
+    ...m,
+    stage: stage as Match['stage'],
+    homeTeam: normalizeTeam(m.homeTeam),
+    awayTeam: normalizeTeam(m.awayTeam),
+  }
 }
 
 function headers() {

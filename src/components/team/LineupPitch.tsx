@@ -177,11 +177,11 @@ export function LineupPitch({ tla }: LineupPitchProps) {
 
   return (
     <section className="mb-4">
-      <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center justify-between">
+      <h2 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 flex items-center justify-between">
         <span>{source.source === 'last-match' ? 'Último 11' : '11 tipo'}</span>
-        <span className="text-[10px] font-bold text-slate-300">{source.formation}</span>
+        <span className="text-[10px] font-bold text-slate-300 dark:text-slate-600">{source.formation}</span>
       </h2>
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm overflow-hidden">
         <div className="relative aspect-[3/4] bg-gradient-to-b from-green-600 to-green-700">
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full" stroke="white" strokeWidth="0.4" fill="none" opacity="0.6">
             <rect x="2" y="2" width="96" height="96" />
@@ -203,7 +203,7 @@ export function LineupPitch({ tla }: LineupPitchProps) {
               className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
               style={{ left: `${p.x}%`, top: `${p.y}%` }}
             >
-              <div className="w-7 h-7 rounded-full bg-white shadow-md flex items-center justify-center text-[10px] font-black text-[#c8102e] border-2 border-[#c8102e]">
+              <div className="w-7 h-7 rounded-full bg-white dark:bg-slate-900 shadow-md flex items-center justify-center text-[10px] font-black text-[#c8102e] border-2 border-[#c8102e]">
                 {p.number}
               </div>
               <span
@@ -215,7 +215,7 @@ export function LineupPitch({ tla }: LineupPitchProps) {
             </div>
           ))}
         </div>
-        <p className="text-[9px] text-slate-400 text-center py-2 px-3">
+        <p className="text-[9px] text-slate-400 dark:text-slate-500 text-center py-2 px-3">
           {sourceLabel}
         </p>
       </div>
