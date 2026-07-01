@@ -145,6 +145,15 @@ function deriveKnockout(positions: Map<string, string>, ko: RawKO[]): Record<str
     winnerBySlot[slot] = k.advancingTeamTla
     assigned.add(idx)
   }
+  // Cuadros que no respetan la estructura FIFA (cruces "imposibles") dejan slots
+  // vacíos. Como último recurso, colocamos los cruces sobrantes de la ronda en los
+  // slots libres (posición aproximada) para que el cuadro salga completo. No afecta
+  // a la puntuación (usa los equipos/avance, no el slot) ni a cuadros consistentes.
+  const fillLeftovers = (round: Stage, slots: readonly string[]) => {
+    const emptySlots = slots.filter(s => !(s in result))
+    const rows = byRound(round).filter(x => !assigned.has(x.i))
+    for (let j = 0; j < emptySlots.length && j < rows.length; j++) put(emptySlots[j], rows[j].i, round)
+  }
 
   // R32: por la etiqueta determinable (1X/2X) → equipo → cruce que lo contiene.
   const r32 = byRound('ROUND_OF_32')
@@ -155,6 +164,8 @@ function deriveKnockout(positions: Map<string, string>, ko: RawKO[]): Record<str
     const hit = r32.find(x => !assigned.has(x.i) && (x.k.homeTla === team || x.k.awayTla === team))
     if (hit) put(slot, hit.i, 'ROUND_OF_32')
   }
+  // Rellena los R32 que no encajaron por estructura, para poder propagar después.
+  fillLeftovers('ROUND_OF_32', [...LEFT_R32_SLOTS, ...RIGHT_R32_SLOTS])
 
   // R16 / QF / SF: propagación por número FIFA (Wn) → cruce con esos dos equipos.
   const wRounds: Array<[Stage, string[]]> = [
@@ -172,6 +183,9 @@ function deriveKnockout(positions: Map<string, string>, ko: RawKO[]): Record<str
       const hit = pool.find(x => !assigned.has(x.i) && sameSet(x.k.homeTla, x.k.awayTla, home, away))
       if (hit) put(slot, hit.i, round)
     }
+    // Coloca los cruces que no se pudieron propagar (cuadro inconsistente) en los
+    // slots libres de esta ronda, antes de propagar la siguiente.
+    fillLeftovers(round, slots)
   }
 
   // Final y 3er puesto: un único cruce cada uno.
