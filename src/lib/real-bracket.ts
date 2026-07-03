@@ -107,5 +107,25 @@ export function resolveRealBracket(matches: Match[]): Map<string, ResolvedSlot> 
   const tpAway = loserOf(WNUM_SLOT[Number(lb.slice(1))])
   setSlot(THIRD_PLACE_SLOT, 'THIRD_PLACE', tpHome, tpAway, stageMatchByTeams('THIRD_PLACE', tpHome, tpAway))
 
+  // --- Fecha/estado en rondas aún sin equipos ---
+  // Dentro de cada ronda, football-data ordena los partidos por número FIFA (Wn),
+  // así que el orden por id equivale al orden de Wn. Enganchamos el partido real a
+  // cada slot por esa posición SOLO para mostrar fecha/hora cuando aún no se pudo
+  // enganchar por equipos (no altera equipos ni ganador, que vienen de la propagación).
+  const WN_RANGES: Array<[Stage, number, number]> = [
+    ['ROUND_OF_16', 89, 96], ['QUARTER_FINALS', 97, 100], ['SEMI_FINALS', 101, 102], ['FINAL', 103, 103],
+  ]
+  for (const [stage, lo, hi] of WN_RANGES) {
+    const roundMatches = matches.filter(m => m.stage === stage).sort((a, b) => a.id - b.id)
+    for (let wn = lo; wn <= hi; wn++) {
+      const r = resolved.get(WNUM_SLOT[wn])
+      const m = roundMatches[wn - lo]
+      if (r && !r.match && m) r.match = m
+    }
+  }
+  const tpMatch = matches.find(m => m.stage === 'THIRD_PLACE')
+  const tpSlot = resolved.get(THIRD_PLACE_SLOT)
+  if (tpSlot && !tpSlot.match && tpMatch) tpSlot.match = tpMatch
+
   return resolved
 }
