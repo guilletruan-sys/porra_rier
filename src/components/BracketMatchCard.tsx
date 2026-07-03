@@ -16,6 +16,7 @@ export interface BracketMatchCardProps {
   score?: { home: number; away: number }
   pens?: { home: number; away: number }  // tanda de penaltis, si se decidió así
   status?: string        // 'TIMED' | 'IN_PLAY' | 'PAUSED' | 'FINISHED'
+  dateLabel?: string     // fecha/hora del partido, p.ej. "3 jul · 21:00"
   winnerTla?: string | null     // marcamos al ganador en negrita / con flecha
   predictedAdvanceTla?: string  // en modo participante: equipo que él predijo a avanzar
   predictionOutcome?: BracketPredictionOutcome  // ✓ acierto / ✗ fallo / ▶ aún en juego
@@ -37,6 +38,7 @@ export function BracketMatchCard({
   score,
   pens,
   status,
+  dateLabel,
   winnerTla,
   predictedAdvanceTla,
   predictionOutcome,
@@ -81,6 +83,11 @@ export function BracketMatchCard({
         predicted={awayPredicted}
         predictionOutcome={awayPredicted ? predictionOutcome : undefined}
       />
+      {!isLive && dateLabel && (
+        <div className="bg-slate-50 dark:bg-slate-950/40 text-[8px] font-semibold text-slate-400 dark:text-slate-500 px-2 py-0.5 text-center tabular-nums border-t border-slate-100 dark:border-slate-800">
+          {dateLabel}
+        </div>
+      )}
       {isLive && (
         <div className="bg-red-50 text-[8px] font-black text-red-600 px-2 py-0.5 text-center uppercase tracking-widest border-t border-red-100">
           ● En vivo

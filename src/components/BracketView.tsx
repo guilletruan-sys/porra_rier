@@ -49,6 +49,14 @@ function winnerTla(m: Match): string | null {
   return null
 }
 
+function formatBracketDate(utcDate: string): string {
+  const d = new Date(utcDate)
+  if (isNaN(d.getTime())) return ''
+  const date = d.toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'Europe/Madrid' })
+  const time = d.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' })
+  return `${date} · ${time}`
+}
+
 const KNOCKOUT_ORDER: Stage[] = ['ROUND_OF_32', 'ROUND_OF_16', 'QUARTER_FINALS', 'SEMI_FINALS', 'FINAL']
 
 export type PredictionOutcome = 'correct' | 'wrong' | 'pending'
@@ -253,6 +261,7 @@ function ResolvedCard({ r, onOpenFinished, onOpenPending }: {
       score={ds ? { home: ds.home, away: ds.away } : undefined}
       pens={ds?.pens}
       status={m?.status}
+      dateLabel={m?.utcDate ? formatBracketDate(m.utcDate) : undefined}
       winnerTla={r.winnerTla}
       onTap={onTap}
     />
